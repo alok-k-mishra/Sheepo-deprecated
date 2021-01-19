@@ -1,0 +1,14 @@
+{
+  "name": "sheepymod",
+  "version": "1.0.0",
+  "description": "A Bot exclusive for MrSuicideSheep",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Killeration",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^12.5.1"
+  }
+}
