@@ -2,7 +2,7 @@ module.exports = {
     name: 'unmute',
     description: "Unmute Members",
     execute(message, args, Discord) {
-        if(message.member.roles.cache.has('799264088534024192') || message.member.roles.cache.has('799264116203847712')){
+        if (message.member.hasPermission("KICK_MEMBERS") || message.member.hasPermission("MANAGE_MESSAGES") || message.member.hasPermission("MANAGE_SERVER") || message.member.hasPermission("BAN_MEMBERS")){
             var target = message.guild.member(message.mentions.users.first()) || message.guild.members.cache.get(args[0]);
             message.delete();
             if(target){
@@ -17,7 +17,7 @@ module.exports = {
                 const unmute = new Discord.MessageEmbed()
 
                 .setColor('2FFF3E')
-                .setTitle("Unmuted "+ (message.mentions.members.first().displayName) + " :green_circle:")
+                .setTitle("Unmuted "+ (message.mentions.members.first()) + " :green_circle:")
                 .setFooter("Happily moderating MrSuicideSheep server :D")
                 .setTimestamp()
 

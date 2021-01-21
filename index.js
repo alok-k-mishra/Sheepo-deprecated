@@ -62,8 +62,14 @@ client.on('message', message =>{
     client.commands.get('slowmode').execute(message, args, Discord);
 
   } else if(command === 'help') {
-    client.commands.get('help').execute(message, args, Discord);
+      client.commands.get('help').execute(message, args, Discord);
 
+  } else if (command === 'helpmember'){
+      client.commands.get('helpmember').execute(message, args, Discord);
+
+  } else if (command === 'helpmod'){
+      client.commands.get('helpmod').execute(message, args, Discord);
+    
   } else if(command === 'youtube') {
     client.commands.get('youtube').execute(message, args, Discord);
 
@@ -80,6 +86,32 @@ client.on('message', message =>{
     client.commands.get('ping').execute(message, args, Discord);
 
   }
+  else if(command === 'bonk') {
+  client.commands.get('bonk').execute(message, args, Discord);
+
+  }
+  else if(command === 'bday') {
+  client.commands.get('bday').execute(message, args, Discord);
+
+  }
+  else if(command === 'hug') {
+  client.commands.get('hug').execute(message, args, Discord);
+
+  } 
+  else if(command === 'unmute') {
+  client.commands.get('unmute').execute(message, args, Discord);
+  }
+  else if(command === 'doubt') {
+  client.commands.get('doubt').execute(message, args, Discord);
+  }
+  else if(command === 'slap') {
+  client.commands.get('slap').execute(message, args, Discord);
+  }
+  else if(command === 'pat') {
+  client.commands.get('pat').execute(message, args, Discord);
+  
+}
+
   }
 
   else {

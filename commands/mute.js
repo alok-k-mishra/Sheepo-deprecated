@@ -14,20 +14,28 @@ module.exports = {
                 let muteRole = message.guild.roles.cache.find(role => role.name === 'Muted');
      
                 let memberTarget = message.guild.members.cache.get(target.id);
+                let mentioned = message.mentions.users.first();
+                memberTarget.roles.set([muteRole.id]);
 
-                memberTarget.roles.remove(mainRole.id);
-                memberTarget.roles.add(muteRole.id);
 
 
             const mute = new Discord.MessageEmbed()
             
                 .setColor('3DAE3B')
-                .setTitle("Muted" + (message.mentions.members.first().displayName) + " :clock:")
+                .setTitle("Muted " + (message.mentions.members.first()) + " :clock:")
                 .setFooter("Happily moderating MrSuicideSheep server :D")
                 .setDescription("Reason: "+ reason)
                 .setTimestamp()
 
+            const muteDM = new Discord.MessageEmbed()
+            .setColor('3DAE3B')
+            .setTitle("You have been muted.")
+            .setFooter("Happily moderating MrSuicideSheep server :D")
+            .setDescription("Reason: "+ reason)
+            .setTimestamp()
+
             message.channel.send(mute);
+            mentioned.send(muteDM);
             }
         
             else{

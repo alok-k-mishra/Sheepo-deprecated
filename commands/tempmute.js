@@ -9,29 +9,41 @@ module.exports = {
             message.delete();
 
         if (target) {
- 
+            
+            var mutereason = args.join(" ").slice(22);
+            if (!mutereason){
+                mutereason = "No mute reasons provided";
+            }
+
+            
             let mainRole = message.guild.roles.cache.find(role => role.name === 'Flock');
             let muteRole = message.guild.roles.cache.find(role => role.name === 'Muted');
  
             let memberTarget = message.guild.members.cache.get(target.id);
+            let mss = args[1]
+            let mst = (mss * 60000);
+            memberTarget.roles.set([muteRole.id]);
 
-            memberTarget.roles.remove(mainRole.id);
-            memberTarget.roles.add(muteRole.id);
 
-        setTimeout(function () {
-            memberTarget.roles.remove(muteRole.id);
-            memberTarget.roles.add(mainRole.id);
-        }, ms(args[1]));
 
         const purge = new Discord.MessageEmbed()
             
         .setColor('3DAE3B')
-        .setTitle("Muted" + (message.mentions.members.first().displayName) + "for " + (args[1]) + " minutes :clock:")
+        .setTitle("Muted " + (message.mentions.members.first().displayName) + " for " + (args[1]) + " minutes :clock:")
         .setFooter("Happily moderating MrSuicideSheep server :D")
-        .setDescription("Reason: "+ reason)
+        .setDescription("Reason: "+ mutereason)
         .setTimestamp()
 
         message.channel.send(purge);
+
+
+        setTimeout(tunmute, mst) 
+            
+            function tunmute(){
+            memberTarget.roles.remove(muteRole.id);
+            memberTarget.roles.add(mainRole.id);
+            }
+        
 
     }   
     else {
