@@ -62,13 +62,14 @@ client.on('message', message =>{
   
   } else if(command === 'slowmode') {
     client.commands.get('slowmode').execute(message, args, Discord);
-  }else {
+  }
+  else {
 
     message.reply("Hey you ain't a mod or admin >:(");
     }
 
-    
-  } else if(command === 'help') {
+
+  } if(command === 'help') {
       client.commands.get('help').execute(message, args, Discord);
 
   } else if (command === 'helpmember'){
