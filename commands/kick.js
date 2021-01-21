@@ -1,7 +1,7 @@
 module.exports = {
     name: 'kick',
     description: "Kick Members",
-    async execute(message, args, Discord) {
+    execute(message, args, Discord) {
         
         if (message.member.hasPermission("KICK_MEMBERS") || message.member.hasPermission("MANAGE_MESSAGES") || message.member.hasPermission("MANAGE_SERVER") || message.member.hasPermission("BAN_MEMBERS")){
             const target = message.mentions.users.first();
@@ -37,8 +37,9 @@ module.exports = {
             message.channel.send("Wasn't able to find or kick the member");
         }
     }
+
         else {
-            return message.reply("Hey you ain't a mod or admin >:(");     
+            message.reply("Hey you ain't a mod or admin >:(");     
         }
     
     }
