@@ -19,7 +19,7 @@ module.exports = {
 
         if(target){
 
-            memberTarget.kick({kickreason});
+            memberTarget.kick(kickreason);
 
             const kick = new Discord.MessageEmbed()
             .setColor('FB542B')

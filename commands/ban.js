@@ -18,7 +18,7 @@ module.exports = {
 
         if(target){
 
-            memberTarget.ban({banreason});
+            memberTarget.ban(banreason);
     
             const ban = new Discord.MessageEmbed()
                 
