@@ -4,7 +4,6 @@ const client = new Discord.Client();
 
 const GuildMemberManager = require("discord.js");
 
-const config = require('./config.json');
 
 const prefix = '.';
 
