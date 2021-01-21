@@ -3,8 +3,7 @@ module.exports = {
     description: "Kick Members",
     execute(message, args, Discord) {
         
-        if (message.member.hasPermission("KICK_MEMBERS") || message.member.hasPermission("MANAGE_MESSAGES") || message.member.hasPermission("MANAGE_SERVER") || message.member.hasPermission("BAN_MEMBERS")){
-            const target = message.mentions.users.first();
+        const target = message.mentions.users.first();
 
             message.delete();
 
@@ -38,11 +37,7 @@ module.exports = {
         }
     }
 
-        else {
-            message.reply("Hey you ain't a mod or admin >:(");     
-        }
-    
-    }
+
     }
 
     

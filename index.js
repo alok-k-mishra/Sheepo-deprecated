@@ -33,8 +33,10 @@ client.on('message', message =>{
 
   if (message.channel.type !== 'dm') {
 
-
-  if(command === 'purge'){
+    if (message.member.hasPermission("KICK_MEMBERS") || message.member.hasPermission("MANAGE_MESSAGES") || message.member.hasPermission("MANAGE_SERVER") || message.member.hasPermission("BAN_MEMBERS")){
+    
+    
+    if(command === 'purge'){
     client.commands.get('purge').execute(message, args, Discord);
   
   } else if(command === 'clear') {
@@ -60,7 +62,12 @@ client.on('message', message =>{
   
   } else if(command === 'slowmode') {
     client.commands.get('slowmode').execute(message, args, Discord);
+  }else {
 
+    message.reply("Hey you ain't a mod or admin >:(");
+    }
+
+    
   } else if(command === 'help') {
       client.commands.get('help').execute(message, args, Discord);
 

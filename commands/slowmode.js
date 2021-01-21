@@ -2,7 +2,6 @@ module.exports = {
     name: 'slowmode',
     description: "Channel Slowmode",
     execute(message, args, Discord) {
-        if (message.member.hasPermission("KICK_MEMBERS") || message.member.hasPermission("MANAGE_MESSAGES") || message.member.hasPermission("MANAGE_SERVER") || message.member.hasPermission("BAN_MEMBERS")){
     
         const smdur = args[0];
 
@@ -58,10 +57,5 @@ module.exports = {
             }
             
     }     
-                else 
-                     {
-                message.reply("Hey, you ain't a admin or a mod >:(");
-                    }
-                      
-    }   
+
 }

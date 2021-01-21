@@ -2,7 +2,6 @@ module.exports = {
     name: 'purge',
     description: "Purge Messages",
     async execute(message, args, Discord) {
-        if (message.member.hasPermission("KICK_MEMBERS") || message.member.hasPermission("MANAGE_MESSAGES") || message.member.hasPermission("MANAGE_SERVER") || message.member.hasPermission("BAN_MEMBERS")){
         if(!args[0]) return message.reply("Please specify the number of messages(1-100) to be purged!");
         if(isNaN(args[0])) return message.reply("Please enter a real number!");
         if(args[0] > 100) return message.reply("Please enter a number between 1-100");
@@ -27,11 +26,9 @@ module.exports = {
 
     }
 
-    else{
-      message.reply("Hey you ain't a mod or admin >:(");
-        }
 
-    } 
+
+ 
 
 
 }

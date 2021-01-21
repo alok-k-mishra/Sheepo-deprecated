@@ -2,8 +2,9 @@ module.exports = {
     name: 'tempmute',
     description: "Temporarily Mute Members",
     execute(message, args, Discord) {
-        if (message.member.hasPermission("KICK_MEMBERS") || message.member.hasPermission("MANAGE_MESSAGES") || message.member.hasPermission("MANAGE_SERVER") || message.member.hasPermission("BAN_MEMBERS")){
-            var target = message.guild.member(message.mentions.users.first()) || message.guild.members.cache.get(args[0]);
+        
+        
+        var target = message.guild.member(message.mentions.users.first()) || message.guild.members.cache.get(args[0]);
             
 
             message.delete();
@@ -53,10 +54,5 @@ module.exports = {
 
 
     
-    else
-    {
-        message.reply("Hey you ain't a mod or admin >:(");
 
-    }
-    }
 }
