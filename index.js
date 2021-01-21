@@ -37,76 +37,75 @@ client.on('message', message =>{
     
     if(command === 'purge'){
       if (message.member.hasPermission("KICK_MEMBERS") || message.member.hasPermission("MANAGE_MESSAGES") || message.member.hasPermission("MANAGE_SERVER") || message.member.hasPermission("BAN_MEMBERS")){
-        client.commands.get('purge').execute(message, args, Discord);
-      } else {
-
+        client.commands.get('purge').execute(message, args, Discord).catch(() => {;
+  
           message.reply("Hey you ain't a mod or admin >:(");
-          }
+          })
+      }
         }
    else if(command === 'clear') {
     if (message.member.hasPermission("KICK_MEMBERS") || message.member.hasPermission("MANAGE_MESSAGES") || message.member.hasPermission("MANAGE_SERVER") || message.member.hasPermission("BAN_MEMBERS")){
-      client.commands.get('clearc').execute(message, args, Discord);
-    } else {
+      client.commands.get('clearc').execute(message, args, Discord).catch(() => {;
 
         message.reply("Hey you ain't a mod or admin >:(");
-        }
+        })
+    }
 
   } else if(command === 'kick') {
     if (message.member.hasPermission("KICK_MEMBERS") || message.member.hasPermission("MANAGE_MESSAGES") || message.member.hasPermission("MANAGE_SERVER") || message.member.hasPermission("BAN_MEMBERS")){
-      client.commands.get('kick').execute(message, args, Discord);
-    } else {
+      client.commands.get('kick').execute(message, args, Discord).catch(() => {;
 
         message.reply("Hey you ain't a mod or admin >:(");
-        }
+        })
+    }
 
   } else if(command === 'ban') {
     if (message.member.hasPermission("KICK_MEMBERS") || message.member.hasPermission("MANAGE_MESSAGES") || message.member.hasPermission("MANAGE_SERVER") || message.member.hasPermission("BAN_MEMBERS")){
-      client.commands.get('ban').execute(message, args, Discord);
-    } else {
+      client.commands.get('ban').execute(message, args, Discord).catch(() => {;
 
         message.reply("Hey you ain't a mod or admin >:(");
-        }
+        })
+    }
 
   } else if(command === 'mute') {
     if (message.member.hasPermission("KICK_MEMBERS") || message.member.hasPermission("MANAGE_MESSAGES") || message.member.hasPermission("MANAGE_SERVER") || message.member.hasPermission("BAN_MEMBERS")){
-      client.commands.get('mute').execute(message, args, Discord);
-    } else {
+      client.commands.get('mute').execute(message, args, Discord).catch(() => {;
 
         message.reply("Hey you ain't a mod or admin >:(");
-        }
+        })
+    }
 
   } else if(command === 'tempmute') {
     if (message.member.hasPermission("KICK_MEMBERS") || message.member.hasPermission("MANAGE_MESSAGES") || message.member.hasPermission("MANAGE_SERVER") || message.member.hasPermission("BAN_MEMBERS")){
-      client.commands.get('tempmute').execute(message, args, Discord);
-    } else {
+      client.commands.get('tempmute').execute(message, args, Discord).catch(() => {;
 
         message.reply("Hey you ain't a mod or admin >:(");
-        }
+        })
+    }
 
   }else if(command === 'tmute') {
     if (message.member.hasPermission("KICK_MEMBERS") || message.member.hasPermission("MANAGE_MESSAGES") || message.member.hasPermission("MANAGE_SERVER") || message.member.hasPermission("BAN_MEMBERS")){
-      client.commands.get('tempmute').execute(message, args, Discord);
-    } else {
+      client.commands.get('tempmute').execute(message, args, Discord).catch(() => {;
 
         message.reply("Hey you ain't a mod or admin >:(");
-        }
+        })
+    }
 
   } else if(command === 'sm') {
     if (message.member.hasPermission("KICK_MEMBERS") || message.member.hasPermission("MANAGE_MESSAGES") || message.member.hasPermission("MANAGE_SERVER") || message.member.hasPermission("BAN_MEMBERS")){
-      client.commands.get('slowmode').execute(message, args, Discord);
-    } else {
+      client.commands.get('slowmode').execute(message, args, Discord).catch(() => {;
 
         message.reply("Hey you ain't a mod or admin >:(");
-        }
+        })
+    }
   
   } else if(command === 'slowmode') {
     if (message.member.hasPermission("KICK_MEMBERS") || message.member.hasPermission("MANAGE_MESSAGES") || message.member.hasPermission("MANAGE_SERVER") || message.member.hasPermission("BAN_MEMBERS")){
-      client.commands.get('slowmode').execute(message, args, Discord);
-    } else {
+      client.commands.get('slowmode').execute(message, args, Discord).catch(() => {;
 
         message.reply("Hey you ain't a mod or admin >:(");
-        }
-      }
+        })
+    }}
 
 
 
