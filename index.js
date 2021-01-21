@@ -4,6 +4,7 @@ const client = new Discord.Client();
 
 const GuildMemberManager = require("discord.js");
 
+const config = require('./config.json');
 
 const prefix = '.';
 
@@ -124,4 +125,4 @@ client.on('message', message =>{
 
 
 
-client.login('Nzk5MTU5MDY1ODM0MDI5MTEx.X__g4A.HQ5zFt1Z23C6nBe01pmlkJzdYM8');
+client.login(process.env.DJS_TOKEN);
