@@ -26,7 +26,7 @@ client.once('ready', () =>{
 
 client.on('message', message =>{
     if(!message.content.startsWith(prefix) || message.author.bot) return;
-})
+
 
   const args = message.content.slice(prefix.length).split(/ +/);
   const command = args.shift().toLowerCase();
@@ -168,7 +168,7 @@ else {
     message.author.send("Hey, you gotta use my commands in sheepy server :)");
 }
 
-
+});
 
 
 
