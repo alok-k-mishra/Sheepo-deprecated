@@ -2,9 +2,10 @@ const commandFiles = ['ban', 'bday', 'bonk', 'clearc', 'doubt', 'help', 'helpmem
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const GuildMemberManager = require("discord.js");
-const prefix = process.env.PREFIX;
+const prefix = '.'
 require("dotenv").config();
 const DISCORD_TOKEN = process.env.DISCORD_TOKEN; 
+console.log(DISCORD_TOKEN)
 client.commands = new Discord.Collection();
 
 commandFiles.forEach(filename => {
@@ -176,7 +177,12 @@ client.on('message', message =>{
             bHasPermission = true; 
           }
         });
-        return bHasPermission;   
+        
+        if(bHasPermission = false) {
+          addError(3, 'SheepyBot'); 
+        } else {
+          return bHasPermission; 
+        }
       }
       
       function addError(vErrorCode, vMemberName) {
@@ -188,6 +194,8 @@ client.on('message', message =>{
           case 2: 
             errMessage = `Yo!  You gotta use my commands in Sheepy Server, ${vMemberName}`; 
           break; 
+          case 3: 
+            errMessage = "Hey, I have some permission errors! Check the roles and permissions in server settings. :)"
           default: 
           errMessage = "Something went wrong!"; 
 
