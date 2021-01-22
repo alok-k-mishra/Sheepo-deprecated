@@ -17,7 +17,8 @@ module.exports = {
         let replies = ["Get Bonked Kid!", "Haha bonk go brrrrr", "Aha BONKED!"];
         let random = Math.floor(Math.random() * 3);
         
-        let bonkgif = ["https://media.giphy.com/media/30lxTuJueXE7C/source.gif",
+        let bonkgif = [
+                        "https://media.giphy.com/media/30lxTuJueXE7C/source.gif",
                         "https://media.giphy.com/media/hsgVkc6mJZV1DLMMFG/giphy.gif",
                         "https://media.giphy.com/media/dQbAV1HS6gVu4Cxwxi/giphy.gif",
                         "https://media.giphy.com/media/3LPo87QppPBt8fnKQL/giphy.gif",
