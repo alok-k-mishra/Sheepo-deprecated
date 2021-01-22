@@ -52,7 +52,7 @@ client.on('message', message =>{
     }
 
   } else if(command === 'kick') {
-    if (message.member.hasPermission("KICK_MEMBERS") || message.member.hasPermission("MANAGE_MESSAGES") || message.member.hasPermission("MANAGE_SERVER") || message.member.hasPermission("BAN_MEMBERS")){
+    if (message.member.roles.cache.has("434006808789647370") || message.member.roles.cache.has("453618428373368832")){
       client.commands.get('kick').execute(message, args, Discord).catch(() => {;
 
         message.reply("Hey you ain't a mod or admin >:(");
@@ -84,7 +84,7 @@ client.on('message', message =>{
     }
 
   }else if(command === 'tmute') {
-    if (message.member.hasPermission("KICK_MEMBERS") || message.member.hasPermission("MANAGE_MESSAGES") || message.member.hasPermission("MANAGE_SERVER") || message.member.hasPermission("BAN_MEMBERS")){
+    if (message.member.roles.cache.has("434006808789647370") || message.member.roles.cache.has("453618428373368832") ){
       client.commands.get('tempmute').execute(message, args, Discord).catch(() => {;
 
         message.reply("Hey you ain't a mod or admin >:(");
