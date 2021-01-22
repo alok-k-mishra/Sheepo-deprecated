@@ -60,7 +60,7 @@ client.on('message', message =>{
         }
     }
 
-  } else if(command === 'ban') {
+   else if(command === 'ban') {
     if (message.member.hasPermission("KICK_MEMBERS") || message.member.hasPermission("MANAGE_MESSAGES") || message.member.hasPermission("MANAGE_SERVER") || message.member.hasPermission("BAN_MEMBERS")){
       client.commands.get('ban').execute(message, args, Discord).catch(() => {;
 
@@ -161,7 +161,7 @@ client.on('message', message =>{
   
 }
 
-  
+}
   
 else {
 
