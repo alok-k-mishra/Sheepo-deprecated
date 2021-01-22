@@ -8,8 +8,25 @@ module.exports = {
         let hug = ["Huggiesss!!!!", "Yayyy Hugssss", "Tight hugssss", "hug hug hug", "Hugs everywhere!!!!"];
         let hugrandom = Math.floor(Math.random() * 5);
         
-        let huggif = ["https://media.giphy.com/media/3oEdv4hwWTzBhWvaU0/giphy.gif", "https://media.giphy.com/media/f6y4qvdxwEDx6/giphy.gif", "https://media.giphy.com/media/U4LhzzpfTP7NZ4UlmH/giphy.gif", "https://media.giphy.com/media/VduFvPwm3gfGO8duNN/giphy.gif", "https://media.giphy.com/media/JzsG0EmHY9eKc/giphy.gif", "https://media.giphy.com/media/KL7xA3fLx7bna/giphy.gif"];
-        let randomhug = Math.floor(Math.random() * 6);
+        let huggif = ["https://media.giphy.com/media/3oEdv4hwWTzBhWvaU0/giphy.gif",
+                    "https://media.giphy.com/media/f6y4qvdxwEDx6/giphy.gif",
+                    "https://media.giphy.com/media/U4LhzzpfTP7NZ4UlmH/giphy.gif",
+                    "https://media.giphy.com/media/VduFvPwm3gfGO8duNN/giphy.gif",
+                    "https://media.giphy.com/media/JzsG0EmHY9eKc/giphy.gif",
+                    "https://media.giphy.com/media/KL7xA3fLx7bna/giphy.gif",
+                    "https://media.giphy.com/media/yidUzriaAGJbsxt58k/giphy.gif",
+                    "https://media.giphy.com/media/VbawWIGNtKYwOFXF7U/giphy.gif",
+                    "https://media.giphy.com/media/f6y4qvdxwEDx6/giphy.gif",
+                    "https://media.giphy.com/media/us8FXd0EtOXXa/giphy-downsized-large.gif",
+                    "https://media.giphy.com/media/INUsrrxQW4et2/giphy.gif" 
+                ];
+
+
+
+
+
+
+        let randomhug = Math.floor(Math.random() * 11);
 
         let hugr = hug[hugrandom];
         let huggr = huggif[randomhug];

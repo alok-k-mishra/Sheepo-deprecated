@@ -17,8 +17,25 @@ module.exports = {
         let slap = ["Get Slapped Kid!", "Haha slap go brrrrr", "Aha SLAPPED!", "Slapped to shame hahahhaha", "*SLAP*"];
         let slapr = Math.floor(Math.random() * 5);
         
-        let slapgif = ["https://media.giphy.com/media/j3iGKfXRKlLqw/giphy.gif", "https://media.giphy.com/media/RrLbvyvatbi36/giphy.gif", "https://media.giphy.com/media/vlH0dqH8DiZa0/giphy.gif", "https://media.giphy.com/media/WLXO8OZmq0JK8/giphy.gif", "https://media.giphy.com/media/3o84skA6NkEvJg4LlK/giphy.gif"];
-        let randomslap = Math.floor(Math.random() * 5);
+        let slapgif = ["https://media.giphy.com/media/j3iGKfXRKlLqw/giphy.gif",
+                        "https://media.giphy.com/media/RrLbvyvatbi36/giphy.gif",
+                        "https://media.giphy.com/media/vlH0dqH8DiZa0/giphy.gif",
+                        "https://media.giphy.com/media/WLXO8OZmq0JK8/giphy.gif",
+                        "https://media.giphy.com/media/3o84skA6NkEvJg4LlK/giphy.gif",
+                        "https://media.giphy.com/media/LD8TdEcyuJxu0/giphy.gif",
+                        "https://media.giphy.com/media/L4BFVWFLKuwe39hOs7/giphy.gif",
+                        "https://media.giphy.com/media/RY4tWACV5NjiM/giphy.gif",
+                        "https://media.giphy.com/media/l378esPEr8isHOAOQ/giphy.gif",
+                        "https://media.giphy.com/media/6NEtPmPHmA8Gk/giphy.gif"
+                    
+                    
+                    ];
+
+
+
+
+
+        let randomslap = Math.floor(Math.random() * 10);
 
         let slapped = slap[slapr];
         let slaprgif = slapgif[randomslap];
