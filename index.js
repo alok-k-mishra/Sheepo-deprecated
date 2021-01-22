@@ -53,10 +53,11 @@ client.on('message', message =>{
 
   } else if(command === 'kick') {
     if (message.member.roles.cache.has("434006808789647370") || message.member.roles.cache.has("453618428373368832")){
-      client.commands.get('kick').execute(message, args, Discord).catch(() => {;
-
+      client.commands.get('kick').execute(message, args, Discord);
+    }
+    else{
         message.reply("Hey you ain't a mod or admin >:(");
-        })
+        }
     }
 
   } else if(command === 'ban') {
@@ -161,13 +162,13 @@ client.on('message', message =>{
 }
 
   
-  }
+  
 else {
 
     message.author.send("Hey, you gotta use my commands in sheepy server :)");
 }
 
-});
+})
 
 
 
