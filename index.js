@@ -36,20 +36,21 @@ client.on('message', message =>{
     
     
     if(command === 'purge'){
-      if (message.member.hasPermission("KICK_MEMBERS") || message.member.hasPermission("MANAGE_MESSAGES") || message.member.hasPermission("MANAGE_SERVER") || message.member.hasPermission("BAN_MEMBERS")){
-        client.commands.get('purge').execute(message, args, Discord).catch(() => {;
-  
-          message.reply("Hey you ain't a mod or admin >:(");
-          })
+      if (message.member.roles.cache.has("434006808789647370") || message.member.roles.cache.has("453618428373368832")){
+        client.commands.get('purge').execute(message, args, Discord);
       }
+      else{
+          message.reply("Hey you ain't a mod or admin >:(");
+          }
         }
+        
    else if(command === 'clear') {
-    if (message.member.hasPermission("KICK_MEMBERS") || message.member.hasPermission("MANAGE_MESSAGES") || message.member.hasPermission("MANAGE_SERVER") || message.member.hasPermission("BAN_MEMBERS")){
-      client.commands.get('clearc').execute(message, args, Discord).catch(() => {;
-
-        message.reply("Hey you ain't a mod or admin >:(");
-        })
+    if (message.member.roles.cache.has("434006808789647370") || message.member.roles.cache.has("453618428373368832")){
+      client.commands.get('clearc').execute(message, args, Discord);
     }
+    else{
+        message.reply("Hey you ain't a mod or admin >:(");
+        }
 
   } else if(command === 'kick') {
     if (message.member.roles.cache.has("434006808789647370") || message.member.roles.cache.has("453618428373368832")){
@@ -61,56 +62,63 @@ client.on('message', message =>{
     }
 
    else if(command === 'ban') {
-    if (message.member.hasPermission("KICK_MEMBERS") || message.member.hasPermission("MANAGE_MESSAGES") || message.member.hasPermission("MANAGE_SERVER") || message.member.hasPermission("BAN_MEMBERS")){
-      client.commands.get('ban').execute(message, args, Discord).catch(() => {;
-
+    if (message.member.roles.cache.has("434006808789647370") || message.member.roles.cache.has("453618428373368832")){
+      client.commands.get('ban').execute(message, args, Discord);
+    }
+    else{
         message.reply("Hey you ain't a mod or admin >:(");
-        })
+        }
     }
 
-  } else if(command === 'mute') {
-    if (message.member.hasPermission("KICK_MEMBERS") || message.member.hasPermission("MANAGE_MESSAGES") || message.member.hasPermission("MANAGE_SERVER") || message.member.hasPermission("BAN_MEMBERS")){
-      client.commands.get('mute').execute(message, args, Discord).catch(() => {;
-
-        message.reply("Hey you ain't a mod or admin >:(");
-        })
+   else if(command === 'mute') {
+    if (message.member.roles.cache.has("434006808789647370") || message.member.roles.cache.has("453618428373368832")){
+      client.commands.get('mute').execute(message, args, Discord);
     }
+    else{
+        message.reply("Hey you ain't a mod or admin >:(");
+        }
+    
 
   } else if(command === 'tempmute') {
-    if (message.member.hasPermission("KICK_MEMBERS") || message.member.hasPermission("MANAGE_MESSAGES") || message.member.hasPermission("MANAGE_SERVER") || message.member.hasPermission("BAN_MEMBERS")){
-      client.commands.get('tempmute').execute(message, args, Discord).catch(() => {;
-
-        message.reply("Hey you ain't a mod or admin >:(");
-        })
+    if (message.member.roles.cache.has("434006808789647370") || message.member.roles.cache.has("453618428373368832")){
+      client.commands.get('tempmute').execute(message, args, Discord);
     }
+    else{
+        message.reply("Hey you ain't a mod or admin >:(");
+        }
 
   }else if(command === 'tmute') {
-    if (message.member.roles.cache.has("434006808789647370") || message.member.roles.cache.has("453618428373368832") ){
-      client.commands.get('tempmute').execute(message, args, Discord).catch(() => {;
-
-        message.reply("Hey you ain't a mod or admin >:(");
-        })
+    if (message.member.roles.cache.has("434006808789647370") || message.member.roles.cache.has("453618428373368832")){
+      client.commands.get('tempmute').execute(message, args, Discord);
     }
+    else{
+        message.reply("Hey you ain't a mod or admin >:(");
+        }
 
   } else if(command === 'sm') {
-    if (message.member.hasPermission("KICK_MEMBERS") || message.member.hasPermission("MANAGE_MESSAGES") || message.member.hasPermission("MANAGE_SERVER") || message.member.hasPermission("BAN_MEMBERS")){
-      client.commands.get('slowmode').execute(message, args, Discord).catch(() => {;
-
-        message.reply("Hey you ain't a mod or admin >:(");
-        })
+    if (message.member.roles.cache.has("434006808789647370") || message.member.roles.cache.has("453618428373368832")){
+      client.commands.get('slowmode').execute(message, args, Discord);
     }
+    else{
+        message.reply("Hey you ain't a mod or admin >:(");
+        }
   
   } else if(command === 'slowmode') {
-    if (message.member.hasPermission("KICK_MEMBERS") || message.member.hasPermission("MANAGE_MESSAGES") || message.member.hasPermission("MANAGE_SERVER") || message.member.hasPermission("BAN_MEMBERS")){
-      client.commands.get('slowmode').execute(message, args, Discord).catch(() => {;
-
+    if (message.member.roles.cache.has("434006808789647370") || message.member.roles.cache.has("453618428373368832")){
+      client.commands.get('slowmode').execute(message, args, Discord);
+    }
+    else{
         message.reply("Hey you ain't a mod or admin >:(");
-        })
-    }}
+        }}  else if(command === 'unmute') {
+          if (message.member.roles.cache.has("434006808789647370") || message.member.roles.cache.has("453618428373368832")){
+            client.commands.get('unmute').execute(message, args, Discord);
+          }
+          else{
+              message.reply("Hey you ain't a mod or admin >:(");
+            }
 
-
-
-   if(command === 'help') {
+          }
+   else if(command === 'help') {
       client.commands.get('help').execute(message, args, Discord);
 
   } else if (command === 'helpmember'){
@@ -147,9 +155,7 @@ client.on('message', message =>{
   client.commands.get('hug').execute(message, args, Discord);
 
   } 
-  else if(command === 'unmute') {
-  client.commands.get('unmute').execute(message, args, Discord);
-  }
+
   else if(command === 'doubt') {
   client.commands.get('doubt').execute(message, args, Discord);
   }
@@ -159,6 +165,8 @@ client.on('message', message =>{
   else if(command === 'pat') {
   client.commands.get('pat').execute(message, args, Discord);
   
+} else if(command === 'feedback'){
+  client.commands.get('feedback').execute(message, args, Discord);
 }
 
 }
