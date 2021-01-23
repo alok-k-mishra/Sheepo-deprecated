@@ -4,6 +4,7 @@ const client = new Discord.Client();
 
 const GuildMemberManager = require("discord.js");
 
+const browser = await puppeteer.launch({ args: ['--no-sandbox']});
 
 const prefix = '.';
 
