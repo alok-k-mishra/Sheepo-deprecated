@@ -1,6 +1,7 @@
 const { MessageEmbed } = require("discord.js");
 var Scraper = require("images-scraper");
 
+
 const google = new Scraper({
     puppeteer: {
       headless: true,
@@ -12,7 +13,10 @@ module.exports = {
     name: 'doggo',
     description: 'Get random dog pics',
     async execute(client, message, Discord){
-        const dog_images = await google.scrape('cute doggo', 100);
+
+        const browser = await puppeteer.launch({ args: ['--no-sandbox']});
+
+        const dog_images = await google.scrape('cutedogsss', 1);
 
         const randomdog = Math.floor(Math.random() * 100);
 
@@ -26,5 +30,7 @@ module.exports = {
 
 
         message.channel.send(doggooo)
+
+        browser.close();
     }
 }
