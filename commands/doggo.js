@@ -16,6 +16,8 @@ module.exports = {
 
         const randomdog = Math.floor(Math.random() * 100);
 
+        const doggooo = dog_images[randomdog]
+
         const doggo = new Discord.MessageEmbed()
 
         .setTitle("Doggoooo")
@@ -23,6 +25,6 @@ module.exports = {
         .setImage(randomdoggo)
 
 
-        message.channel.send(doggo)
+        message.channel.send(doggooo)
     }
 }
