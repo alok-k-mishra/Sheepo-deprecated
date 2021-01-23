@@ -1,5 +1,5 @@
 const { MessageEmbed } = require("discord.js");
-var scraper = require("images-scraper");
+var Scraper = require("images-scraper");
 
 const google = new Scraper({
     puppeteer: {
