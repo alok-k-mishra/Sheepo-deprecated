@@ -18,7 +18,12 @@ module.exports = {
                     "https://media.giphy.com/media/VbawWIGNtKYwOFXF7U/giphy.gif",
                     "https://media.giphy.com/media/f6y4qvdxwEDx6/giphy.gif",
                     "https://media.giphy.com/media/us8FXd0EtOXXa/giphy-downsized-large.gif",
-                    "https://media.giphy.com/media/INUsrrxQW4et2/giphy.gif" 
+                    "https://media.giphy.com/media/INUsrrxQW4et2/giphy.gif",
+                    "https://media.giphy.com/media/UwaByp0aMg6BO/giphy.gif",
+                    "https://media.giphy.com/media/kooPUWvhaGe7C/giphy.gif",
+                    "https://media.giphy.com/media/13YrHUvPzUUmkM/giphy.gif",
+                    "https://media.giphy.com/media/l41lSTVB8eei3U3hC/giphy.gif",
+                    "https://media.giphy.com/media/eMIGPdZ77kPgD7nf4j/giphy.gif"
                 ];
 
 
@@ -26,7 +31,7 @@ module.exports = {
 
 
 
-        let randomhug = Math.floor(Math.random() * 11);
+        let randomhug = Math.floor(Math.random() * 16);
 
         let hugr = hug[hugrandom];
         let huggr = huggif[randomhug];
