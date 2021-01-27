@@ -26,7 +26,7 @@ module.exports = {
                 
             .setColor('FB542B')
             .setTitle("Changed Nickname for "+ (message.mentions.members.first().displayName))
-            .setDescription("Reason: "+ nickname)
+            .setDescription("New Nickname: "+ nickname)
             .setFooter("Happily moderating MrSuicideSheep server :D")
     
             message.channel.send(nname);
