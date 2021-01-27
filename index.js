@@ -5,10 +5,6 @@ const client = new Discord.Client();
 const GuildMemberManager = require("discord.js");
 
 
-const giphyRandom = require("giphy-random");
-
-const gdata = giphyRandom(process.env.GIPHY_TOKEN)      
-
 const prefix = '.';
 
 const fs = require('fs');
