@@ -174,8 +174,25 @@ client.on('message', message =>{
   else if(command === 'pat') {
   client.commands.get('pat').execute(message, args, Discord);
   
-} else if(command === 'feedback'){
-  client.commands.get('feedback').execute(message, args, Discord);
+
+} else if(command === 'boop'){
+  client.commands.get('boop').execute(message, args, Discord);
+
+}
+else if(command === 'poke'){
+  client.commands.get('poke').execute(message, args, Discord);
+
+}
+else if(command === 'catto'){
+  client.commands.get('catto').execute(message, args, Discord);
+
+}
+else if(command === 'doggo'){
+  client.commands.get('doggo').execute(message, args, Discord);
+
+}
+else if(command === 'animal'){
+  client.commands.get('animal').execute(message, args, Discord);
 
 }
 }
