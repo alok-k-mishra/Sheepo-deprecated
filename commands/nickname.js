@@ -10,7 +10,8 @@ module.exports = {
             if(target){
                 const memberTarget = message.guild.members.cache.get(target.id);
         
-        }
+           
+
 
         var nickname = args.join(" ").slice(22);
         if (!nickname){
@@ -29,7 +30,8 @@ module.exports = {
             .setFooter("Happily moderating MrSuicideSheep server :D")
     
             message.channel.send(nname);
-        }
+        }}
+        
             else{
                 message.channel.send("Wasn't able to change the nickname :/");
             }
