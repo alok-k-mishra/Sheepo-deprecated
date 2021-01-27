@@ -181,10 +181,7 @@ client.on('message', message =>{
 } else if(command === 'feedback'){
   client.commands.get('feedback').execute(message, args, Discord);
 
-} else if(command === 'doggo'){
-  client.commands.get('doggo').execute(message, args, Discord);
 }
-
 }
   
 else {
