@@ -21,7 +21,7 @@ module.exports = {
         .setColor('00FFEC')
         .setTitle("Doggooo")
         .setDescription("Dogggsss!")
-        .setImage(randomcatto)
+        .setImage(randomdoggo)
 
 
         message.channel.send(dogggooo);
