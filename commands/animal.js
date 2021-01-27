@@ -16,15 +16,10 @@ module.exports = {
 
         const randomanimal = Math.floor(Math.random() * result.results.length);
 
-        const animoll = new Discord.MessageEmbed() 
 
-        .setColor('00FFEC')
-        .setTitle("Animallss")
-        .setDescription("Cute Cute Cute :heart:")
-        .setImage(randomanimal)
+        const animalll = result.results[randomanimal].url
 
-
-        message.channel.send(animoll);
+        message.channel.send(animalll);
 
 
         

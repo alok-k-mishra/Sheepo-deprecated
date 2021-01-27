@@ -32,7 +32,7 @@ module.exports = {
         let randompoke = Math.floor(Math.random() * 6);
 
         let poked = poke[pokeR];
-        let pokedRGif = pokegif[pokedRGif];
+        let pokedRGif = pokegif[randompoke];
     
 
 

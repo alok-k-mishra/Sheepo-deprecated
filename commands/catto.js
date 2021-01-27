@@ -2,6 +2,8 @@
         name: 'catto',
         async execute(message, args, Discord  ){
             
+            message.react('🐱')
+
             const fetch = require('node-fetch')
 
             let keyword = "cat";
@@ -16,15 +18,9 @@
 
             const randomcatto = Math.floor(Math.random() * result.results.length);
 
-            const cattooo = new Discord.MessageEmbed() 
+            const cattoooo = result.results[randomcatto].url
 
-            .setColor('00FFEC')
-            .setTitle("Catto")
-            .setDescription("Ket")
-            .setImage(randomcatto)
-
-
-            message.channel.send(cattooo);
+            message.channel.send(cattoooo);
 
 
             

@@ -2,6 +2,9 @@ module.exports = {
     name: 'doggo',
     async execute(message, args, Discord  ){
         
+
+        message.react('🐶');
+
         const fetch = require('node-fetch')
 
         let keyword = "dog";
@@ -16,15 +19,10 @@ module.exports = {
 
         const randomdoggo = Math.floor(Math.random() * result.results.length);
 
-        const dogggooo = new Discord.MessageEmbed() 
-
-        .setColor('00FFEC')
-        .setTitle("Doggooo")
-        .setDescription("Dogggsss!")
-        .setImage(randomdoggo)
+        const doggooo = result.results[randomdoggo].url
 
 
-        message.channel.send(dogggooo);
+        message.channel.send(doggooo);
 
 
         
