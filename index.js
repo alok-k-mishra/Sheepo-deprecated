@@ -5,6 +5,10 @@ const client = new Discord.Client();
 const GuildMemberManager = require("discord.js");
 
 
+const giphyRandom = require("giphy-random");
+
+const gdata = giphyRandom(process.env.GIPHY_TOKEN)      
+
 const prefix = '.';
 
 const fs = require('fs');
@@ -116,6 +120,15 @@ client.on('message', message =>{
           else{
               message.reply("Hey you ain't a mod or admin >:(");
             }
+          } 
+           else if(command === 'nickname') {
+            if (message.member.roles.cache.has("434006808789647370") || message.member.roles.cache.has("453618428373368832")){
+              client.commands.get('nickname').execute(message, args, Discord);
+            }
+            else{
+                message.reply("Hey you ain't a mod or admin >:(");
+              }
+            
 
           }
    else if(command === 'help') {
@@ -167,6 +180,7 @@ client.on('message', message =>{
   
 } else if(command === 'feedback'){
   client.commands.get('feedback').execute(message, args, Discord);
+
 } else if(command === 'doggo'){
   client.commands.get('doggo').execute(message, args, Discord);
 }
