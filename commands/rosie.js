@@ -4,9 +4,9 @@ module.exports = {
     execute(message, args, Discord) {
         
 
-        message.react(message.react(message.guild.emojis.cache.get('783790184868741191')));
+        message.react(message.react("<:rosie:783790184868741191>"));
 
-        message.channel.send(message.react(message.guild.emojis.cache.get('783790184868741191')));
+        message.channel.send("<:rosie:783790184868741191>");
 
 
 
