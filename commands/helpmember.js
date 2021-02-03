@@ -20,6 +20,7 @@ module.exports = {
             { name: '.boop', value: 'Boop a member :p [.boop (member)' },
             { name: '.poke', value: 'Poke a member :p [.poke (member)' },
             { name: '.pat', value: 'Pat a member :D [.pat (member)' },
+            { name: '.rosie', value: 'rosie.' },
             { name: '.playlist / .playlists', value: 'Sends Official Playlists' },
             { name: '.youtube / .yt', value: 'Sends Official YouTube channel link for MrSuicideSheep' },
         )
