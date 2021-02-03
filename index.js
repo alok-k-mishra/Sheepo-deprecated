@@ -195,12 +195,16 @@ else if(command === 'animal'){
   client.commands.get('animal').execute(message, args, Discord);
 
 }
+else if(command === 'rosie'){
+  client.commands.get('rosie').execute(message, args, Discord);
+
+}
 }
   
 else {
 
     message.author.send("Hey, you gotta use my commands in sheepy server :)");
-}
+} 
 
 })
 
