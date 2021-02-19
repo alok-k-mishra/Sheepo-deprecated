@@ -195,6 +195,10 @@ else if(command === 'animal'){
   client.commands.get('animal').execute(message, args, Discord);
 
 }
+else if(command === 'birb'){
+  client.commands.get('birb').execute(message, args, Discord);
+
+}
 else if(command === 'rosie'){
   client.commands.get('rosie').execute(message, args, Discord);
 

@@ -9,7 +9,7 @@ module.exports = {
         .setColor('99ffeb')
         .setDescription("Hey, I'm SheepyMod, a mod bot developed by Killeration, exclusively for MrSuicideSheep Server, this bot is still in developement! :D \n \n Here are the fun commands members can use!")
         .addFields(
-            { name: '.help', value: 'Sends Hugs :p  [.hug / .hug (member)' },
+            { name: '.hug', value: 'Sends Hugs :p  [.hug / .hug (member)' },
             { name: '.slap', value: 'Slap yourself or a member [.slap / .slap (member)' },
             { name: '.bday', value: 'Wishes a user on their bday! [.wish (member)]' },
             { name: '.bonk', value: 'Bonk a member :p [.bonk (member)' },
@@ -17,6 +17,7 @@ module.exports = {
             { name: '.doggo', value: 'Get random dog gifs!' },
             { name: '.catto', value: 'Get random cat gifs!' },
             { name: '.animal', value: 'Get random animal gifs!' },
+            { name: '.birb', value: 'Get random cute bird gifs!' },
             { name: '.boop', value: 'Boop a member :p [.boop (member)' },
             { name: '.poke', value: 'Poke a member :p [.poke (member)' },
             { name: '.pat', value: 'Pat a member :D [.pat (member)' },
