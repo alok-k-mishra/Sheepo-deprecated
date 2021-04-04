@@ -25,6 +25,27 @@ client.once('ready', () =>{
 });
 
 client.on('message', message =>{
+
+  ///banned words blacklist
+
+  const blwords = [
+                  'faggot', 'cum', 'cumming', 'jap', 'rape', 'rapes', 'nigga', 'nigger', 'paki',
+                  'milf', 'motherfucker', 'sex', 's3x', 'pedophile', 'paedophile', 'pedo', 'paedo',
+                  'fag', 'torrent', 'nigguh', 'porn', 'pornography', 'retard', 'retarded', 'cock', 'vagina', 'bitch',
+                  'fags', 'bastard', 'abortion', 'aids', 'niggers', 'nonce', 'nonces', 'porno', 'tits', 'cunts',
+                  'raped', 'raping', 
+
+                  ]
+  const foundInText = false;
+  for (var i in blacklisted) {
+    if (message.content.toLowerCase().includes(blacklisted[i].toLowerCase())) foundInText = true;
+  }
+  if (foundInText) {
+    message.delete();
+    message.channel.send();
+  }
+
+
     if(!message.content.startsWith(prefix) || message.author.bot) return;
 
 
