@@ -26,25 +26,6 @@ client.once('ready', () =>{
 
 client.on('message', message =>{
 
-  ///banned words blacklist
-
-  const blwords = [
-                  'faggot', 'cum', 'cumming', 'jap', 'rape', 'rapes', 'nigga', 'nigger', 'paki',
-                  'milf', 'motherfucker', 'sex', 's3x', 'pedophile', 'paedophile', 'pedo', 'paedo',
-                  'fag', 'torrent', 'nigguh', 'porn', 'pornography', 'retard', 'retarded', 'cock', 'vagina', 'bitch',
-                  'fags', 'bastard', 'abortion', 'aids', 'niggers', 'nonce', 'nonces', 'porno', 'tits', 'cunts',
-                  'raped', 'raping', 
-
-                  ]
-  const foundInText = false;
-  for (var i in blacklisted) {
-    if (message.content.toLowerCase().includes(blacklisted[i].toLowerCase())) foundInText = true;
-  }
-  if (foundInText) {
-    message.delete();
-    message.channel.send();
-  }
-
 
     if(!message.content.startsWith(prefix) || message.author.bot) return;
 
@@ -230,6 +211,77 @@ else {
 
     message.author.send("Hey, you gotta use my commands in sheepy server :)");
 } 
+
+  ///banned words blacklist
+
+  const blwords = [
+    'faggot', 'cum', 'cumming', 'jap', 'rape', 'rapes', 'nigga', 'nigger', 'paki',
+    'milf', 'motherfucker', 'sex', 's3x', 'pedophile', 'paedophile', 'pedo', 'paedo',
+    'fag', 'torrent', 'nigguh', 'porn', 'pornography', 'retard', 'retarded', 'cock', 'vagina', 'bitch',
+    'fags', 'bastard', 'abortion', 'aids', 'niggers', 'nonce', 'nonces', 'porno', 'tits', 'cunts',
+    'raped', 'raping', 'nazi', 'nazis', 'rapist', 'pussy', 'fuckboy', 'fuckboi', 'chink', 'nigguh', 'nig'
+
+    ]
+
+
+
+
+let bl = [
+    "Bruh, why?", "smh.", "<:FeelsBanMan:756266709085847574>", "<:Welp:809237146950041620> nope.",
+    "Chill", "nO.", "brutha-, keep it safe <:angeryfish:784084830769905675>", "<:angeryfish:784084830769905675>",
+    "that's not allowed.", "<:MikeSullyFaceSwap:766014297959563284>", "<:MikeSullyFaceSwap:766014297959563284> no."
+    ];
+
+const blwords2 = [
+'*faggot*', '*cum*', '*cumming*', '*jap*', '*rape*', '*rapes*', '*nigga*', '*nigger*', '*paki*',
+'*milf*', '*motherfucker*', '*sex*', '*s3x*', '*pedophile*', '*paedophile*', '*pedo*', '*paedo*',
+'*fag*', '*torrent*', '*nigguh*', '*porn*', '*pornography*', '*retard*', '*retarded*', '*cock*', '*vagina*', '*bitch*',
+'*fags*', '*bastard*', '*abortion*', '*aids*', '*niggers*', '*nonce*', '*nonces*', '*porno*', '*tits*', '*cunts*',
+'*raped*', '*raping*', '*nazi*', '*nazis*', '*rapist*', '*pussy*', '*fuckboy*', '*fuckboi*', '*chink*', '*nigguh*', '*nig*',
+
+
+'**faggot**', '**cum**', '**cumming**', '**jap**', '**rape**', '**rapes**', '**nigga**', '**nigger**', '**paki**',
+'**milf**', '**motherfucker**', '**sex**', '**s3x**', '**pedophile**', '**paedophile**', '**pedo**', '**paedo**',
+'**fag**', '**torrent**', '**nigguh**', '**porn**', '**pornography**', '**retard**', '**retarded**', '**cock**', '**vagina**', '**bitch**',
+'**fags**', '**bastard**', '**abortion**', '**aids**', '**niggers**', '**nonce**', '**nonces**', '**porno**', '**tits**', '**cunts**',
+'**raped**', '**raping**', '**nazi**', '**nazis**', '**rapist**', '**pussy**', '**fuckboy**', '**fuckboi**', '**chink**', '**nigguh**', '**nig**',
+
+
+'***faggot***', '***cum***', '***cumming***', '***jap***', '***rape***', '***rapes***', '***nigga***', '***nigger***', '***paki***',
+'***milf***', '***motherfucker***', '***sex***', '***s3x***', '***pedophile***', '***paedophile***', '***pedo***', '***paedo***',
+'***fag***', '***torrent***', '***nigguh***', '***porn***', '***pornography***', '***retard***', '***retarded***', '***cock***', '***vagina***', '***bitch***',
+'***fags***', '***bastard***', '***abortion***', '***aids***', '***niggers***', '***nonce***', '***nonces***', '***porno***', '***tits***', '***cunts***',
+'***raped***', '***raping***', '***nazi***', '***nazis***', '***rapist***', '***pussy***', '***fuckboy***', '***fuckboi***', '***chink***', '***nigguh***', '***nig***',
+
+'||faggot||', '||cum||', '||cumming||', '||jap||', '||rape||', '||rapes||', '||nigga||', '||nigger||', '||paki||',
+'||milf||', '||motherfucker||', '||sex||', '||s3x||', '||pedophile||', '||paedophile||', '||pedo||', '||paedo||',
+'||fag||', '||torrent||', '||nigguh||', '||porn||', '||pornography||', '||retard||', '||retarded||', '||cock||', '||vagina||', '||bitch||',
+'||fags||', '||bastard||', '||abortion||', '||aids||', '||niggers||', '||nonce||', '||nonces||', '||porno||', '||tits||', '||cunts||',
+'||raped||', '||raping||', '||nazi||', '||nazis||', '||rapist||', '||pussy||', '||fuckboy||', '||fuckboi||', '||chink||', '||nigguh||', '||nig||'
+
+
+
+]
+let blrandom = Math.floor(Math.random() * 11);
+let blmsg = bl[blrandom];
+const foundInText = false;
+const foundInText2 = false; 
+
+for (var i in blwords) {
+if (message.content.toLowerCase().includes(blwords[i].toLowerCase())) foundInText = true;
+}
+if (foundInText) {
+message.channel.send(blrandom);
+}
+
+for (var i in blwords2) {
+if (message.content.toLowerCase().includes(blwords2[i].toLowerCase())) foundInText2 = true;
+}
+if (foundInText2) {
+message.delete()
+message.channel.send(blrandom);
+}
+///end of blacklisted words
 
 })
 
