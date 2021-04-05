@@ -48,36 +48,15 @@ let bl = [
 let blrandom = Math.floor(Math.random() * 11);
 let blmsg = bl[blrandom];
 
-const foundInText = false;
-const foundInText2 = false; 
 
-   
-var i;
-for(i = 0;i < badwords.length; i++) {
-  
-  if(message.content.toLowerCase().includes(badwords[i].toLowerCase()))
-    foundInText = true;
-  
+if (badwords.some(word => message.content.includes(word))) {
+  message.channel.send(blmsg);
 
+if (badwords2.some(word => message.content.includes(word))) {
+    message.delete();
+    message.channel.send(blmsg);
 }
-
-   
-var j;
-for(j = 0;j < badwords2.length; j++) {
-  
-  if(message.content.toLowerCase().includes(badwords2[j].toLowerCase()))
-    foundInText2 = true;
-  
-}
-
-if(foundInText) {
-  return message.channel.send(blmsg)
-}    
-
-if(foundInText2) {
-  message.delete()
-  return message.channel.send(blmsg)
-}    
+} 
 ///end of blacklisted words
 
 
