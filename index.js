@@ -36,7 +36,20 @@ client.on('message', message =>{
 
     if(!message.content.startsWith(prefix) || message.author.bot) return;
 
-///banned words blacklist
+
+
+
+
+
+
+
+
+  const args = message.content.slice(prefix.length).split(/ +/);
+  const command = args.shift().toLowerCase();
+
+  if (message.channel.type !== 'dm') {
+
+    ///banned words blacklist
 
 let bl = [
   "Bruh, why?", "smh.", "<:FeelsBanMan:756266709085847574>", "<:Welp:809237146950041620> nope.",
@@ -51,26 +64,14 @@ let blmsg = bl[blrandom];
 
 if (badwords.some(word => message.content.includes(word))) {
   message.channel.send(blmsg);
+}
 
 if (badwords2.some(word => message.content.includes(word))) {
     message.delete();
     message.channel.send(blmsg);
 }
-} 
+ 
 ///end of blacklisted words
-
-
-
-
-
-
-
-  const args = message.content.slice(prefix.length).split(/ +/);
-  const command = args.shift().toLowerCase();
-
-  if (message.channel.type !== 'dm') {
-
-    
     
     if(command === 'purge'){
       if (message.member.roles.cache.has("434006808789647370") || message.member.roles.cache.has("453618428373368832")){
