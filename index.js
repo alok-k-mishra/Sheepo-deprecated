@@ -4,6 +4,10 @@ const client = new Discord.Client();
 
 const GuildMemberManager = require("discord.js");
 
+const { badwords } = require("./badwords.json")
+
+const { badwords2 } = require("./badwords.json")
+
 
 const prefix = '.';
 
@@ -32,49 +36,7 @@ client.on('message', message =>{
 
     if(!message.content.startsWith(prefix) || message.author.bot) return;
 
-      ///banned words blacklist
-
-  const blwords = [
-    'faggot', 'cum', 'cumming', 'jap', 'rape', 'rapes', 'nigga', 'nigger', 'paki',
-    'milf', 'motherfucker', 'sex', 's3x', 'pedophile', 'paedophile', 'pedo', 'paedo',
-    'fag', 'torrent', 'nigguh', 'porn', 'pornography', 'retard', 'retarded', 'cock', 'vagina', 'bitch',
-    'fags', 'bastard', 'abortion', 'aids', 'niggers', 'nonce', 'nonces', 'porno', 'tits', 'cunts',
-    'raped', 'raping', 'nazi', 'nazis', 'rapist', 'pussy', 'fuckboy', 'fuckboi', 'chink', 'nigguh', 'nig'
-
-    ]
-
-
-
-
-
-
-const blwords2 = [
-'*faggot*', '*cum*', '*cumming*', '*jap*', '*rape*', '*rapes*', '*nigga*', '*nigger*', '*paki*',
-'*milf*', '*motherfucker*', '*sex*', '*s3x*', '*pedophile*', '*paedophile*', '*pedo*', '*paedo*',
-'*fag*', '*torrent*', '*nigguh*', '*porn*', '*pornography*', '*retard*', '*retarded*', '*cock*', '*vagina*', '*bitch*',
-'*fags*', '*bastard*', '*abortion*', '*aids*', '*niggers*', '*nonce*', '*nonces*', '*porno*', '*tits*', '*cunts*',
-'*raped*', '*raping*', '*nazi*', '*nazis*', '*rapist*', '*pussy*', '*fuckboy*', '*fuckboi*', '*chink*', '*nigguh*', '*nig*',
-
-
-'**faggot**', '**cum**', '**cumming**', '**jap**', '**rape**', '**rapes**', '**nigga**', '**nigger**', '**paki**',
-'**milf**', '**motherfucker**', '**sex**', '**s3x**', '**pedophile**', '**paedophile**', '**pedo**', '**paedo**',
-'**fag**', '**torrent**', '**nigguh**', '**porn**', '**pornography**', '**retard**', '**retarded**', '**cock**', '**vagina**', '**bitch**',
-'**fags**', '**bastard**', '**abortion**', '**aids**', '**niggers**', '**nonce**', '**nonces**', '**porno**', '**tits**', '**cunts**',
-'**raped**', '**raping**', '**nazi**', '**nazis**', '**rapist**', '**pussy**', '**fuckboy**', '**fuckboi**', '**chink**', '**nigguh**', '**nig**',
-
-
-'***faggot***', '***cum***', '***cumming***', '***jap***', '***rape***', '***rapes***', '***nigga***', '***nigger***', '***paki***',
-'***milf***', '***motherfucker***', '***sex***', '***s3x***', '***pedophile***', '***paedophile***', '***pedo***', '***paedo***',
-'***fag***', '***torrent***', '***nigguh***', '***porn***', '***pornography***', '***retard***', '***retarded***', '***cock***', '***vagina***', '***bitch***',
-'***fags***', '***bastard***', '***abortion***', '***aids***', '***niggers***', '***nonce***', '***nonces***', '***porno***', '***tits***', '***cunts***',
-'***raped***', '***raping***', '***nazi***', '***nazis***', '***rapist***', '***pussy***', '***fuckboy***', '***fuckboi***', '***chink***', '***nigguh***', '***nig***',
-
-'||faggot||', '||cum||', '||cumming||', '||jap||', '||rape||', '||rapes||', '||nigga||', '||nigger||', '||paki||',
-'||milf||', '||motherfucker||', '||sex||', '||s3x||', '||pedophile||', '||paedophile||', '||pedo||', '||paedo||',
-'||fag||', '||torrent||', '||nigguh||', '||porn||', '||pornography||', '||retard||', '||retarded||', '||cock||', '||vagina||', '||bitch||',
-'||fags||', '||bastard||', '||abortion||', '||aids||', '||niggers||', '||nonce||', '||nonces||', '||porno||', '||tits||', '||cunts||',
-'||raped||', '||raping||', '||nazi||', '||nazis||', '||rapist||', '||pussy||', '||fuckboy||', '||fuckboi||', '||chink||', '||nigguh||', '||nig||'
-];
+///banned words blacklist
 
 let bl = [
   "Bruh, why?", "smh.", "<:FeelsBanMan:756266709085847574>", "<:Welp:809237146950041620> nope.",
@@ -85,23 +47,37 @@ let bl = [
 
 let blrandom = Math.floor(Math.random() * 11);
 let blmsg = bl[blrandom];
+
 const foundInText = false;
 const foundInText2 = false; 
 
-for (var i in blwords) {
-if (message.content.toLowerCase().includes(blwords[i].toLowerCase())) foundInText = true;
-}
-if (foundInText) {
-message.channel.send(blrandom);
+   
+var i;
+for(i = 0;i < badwords.length; i++) {
+  
+  if(message.content.toLowerCase().includes(badwords[i].toLowerCase()))
+    foundInText = true;
+  
+
 }
 
-for (var i in blwords2) {
-if (message.content.toLowerCase().includes(blwords2[i].toLowerCase())) foundInText2 = true;
+   
+var j;
+for(j = 0;j < badwords2.length; j++) {
+  
+  if(message.content.toLowerCase().includes(badwords2[j].toLowerCase()))
+    foundInText2 = true;
+  
 }
-if (foundInText2) {
-message.delete()
-message.channel.send(blrandom);
-}
+
+if(foundInText) {
+  return message.channel.send(blmsg)
+}    
+
+if(foundInText2) {
+  message.delete()
+  return message.channel.send(blmsg)
+}    
 ///end of blacklisted words
 
 
