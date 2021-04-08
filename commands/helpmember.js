@@ -7,7 +7,7 @@ module.exports = {
         .setTitle("Help")
         .setAuthor("MrSuicideSheep", "https://lh3.googleusercontent.com/BXlHhxyGmyTr7w4F8tSMui6qMSYz9H-Sa-j68037r7RQyCJdX73khLuCr0fpE6qnWtMPOWlQTweItOttmjCPnGtW")
         .setColor('99ffeb')
-        .setDescription("Hey, I'm SheepyMod, a mod bot developed by Killeration, exclusively for MrSuicideSheep Server, this bot is still in developement! :D \n \n Here are the fun commands members can use!")
+        .setDescription("Hey, I'm SheepyMod, a mod bot developed by Killeration and Gronky, exclusively for MrSuicideSheep Server, this bot is still in developement! :D \n \n Here are the fun commands members can use!")
         .addFields(
             { name: '.hug', value: 'Sends Hugs :p  [.hug / .hug (member)' },
             { name: '.slap', value: 'Slap yourself or a member [.slap / .slap (member)' },
