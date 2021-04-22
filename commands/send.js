@@ -13,7 +13,7 @@ module.exports = {
         console.log(dmmessage);
 
 
-       ///channel.send(dmmessage)
+       channel.send(dmmessage)
 
 
 
