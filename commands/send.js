@@ -16,19 +16,19 @@ module.exports = {
        const channel4 = guild.channels.cache.get("455037507734863882")
        const channel5 = guild.channels.cache.get("464279991463706627")
        if(args[1] === 'gen'){
-        message.channel1.send(dmmessage);
+        message.guild.channel1.send(dmmessage);
     }
        if(args[1] === 'pvm'){
-        message.channel2.send(dmmessage);
+        message.guild.channel2.send(dmmessage);
        }
        if(args[1] === 'selfies'){
-        message.channel3.send(dmmessage);
+        message.guild.channel3.send(dmmessage);
         }
        if(args[1] === 'ap'){
-        message.channel4.send(dmmessage);
+        message.guild.channel4.send(dmmessage);
        }
        if(args[1] === 'intro'){
-        message.channel5.send(dmmessage);
+        message.guild.channel5.send(dmmessage);
        }
 
 
