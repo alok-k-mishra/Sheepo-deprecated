@@ -17,7 +17,7 @@ module.exports = {
         if(args[1] === 'intro')
         var channel = guild.channels.cache.get("464279991463706627") 
  
-        var dmmessage = args.join(" ").slice(22)
+        var dmmessage = args.join(" ").then(console.log(dmmessage)).slice(22)
         console.log(dmmessage)
 
    ///     message.channel.send(dmmessage);
