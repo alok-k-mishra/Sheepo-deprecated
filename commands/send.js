@@ -10,10 +10,10 @@ module.exports = {
 
         var dmmessage = args.join(" ")
        
-        console.log(dmmessage)
+        console.log(dmmessage);
 
 
-       channel.send(dmmessage)
+       ///channel.send(dmmessage)
 
 
 

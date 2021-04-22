@@ -1,6 +1,6 @@
 
 module.exports = {
-    name: 'send',
+    name: 'sendbeta',
     description: "Secret Sending from dms",
     execute(message, args, Discord) {
         
