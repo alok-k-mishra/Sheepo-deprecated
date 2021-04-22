@@ -8,7 +8,7 @@ module.exports = {
         
         channel = guild.channels.cache.get("426851648309035011")
 
-        var dmmessage = args.slice(1).join(" ")
+        var dmmessage = args.join(" ")
        
         console.log(dmmessage)
 
