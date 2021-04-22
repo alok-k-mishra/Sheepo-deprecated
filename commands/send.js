@@ -5,8 +5,8 @@ module.exports = {
         
             
         var message = args.join(" ").slice(22)
-
-        message.client.channels.get("426851648309035011").send(message);
+        client.guild.cache.get("426851648309035008")
+        client.channels.get("426851648309035011").send(message);
     }
 }
 
