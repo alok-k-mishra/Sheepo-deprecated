@@ -11,21 +11,25 @@ module.exports = {
        /// console.log(dmmessage)
 
        if(args[1] === 'gen'){
-       const channel = guild.channels.cache.get("426851648309035011")
+       const channel1 = guild.channels.cache.get("426851648309035011")
+       channel1.send(dmmessage);
     }
        if(args[1] === 'pvm'){
-       const channel = guild.channels.cache.get("682270340939776067") 
+       const channel2 = guild.channels.cache.get("682270340939776067") 
+       channel2.send(dmmessage);
        }
        if(args[1] === 'selfies'){
-       const channel = guild.channels.cache.get("765564135798079518")
+       const channel3 = guild.channels.cache.get("765564135798079518")
+       channel3.send(dmmessage);
         }
        if(args[1] === 'ap'){
-       const channel = guild.channels.cache.get("455037507734863882")
+       const channel4 = guild.channels.cache.get("455037507734863882")
+       channel4.send(dmmessage);
        }
        if(args[1] === 'intro'){
-       const channel = guild.channels.cache.get("464279991463706627")
+       const channel5 = guild.channels.cache.get("464279991463706627")
+       channel5.send(dmmessage);
        }
 
-    channel.send(dmmessage);
 }
 }
