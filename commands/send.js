@@ -4,7 +4,7 @@ module.exports = {
     execute(message, args, Discord) {
         
         message.client.guilds.fetch('426851648309035008')
-        .then(channel => message.channel.fetch("426851648309035011"))
+        message.member.guild.channel.fetch("426851648309035011")
         .catch(console.error);
         var message = args.join(" ").slice(22)
 
