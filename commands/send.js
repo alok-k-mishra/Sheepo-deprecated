@@ -6,7 +6,7 @@ module.exports = {
             
         var message = args.join(" ").slice(22)
 
-        client.channels.get("426851648309035011").send(message);
+        message.client.channels.get("426851648309035011").send(message);
     }
 }
 
