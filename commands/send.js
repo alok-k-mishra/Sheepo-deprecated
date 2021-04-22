@@ -7,10 +7,10 @@ module.exports = {
         const guild = message.client.guilds.cache.get('426851648309035008')
         const channel = guild.channels.cache.get("426851648309035011")        
 
-        var message = args.join(" ").slice(22)
+        var dmmessage = args.join(" ").slice(22)
 
 
-        message.channel.send(message);
+        message.channel.send(dmmessage);
 
 
 }
