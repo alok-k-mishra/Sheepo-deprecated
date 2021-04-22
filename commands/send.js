@@ -8,12 +8,9 @@ module.exports = {
         .catch(console.error);
         var message = args.join(" ").slice(22)
 
-        if(!message){
-        message.author.send("What should I send?");
-        }
 
         message.channel.send(message);
 
-    }
-}
 
+}
+}
