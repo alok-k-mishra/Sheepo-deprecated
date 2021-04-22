@@ -1,12 +1,11 @@
-client.guilds.cache.get('426851648309035008')
-guild.channels.cache.get("426851648309035011")
 
 module.exports = {
     name: 'send',
     description: "Secret Sending from dms",
     execute(message, args, Discord) {
-        
-
+ 
+        message.client.guilds.cache.get('426851648309035008')
+        guild.channels.cache.get("426851648309035011")        
 
         var message = args.join(" ").slice(22)
 
