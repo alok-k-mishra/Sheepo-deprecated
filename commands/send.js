@@ -10,22 +10,27 @@ module.exports = {
         var dmmessage = args.slice(1).join(" ")
        /// console.log(dmmessage)
 
+       const channel1 = guild.channels.cache.get("426851648309035011")
+       const channel2 = guild.channels.cache.get("682270340939776067") 
+       const channel3 = guild.channels.cache.get("765564135798079518")
+       const channel4 = guild.channels.cache.get("455037507734863882")
+       const channel5 = guild.channels.cache.get("464279991463706627")
        if(args[1] === 'gen'){
-       const channel = guild.channels.cache.get("426851648309035011")
+        message.channel1.send(dmmessage);
     }
        if(args[1] === 'pvm'){
-       const channel = guild.channels.cache.get("682270340939776067") 
+        message.channel2.send(dmmessage);
        }
        if(args[1] === 'selfies'){
-       const channel = guild.channels.cache.get("765564135798079518")
+        message.channel3.send(dmmessage);
         }
        if(args[1] === 'ap'){
-       const channel = guild.channels.cache.get("455037507734863882")
+        message.channel4.send(dmmessage);
        }
        if(args[1] === 'intro'){
-       const channel = guild.channels.cache.get("464279991463706627")
+        message.channel5.send(dmmessage);
        }
 
-    message.channel.send(dmmessage);
+
 }
 }
