@@ -6,11 +6,11 @@ module.exports = {
         
         const guild = message.client.guilds.cache.get('426851648309035008')
         
-        const channel = guild.channels.cache.get("426851648309035011")
+        channel = guild.channels.cache.get("426851648309035011")
 
         var dmmessage = args.slice(1).join(" ")
-       /// console.log(dmmessage)
-
+       
+        console.log(dmmessage)
 
 
        channel.send(dmmessage)
