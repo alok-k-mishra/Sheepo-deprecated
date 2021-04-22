@@ -3,10 +3,13 @@ module.exports = {
     description: "Secret Sending from dms",
     execute(message, args, Discord) {
         
-            
+        client.guilds.fetch('426851648309035008')
+        .then(channel => channel.fetch("426851648309035011"))
+        .catch(console.error);
         var message = args.join(" ").slice(22)
-        client.guild.cache.get("426851648309035008")
-        client.channels.get("426851648309035011").send(message);
+
+        message.channel.send(message);
+
     }
 }
 
