@@ -34,11 +34,24 @@ client.on('message', message =>{
   const args = message.content.slice(prefix.length).split(/ +/);
   const command = args.shift().toLowerCase();
 
+
+  
+  let bl = [
+    "Bruh, why?", "smh.", "<:FeelsBanMan:756266709085847574>", "<:Welp:809237146950041620> nope.",
+    "Chill", "nO.", "brutha-, keep it safe <:angeryfish:784084830769905675>", "<:angeryfish:784084830769905675>",
+    "that's not allowed.", "<:MikeSullyFaceSwap:766014297959563284>", "<:MikeSullyFaceSwap:766014297959563284> no."
+  ]
+
+  let blrandom = Math.floor(Math.random() * 11);
+  let blmsg = bl[blrandom];
+
+
+
   (command === 'send')?
   (message.author.id = '560848102295207940') ?
   client.commands.get('send').execute(message, args, Discord) : message.author.send("Hey, you gotta use my commands in sheepy server :)") 
 
-   : (message.channel.type !== 'dm') ?
+: (message.channel.type !== 'dm') ?
     
     (command === 'purge') ?
       (message.member.roles.cache.has("434006808789647370") || message.member.roles.cache.has("453618428373368832")) ?
@@ -122,10 +135,18 @@ client.on('message', message =>{
 
     : (command === 'rosie') ? client.commands.get('rosie').execute(message, args, Discord)
 
+    
+
     : {}
+    : badwords.some(word => message.content.includes(word)) ?
+      message.channel.send(blmsg)
+
+    : badwords2.some(word => message.content.includes(word)) ? 
+      message.delete()
+      .then(message.channel.send(blmsg))
+        
   : message.author.send("Hey, you gotta use my commands in sheepy server :)");
 
-  
 
 
 
@@ -141,62 +162,14 @@ client.on('message', message =>{
 
 
 
-    /// Banned words blacklist
 
-  let bl = [
-    "Bruh, why?", "smh.", "<:FeelsBanMan:756266709085847574>", "<:Welp:809237146950041620> nope.",
-    "Chill", "nO.", "brutha-, keep it safe <:angeryfish:784084830769905675>", "<:angeryfish:784084830769905675>",
-    "that's not allowed.", "<:MikeSullyFaceSwap:766014297959563284>", "<:MikeSullyFaceSwap:766014297959563284> no."
-  ]
+
+
     
-    
-  let blrandom = Math.floor(Math.random() * 11);
-  let blmsg = bl[blrandom];
-    
-    
-  const blacklisted = [
-    "faggot", "cum", "cumming", "jap", "rape", "rapes", "nigga", "nigger", "paki",
-    "milf", "motherfucker", "sex", "s3x", "pedophile", "paedophile", "pedo", "paedo",
-    "fag", "torrent", "nigguh", "porn", "pornography", "retard", "retarded", "cock", "vagina", "bitch",
-    "fags", "bastard", "abortion", "aids", "niggers", "nonce", "nonces", "porno", "tits", "cunts",
-    "raped", "raping", "nazi", "nazis", "rapist", "pussy", "fuckboy", "fuckboi", "chink", "nigguh", "nig"
-  ]
 
-  if (blacklisted.some(word => message.content.includes(word))) message.channel.send(blmsg);
-    
-  const blacklisted2 = [
-    "*faggot*", "*cum*", "*cumming*", "*jap*", "*rape*", "*rapes*", "*nigga*", "*nigger*", "*paki*",
-    "*milf*", "*motherfucker*", "*sex*", "*s3x*", "*pedophile*", "*paedophile*", "*pedo*", "*paedo*",
-    "*fag*", "*torrent*", "*nigguh*", "*porn*", "*pornography*", "*retard*", "*retarded*", "*cock*", "*vagina*", "*bitch*",
-    "*fags*", "*bastard*", "*abortion*", "*aids*", "*niggers*", "*nonce*", "*nonces*", "*porno*", "*tits*", "*cunts*",
-    "*raped*", "*raping*", "*nazi*", "*nazis*", "*rapist*", "*pussy*", "*fuckboy*", "*fuckboi*", "*chink*", "*nigguh*", "*nig*",
-      
-      
-    "**faggot**", "**cum**", "**cumming**", "**jap**", "**rape**", "**rapes**", "**nigga**", "**nigger**", "**paki**",
-    "**milf**", "**motherfucker**", "**sex**", "**s3x**", "**pedophile**", "**paedophile**", "**pedo**", "**paedo**",
-    "**fag**", "**torrent**", "**nigguh**", "**porn**", "**pornography**", "**retard**", "**retarded**", "**cock**", "**vagina**", "**bitch**",
-    "**fags**", "**bastard**", "**abortion**", "**aids**", "**niggers**", "**nonce**", "**nonces**", "**porno**", "**tits**", "**cunts**",
-    "**raped**", "**raping**", "**nazi**", "**nazis**", "**rapist**", "**pussy**", "**fuckboy**", "**fuckboi**", "**chink**", "**nigguh**", "**nig**",
-      
-      
-    "***faggot***", "***cum***", "***cumming***", "***jap***", "***rape***", "***rapes***", "***nigga***", "***nigger***", "***paki***",
-    "***milf***", "***motherfucker***", "***sex***", "***s3x***", "***pedophile***", "***paedophile***", "***pedo***", "***paedo***",
-    "***fag***", "***torrent***", "***nigguh***", "***porn***", "***pornography***", "***retard***", "***retarded***", "***cock***", "***vagina***", "***bitch***",
-    "***fags***", "***bastard***", "***abortion***", "***aids***", "***niggers***", "***nonce***", "***nonces***", "***porno***", "***tits***", "***cunts***",
-    "***raped***", "***raping***", "***nazi***", "***nazis***", "***rapist***", "***pussy***", "***fuckboy***", "***fuckboi***", "***chink***", "***nigguh***", "***nig***",
-      
-    "||faggot||", "||cum||", "||cumming||", "||jap||", "||rape||", "||rapes||", "||nigga||", "||nigger||", "||paki||",
-    "||milf||", "||motherfucker||", "||sex||", "||s3x||", "||pedophile||", "||paedophile||", "||pedo||", "||paedo||",
-    "||fag||", "||torrent||", "||nigguh||", "||porn||", "||pornography||", "||retard||", "||retarded||", "||cock||", "||vagina||", "||bitch||",
-    "||fags||", "||bastard||", "||abortion||", "||aids||", "||niggers||", "||nonce||", "||nonces||", "||porno||", "||tits||", "||cunts||",
-    "||raped||", "||raping||", "||nazi||", "||nazis||", "||rapist||", "||pussy||", "||fuckboy||", "||fuckboi||", "||chink||", "||nigguh||", "||nig||"
-  ]
-    
-  if (blacklisted2.some(word => message.content.includes(word))) {
-    message.delete()
-    message.channel.send(blmsg);
-  }     
-    ///end of blacklisted words
+
+
+ 
 })
 
 
