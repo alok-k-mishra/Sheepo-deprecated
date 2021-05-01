@@ -4,9 +4,9 @@ const client = new Discord.Client();
 
 const GuildMemberManager = require("discord.js");
 
-const badwords = require("./bw.json")
+const { badwords } = require("./bw.json")
 
-const badwords2 = require("./bw.json")
+const { badwords2 } = require("./bw.json")
 
 const prefix = '.';
 
@@ -36,16 +36,6 @@ client.on('message', message =>{
 
 
 
-  let bl = [
-    "Bruh, why?", "smh.", "<:FeelsBanMan:756266709085847574>", "<:Welp:809237146950041620> nope.",
-    "Chill", "nO.", "brutha-, keep it safe <:angeryfish:784084830769905675>", "<:angeryfish:784084830769905675>",
-    "that's not allowed.", "<:MikeSullyFaceSwap:766014297959563284>", "<:MikeSullyFaceSwap:766014297959563284> no."
-  ]
-
-  let blrandom = Math.floor(Math.random() * 11);
-  let blmsg = bl[blrandom];
-
-
 
   (command === 'send')?
   (message.author.id = '560848102295207940') ?
@@ -54,11 +44,11 @@ client.on('message', message =>{
 : (message.channel.type !== 'dm') ?
     
     (command === 'purge') ?
-      (message.member.roles.cache.has("434006808789647370") || message.member.roles.cache.has("453618428373368832") || (message.author.id = '560848102295207940')) ?
+      (message.member.roles.cache.has("434006808789647370") || message.member.roles.cache.has("453618428373368832")) ?
       client.commands.get('purge').execute(message, args, Discord) : message.reply("Hey you ain't a mod or admin >:(") 
 
     : (command === 'clear') ?
-     (message.member.roles.cache.has("434006808789647370") || message.member.roles.cache.has("453618428373368832")  ) ? 
+     (message.member.roles.cache.has("434006808789647370") || message.member.roles.cache.has("453618428373368832") || (message.author.id = '560848102295207940')) ? 
       client.commands.get('clearc').execute(message, args, Discord): message.reply("Hey you ain't a mod or admin >:(")
       
     : (command === 'kick') ?
@@ -135,22 +125,18 @@ client.on('message', message =>{
 
     : (command === 'rosie') ? client.commands.get('rosie').execute(message, args, Discord)
 
-   
-    : {}
-   
-   
+    
     : badwords.some(word => message.content.includes(word)) ?
-      message.channel.send(blmsg)
+      client.commands.get('filter').execute(message, args, Discord)
 
     : badwords2.some(word => message.content.includes(word)) ? 
       message.delete()
-      .then(message.channel.send(blmsg))
+      .then(client.commands.get('filter').execute(message, args, Discord))
         
-  : message.author.send("Hey, you gotta use my commands in sheepy server :)");
 
+  :{}
 
-
-
+  : message.author.send("Hey, you gotta use my commands in sheepy server :)")
 
 
 
