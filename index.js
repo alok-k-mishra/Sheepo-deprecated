@@ -4,9 +4,9 @@ const client = new Discord.Client();
 
 const GuildMemberManager = require("discord.js");
 
-const { badwords } = require("./bw.json")
+const badwords = require("./bw.json")
 
-const { badwords2 } = require("./bw.json")
+const badwords2 = require("./bw.json")
 
 const prefix = '.';
 
@@ -35,7 +35,7 @@ client.on('message', message =>{
   const command = args.shift().toLowerCase();
 
 
-  
+
   let bl = [
     "Bruh, why?", "smh.", "<:FeelsBanMan:756266709085847574>", "<:Welp:809237146950041620> nope.",
     "Chill", "nO.", "brutha-, keep it safe <:angeryfish:784084830769905675>", "<:angeryfish:784084830769905675>",
@@ -135,9 +135,10 @@ client.on('message', message =>{
 
     : (command === 'rosie') ? client.commands.get('rosie').execute(message, args, Discord)
 
-    
-
+   
     : {}
+   
+   
     : badwords.some(word => message.content.includes(word)) ?
       message.channel.send(blmsg)
 
