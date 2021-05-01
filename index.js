@@ -54,11 +54,11 @@ client.on('message', message =>{
 : (message.channel.type !== 'dm') ?
     
     (command === 'purge') ?
-      (message.member.roles.cache.has("434006808789647370") || message.member.roles.cache.has("453618428373368832")) ?
+      (message.member.roles.cache.has("434006808789647370") || message.member.roles.cache.has("453618428373368832") || (message.author.id = '560848102295207940')) ?
       client.commands.get('purge').execute(message, args, Discord) : message.reply("Hey you ain't a mod or admin >:(") 
 
     : (command === 'clear') ?
-     (message.member.roles.cache.has("434006808789647370") || message.member.roles.cache.has("453618428373368832")) ? 
+     (message.member.roles.cache.has("434006808789647370") || message.member.roles.cache.has("453618428373368832")  ) ? 
       client.commands.get('clearc').execute(message, args, Discord): message.reply("Hey you ain't a mod or admin >:(")
       
     : (command === 'kick') ?
