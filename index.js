@@ -24,7 +24,7 @@ for (const file of commandFiles){
 }
 client.once('ready', () =>{
   console.log('SheepyMod is Online!');
-  client.user.setActivity('Sheepy Server', { type: 'WATCHING'}).catch();
+  client.user.setActivity('Sheepy Server || Stay Safe and Hydrated!', { type: 'WATCHING', url:"https://linktr.ee/mrsuicidesheep"}).catch();
 });
 
 client.on('message', message =>{
@@ -175,13 +175,27 @@ client.on('message', message =>{
     "||raped||", "||raping||", "||nazi||", "||nazis||", "||rapist||", "||pussy||", "||fuckboy||", "||fuckboi||", "||chink||", "||nigguh||", "||nig||"
   ]
     
+  let bl = [
+    "Bruh, why?", "smh.", "<:FeelsBanMan:756266709085847574>", "<:Welp:809237146950041620> nope.",
+    "Chill", "nO.", "brutha-, keep it safe <:angeryfish:784084830769905675>", "<:angeryfish:784084830769905675>",
+    "that's not allowed.", "<:MikeSullyFaceSwap:766014297959563284>", "<:MikeSullyFaceSwap:766014297959563284> no."
+  ]
+
+  let blrandom = Math.floor(Math.random() * 11);
+  let blmsg = bl[blrandom];
+
+
+
+
+
+
     if(blacklisted.some(word => message.content.includes(word))){
-    client.commands.get('filter').execute(message, args, Discord)
+      message.channel.send(blmsg)
     }
     
     if(blacklisted2.some(word => message.content.includes(word))){
     message.delete()
-    .then(client.commands.get('filter').execute(message, args, Discord))
+    message.channel.send(blmsg)
   }
   }
 
