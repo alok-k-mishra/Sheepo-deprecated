@@ -24,7 +24,8 @@ for (const file of commandFiles){
 }
 client.once('ready', () =>{
   console.log('SheepyMod is Online!');
-  client.user.setActivity('Sheepy Server || Stay Safe and Hydrated!', { type: 'WATCHING', url:"https://linktr.ee/mrsuicidesheep"}).catch();
+  client.user.setActivity('Sheepy Server || Stay Safe and Hydrated!',
+  { type: 'WATCHING', url:"https://linktr.ee/mrsuicidesheep"}).catch();
 });
 
 client.on('message', message =>{
@@ -190,12 +191,12 @@ client.on('message', message =>{
 
 
     if(blacklisted.some(word => message.content.includes(word))){
-      message.channel.send(blmsg)
+      message.channel.send(blmsg);
     }
     
-    if(blacklisted2.some(word => message.content.includes(word))){
-    message.delete()
-    message.channel.send(blmsg)
+    else if(blacklisted2.some(word => message.content.includes(word))){
+    message.delete();
+    message.channel.send(blmsg);
   }
   }
 
