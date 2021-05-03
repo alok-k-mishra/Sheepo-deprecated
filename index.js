@@ -126,12 +126,6 @@ client.on('message', message =>{
     : (command === 'rosie') ? client.commands.get('rosie').execute(message, args, Discord)
 
     
-    : badwords.some(word => message.content.includes(word)) ?
-      client.commands.get('filter').execute(message, args, Discord)
-
-    : badwords2.some(word => message.content.includes(word)) ? 
-      message.delete()
-      .then(client.commands.get('filter').execute(message, args, Discord))
         
 
   :{}
@@ -142,6 +136,59 @@ client.on('message', message =>{
 
 
 
+  if(message.channel.type !== 'dm'){
+
+  const blacklisted = [
+    "faggot", "cum", "cumming", "jap", "rape", "rapes", "nigga", "nigger", "paki",
+    "milf", "motherfucker", "sex", "s3x", "pedophile", "paedophile", "pedo", "paedo",
+    "fag", "torrent", "nigguh", "porn", "pornography", "retard", "retarded", "cock", "vagina", "bitch",
+    "fags", "bastard", "abortion", "aids", "niggers", "nonce", "nonces", "porno", "tits", "cunts",
+    "raped", "raping", "nazi", "nazis", "rapist", "pussy", "fuckboy", "fuckboi", "chink", "nigguh", "nig"
+  ]
+  
+    
+  const blacklisted2 = [
+    "*faggot*", "*cum*", "*cumming*", "*jap*", "*rape*", "*rapes*", "*nigga*", "*nigger*", "*paki*",
+    "*milf*", "*motherfucker*", "*sex*", "*s3x*", "*pedophile*", "*paedophile*", "*pedo*", "*paedo*",
+    "*fag*", "*torrent*", "*nigguh*", "*porn*", "*pornography*", "*retard*", "*retarded*", "*cock*", "*vagina*", "*bitch*",
+    "*fags*", "*bastard*", "*abortion*", "*aids*", "*niggers*", "*nonce*", "*nonces*", "*porno*", "*tits*", "*cunts*",
+    "*raped*", "*raping*", "*nazi*", "*nazis*", "*rapist*", "*pussy*", "*fuckboy*", "*fuckboi*", "*chink*", "*nigguh*", "*nig*",
+      
+      
+    "**faggot**", "**cum**", "**cumming**", "**jap**", "**rape**", "**rapes**", "**nigga**", "**nigger**", "**paki**",
+    "**milf**", "**motherfucker**", "**sex**", "**s3x**", "**pedophile**", "**paedophile**", "**pedo**", "**paedo**",
+    "**fag**", "**torrent**", "**nigguh**", "**porn**", "**pornography**", "**retard**", "**retarded**", "**cock**", "**vagina**", "**bitch**",
+    "**fags**", "**bastard**", "**abortion**", "**aids**", "**niggers**", "**nonce**", "**nonces**", "**porno**", "**tits**", "**cunts**",
+    "**raped**", "**raping**", "**nazi**", "**nazis**", "**rapist**", "**pussy**", "**fuckboy**", "**fuckboi**", "**chink**", "**nigguh**", "**nig**",
+      
+      
+    "***faggot***", "***cum***", "***cumming***", "***jap***", "***rape***", "***rapes***", "***nigga***", "***nigger***", "***paki***",
+    "***milf***", "***motherfucker***", "***sex***", "***s3x***", "***pedophile***", "***paedophile***", "***pedo***", "***paedo***",
+    "***fag***", "***torrent***", "***nigguh***", "***porn***", "***pornography***", "***retard***", "***retarded***", "***cock***", "***vagina***", "***bitch***",
+    "***fags***", "***bastard***", "***abortion***", "***aids***", "***niggers***", "***nonce***", "***nonces***", "***porno***", "***tits***", "***cunts***",
+    "***raped***", "***raping***", "***nazi***", "***nazis***", "***rapist***", "***pussy***", "***fuckboy***", "***fuckboi***", "***chink***", "***nigguh***", "***nig***",
+      
+    "||faggot||", "||cum||", "||cumming||", "||jap||", "||rape||", "||rapes||", "||nigga||", "||nigger||", "||paki||",
+    "||milf||", "||motherfucker||", "||sex||", "||s3x||", "||pedophile||", "||paedophile||", "||pedo||", "||paedo||",
+    "||fag||", "||torrent||", "||nigguh||", "||porn||", "||pornography||", "||retard||", "||retarded||", "||cock||", "||vagina||", "||bitch||",
+    "||fags||", "||bastard||", "||abortion||", "||aids||", "||niggers||", "||nonce||", "||nonces||", "||porno||", "||tits||", "||cunts||",
+    "||raped||", "||raping||", "||nazi||", "||nazis||", "||rapist||", "||pussy||", "||fuckboy||", "||fuckboi||", "||chink||", "||nigguh||", "||nig||"
+  ]
+    
+    if(badwords.some(word => message.content.includes(word))){
+    client.commands.get('filter').execute(message, args, Discord)
+    }
+    
+    if(badwords2.some(word => message.content.includes(word))){
+    message.delete()
+    .then(client.commands.get('filter').execute(message, args, Discord))
+  }
+  }
+
+  else{
+    message.author.send("Hey, you gotta use my commands in sheepy server :)")
+
+  }
 
 
 
