@@ -32,8 +32,8 @@ client.on('message', message =>{
 
   if (message.content.startsWith(prefix) || !message.author.bot){
 
-  const comargs = message.content.slice(prefix.length).split(/ +/);
-  const command = comargs.shift().toLowerCase();
+  const args = message.content.slice(prefix.length).split(/ +/);
+  const command = args.shift().toLowerCase();
 
 
 
@@ -189,7 +189,7 @@ client.on('message', message =>{
   let ftext1 = false;
   let ftext2 = false;
 
-  
+
   for (var i in blacklisted) {
     if (message.content.toLowerCase().includes(blacklisted[i].toLowerCase())) ftext1 = true;
   }
@@ -198,15 +198,17 @@ client.on('message', message =>{
     if (message.content.toLowerCase().includes(blacklisted2[j].toLowerCase())) ftext2 = true;
   }
 
-  if (ftext1) {
-    message.channel.send(blmsg);
+    if (ftext1) {
+      message.channel.send(blmsg);
 
-  }
+    }
 
-  if (ftext2){
-    message.delete();
-    message.channel.send(blmsg);
-  }
+    if (ftext2){
+      message.delete();
+      message.channel.send(blmsg);
+    }
+
+
   ///  if(blacklisted.some(word => message.content.includes(word))){
   ///    message.channel.send(blmsg);
   ///  }
