@@ -186,18 +186,36 @@ client.on('message', message =>{
   let blrandom = Math.floor(Math.random() * 11);
   let blmsg = bl[blrandom];
 
+  let ftext1 = false;
+  let ftext2 = false;
 
+  
+  for (var i in blacklisted) {
+    if (message.content.toLowerCase().includes(blacklisted[i].toLowerCase())) ftext1 = true;
+  }
 
+  for (var j in blacklisted2) {
+    if (message.content.toLowerCase().includes(blacklisted2[j].toLowerCase())) ftext2 = true;
+  }
 
-    if(blacklisted.some(word => message.content.includes(word))){
-      message.channel.send(blmsg);
-    }
-    
-    else if(blacklisted2.some(word => message.content.includes(word))){
+  if (ftext1) {
+    message.channel.send(blmsg);
+
+  }
+
+  if (ftext2){
     message.delete();
     message.channel.send(blmsg);
   }
+  ///  if(blacklisted.some(word => message.content.includes(word))){
+  ///    message.channel.send(blmsg);
+  ///  }
+    
+  ///  else if(blacklisted2.some(word => message.content.includes(word))){
+  ///  message.delete();
+  ///  message.channel.send(blmsg);
   }
+  
 
   else{
     message.author.send("Hey, you gotta use my commands in sheepy server :)")
