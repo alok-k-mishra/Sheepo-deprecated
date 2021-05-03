@@ -175,11 +175,11 @@ client.on('message', message =>{
     "||raped||", "||raping||", "||nazi||", "||nazis||", "||rapist||", "||pussy||", "||fuckboy||", "||fuckboi||", "||chink||", "||nigguh||", "||nig||"
   ]
     
-    if(badwords.some(word => message.content.includes(word))){
+    if(blacklisted.some(word => message.content.includes(word))){
     client.commands.get('filter').execute(message, args, Discord)
     }
     
-    if(badwords2.some(word => message.content.includes(word))){
+    if(blacklisted2.some(word => message.content.includes(word))){
     message.delete()
     .then(client.commands.get('filter').execute(message, args, Discord))
   }
