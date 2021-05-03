@@ -30,10 +30,10 @@ client.once('ready', () =>{
 
 client.on('message', message =>{
 
-  if (!message.content.startsWith(prefix) || message.author.bot) return
+  if (message.content.startsWith(prefix) || !message.author.bot){
 
-  const args = message.content.slice(prefix.length).split(/ +/);
-  const command = args.shift().toLowerCase();
+  const comargs = message.content.slice(prefix.length).split(/ +/);
+  const command = comargs.shift().toLowerCase();
 
 
 
@@ -134,8 +134,9 @@ client.on('message', message =>{
   : message.author.send("Hey, you gotta use my commands in sheepy server :)")
 
 
+  }
 
-
+  if(message.author.bot) return
 
   if(message.channel.type !== 'dm'){
 
@@ -184,8 +185,6 @@ client.on('message', message =>{
 
   let blrandom = Math.floor(Math.random() * 11);
   let blmsg = bl[blrandom];
-
-
 
 
 
