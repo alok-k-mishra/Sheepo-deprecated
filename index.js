@@ -30,7 +30,7 @@ client.once('ready', () =>{
 
 client.on('message', message =>{
 
-  if (message.content.startsWith(prefix) || !message.author.bot){
+  if (!message.content.startsWith(prefix) || message.author.bot) return
 
   const args = message.content.slice(prefix.length).split(/ +/);
   const command = args.shift().toLowerCase();
@@ -38,10 +38,12 @@ client.on('message', message =>{
 
 
 
-  (command === 'send')?
-  (message.author.id = '560848102295207940') ?
+  (command === 'msend')?
+  if(message.author.id = '560848102295207940'){
   client.commands.get('send').execute(message, args, Discord) : message.author.send("Hey, you gotta use my commands in sheepy server :)") 
-
+  } else{
+    (message.channel.send("no"));
+  }
 : (message.channel.type !== 'dm') ?
     
     (command === 'purge') ?
@@ -134,7 +136,7 @@ client.on('message', message =>{
   : message.author.send("Hey, you gotta use my commands in sheepy server :)")
 
 
-  }
+  
 
 
 
