@@ -39,12 +39,11 @@ client.on('message', message =>{
 
 
   (command === 'msend')?
-  if(message.author.id = '560848102295207940'){
+  (message.author.id = '560848102295207940') ?
   client.commands.get('send').execute(message, args, Discord) : message.author.send("Hey, you gotta use my commands in sheepy server :)") 
-  } else{
-    (message.channel.send("no"));
-  }
-: (message.channel.type !== 'dm') ?
+  
+
+  : (message.channel.type !== 'dm') ?
     
     (command === 'purge') ?
       (message.member.roles.cache.has("434006808789647370") || message.member.roles.cache.has("453618428373368832")) ?
