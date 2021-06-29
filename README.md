@@ -1,5 +1,5 @@
-# SheepyMod
-SheepyMod Discord Bot Source Code
+# Sheepo
+Sheepo Discord Bot Source Code
 This is a discord bot written in javascript, with integrated node.js/discord.js
 
 A bot developed by Killeration and Gronky exclusively for MrSuicideSheep Discord (https://www.discord.gg/mrsuicidesheep)
