@@ -81,7 +81,7 @@ client.on('message', message =>{
       (message.member.roles.cache.has("434006808789647370") || message.member.roles.cache.has("453618428373368832")) ?
       client.commands.get('nickname').execute(message, args, Discord) : message.reply("Hey you ain't a mod or admin >:(")
 
-    : (command === 'help') ? client.commands.get('help').execute(message, args, Discord)
+    : (command === 'about') ? client.commands.get('about').execute(message, args, Discord)
 
     : (command === 'helpmember') ? client.commands.get('helpmember').execute(message, args, Discord)
 
