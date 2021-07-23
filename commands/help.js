@@ -13,12 +13,12 @@ module.exports = {
                 { name: '.helpmember', value: 'Get the commands a member can use!' },
             )
         
-                message.channel.send(help)
-        }
+            message.channel.send(help)
+    }
 
 
         
-        }
+}
 
 
 
