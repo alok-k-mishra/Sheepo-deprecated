@@ -8,7 +8,6 @@ const { badwords } = require("./bw.json")
 
 const { badwords2 } = require("./bw.json")
 
-
 const prefix = '.';
 
 const fs = require('fs');
@@ -25,7 +24,8 @@ for (const file of commandFiles){
 }
 client.once('ready', () =>{
   console.log('SheepyMod is Online!');
-  client.user.setActivity('Sheepy Server', { type: 'WATCHING'}).catch();
+  client.user.setActivity('Sheepy Server || Stay Safe and Hydrated!',
+  { type: 'WATCHING', url:"https://linktr.ee/mrsuicidesheep"}).catch();
 });
 
 client.on('message', message =>{
@@ -127,14 +127,104 @@ client.on('message', message =>{
   : message.author.send("Hey, you gotta use my commands in sheepy server :)");
   
 
+  (command === 'msend')?
+  (message.author.id = '560848102295207940') ?
+  client.commands.get('send').execute(message, args, Discord) : message.author.send("Hey, you gotta use my commands in sheepy server :)") 
+  
+
+  : (message.channel.type !== 'dm') ?
+    
+    (command === 'purge') ?
+      (message.member.roles.cache.has("434006808789647370") || message.member.roles.cache.has("453618428373368832")) ?
+      client.commands.get('purge').execute(message, args, Discord) : message.reply("Hey you ain't a mod or admin >:(") 
+
+    : (command === 'clear') ?
+     (message.member.roles.cache.has("434006808789647370") || message.member.roles.cache.has("453618428373368832") || (message.author.id = '560848102295207940')) ? 
+      client.commands.get('clearc').execute(message, args, Discord): message.reply("Hey you ain't a mod or admin >:(")
+      
+    : (command === 'kick') ?
+      (message.member.roles.cache.has("434006808789647370") || message.member.roles.cache.has("453618428373368832")) ? 
+      client.commands.get('kick').execute(message, args, Discord) : message.reply("Hey you ain't a mod or admin >:(")
+
+    : (command === 'ban') ?
+      (message.member.roles.cache.has("434006808789647370") || message.member.roles.cache.has("453618428373368832")) ?
+      client.commands.get('ban').execute(message, args, Discord) : message.reply("Hey you ain't a mod or admin >:(")
+
+    : (command === 'mute') ?
+      (message.member.roles.cache.has("434006808789647370") || message.member.roles.cache.has("453618428373368832")) ?
+      client.commands.get('mute').execute(message, args, Discord) : message.reply("Hey you ain't a mod or admin >:(")
+
+    : (command === 'tempmute') ?
+      (message.member.roles.cache.has("434006808789647370") || message.member.roles.cache.has("453618428373368832")) ?
+      client.commands.get('tempmute').execute(message, args, Discord) : message.reply("Hey you ain't a mod or admin >:(")
+
+    : (command === 'tmute') ?
+      (message.member.roles.cache.has("434006808789647370") || message.member.roles.cache.has("453618428373368832")) ?
+      client.commands.get('tempmute').execute(message, args, Discord) : message.reply("Hey you ain't a mod or admin >:(")
+
+    : (command === 'sm') ?
+      (message.member.roles.cache.has("434006808789647370") || message.member.roles.cache.has("453618428373368832")) ?
+      client.commands.get('slowmode').execute(message, args, Discord) : message.reply("Hey you ain't a mod or admin >:(")
+
+    : (command === 'slowmode') ?
+      (message.member.roles.cache.has("434006808789647370") || message.member.roles.cache.has("453618428373368832")) ?
+      client.commands.get('slowmode').execute(message, args, Discord) : message.reply("Hey you ain't a mod or admin >:(")
+
+    : (command === 'unmute') ?
+      (message.member.roles.cache.has("434006808789647370") || message.member.roles.cache.has("453618428373368832")) ?
+      client.commands.get('unmute').execute(message, args, Discord) :message.reply("Hey you ain't a mod or admin >:(")
+
+    : (command === 'nickname') ? 
+      (message.member.roles.cache.has("434006808789647370") || message.member.roles.cache.has("453618428373368832")) ?
+      client.commands.get('nickname').execute(message, args, Discord) : message.reply("Hey you ain't a mod or admin >:(")
+
+    : (command === 'help') ? client.commands.get('help').execute(message, args, Discord)
+
+    : (command === 'helpmember') ? client.commands.get('helpmember').execute(message, args, Discord)
+
+    : (command === 'helpmod') ? client.commands.get('helpmod').execute(message, args, Discord)
+      
+    : (command === 'youtube' || command === 'yt') ? client.commands.get('youtube').execute(message, args, Discord)
+
+    : (command === 'playlist' || command === 'playlists') ? client.commands.get('playlist').execute(message, args, Discord)
+
+    : (command === 'ping') ? client.commands.get('ping').execute(message, args, Discord)
+
+    : (command === 'bonk') ? client.commands.get('bonk').execute(message, args, Discord)
+    
+    : (command === 'bday') ? client.commands.get('bday').execute(message, args, Discord)
+
+    : (command === 'hug') ? client.commands.get('hug').execute(message, args, Discord)
+
+    : (command === 'doubt') ? client.commands.get('doubt').execute(message, args, Discord)
+
+    : (command === 'slap') ? client.commands.get('slap').execute(message, args, Discord)
+
+    : (command === 'pat') ? client.commands.get('pat').execute(message, args, Discord)
+
+    : (command === 'boop') ? client.commands.get('boop').execute(message, args, Discord)
+
+    : (command === 'poke') ? client.commands.get('poke').execute(message, args, Discord)
+
+    : (command === 'catto') ? client.commands.get('catto').execute(message, args, Discord)
+
+    : (command === 'doggo') ? client.commands.get('doggo').execute(message, args, Discord)
+
+    : (command === 'animal') ? client.commands.get('animal').execute(message, args, Discord)
+
+    : (command === 'birb') ? client.commands.get('birb').execute(message, args, Discord)
+
+    : (command === 'rosie') ? client.commands.get('rosie').execute(message, args, Discord)
+
+    
+        
+
+  :{}
+
+  : message.author.send("Hey, you gotta use my commands in sheepy server :)")
 
 
-
-
-
-
-
-
+  
 
 
 
@@ -199,4 +289,15 @@ client.on('message', message =>{
 })
 
 
+
+
+
+
+
+
+    
+
+
+
+ 
 client.login(process.env.DJS_TOKEN);
