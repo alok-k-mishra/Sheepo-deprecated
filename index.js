@@ -35,7 +35,7 @@ client.on('message', message =>{
   const args = message.content.slice(prefix.length).split(/ +/);
   const command = args.shift().toLowerCase();
 
-  
+
   (message.channel.type !== 'dm') ?
     
     (command === 'purge') ?
@@ -126,6 +126,9 @@ client.on('message', message =>{
 
     : {}
   
+    : (command === 'msend')? (message.author.id = '560848102295207940') ? client.commands.get('send').execute(message, args, Discord) 
+
+    :{}
 
   : message.author.send("Hey, you gotta use my commands in sheepy server :)")
 
