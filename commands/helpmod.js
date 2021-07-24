@@ -21,7 +21,6 @@ module.exports = {
             { name: '.kick', value: 'Kicks a member, only for Mods and Admins [.kick (Username)]' },
             { name: '.ban', value: 'Bans a member, only for Mods and Admins [.ban (Username)]'  },
             )
-
             message.channel.send(helpmod)
         }
 
