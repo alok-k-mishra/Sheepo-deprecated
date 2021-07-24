@@ -124,12 +124,12 @@ client.on('message', message =>{
     : (command === 'rosie') ? client.commands.get('rosie').execute(message, args, Discord)
 
     : {}
-  : message.author.send("Hey, you gotta use my commands in sheepy server :)");
+  // : message.author.send("Hey, you gotta use my commands in sheepy server :)");
   
 
-  (command === 'msend')?
-  (message.author.id = '560848102295207940') ?
-  client.commands.get('send').execute(message, args, Discord) : message.author.send("Hey, you gotta use my commands in sheepy server :)") 
+  // (command === 'msend')?
+  // (message.author.id = '560848102295207940') ?
+  // client.commands.get('send').execute(message, args, Discord) : message.author.send("Hey, you gotta use my commands in sheepy server :)") 
   
 
   : (message.channel.type == 'dm') ?
