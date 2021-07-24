@@ -17,7 +17,6 @@ module.exports = {
             { name: '.purge', value: 'Clears upto 100 messages [.purge (Number of messages)]'},
             { name: '.clear', value: 'Clears upto 100 messages which don\'t have attachments [.clear (Number of messages)]'},
             { name: '.slowmode / .sm ', value: 'Sets or disables slowmode on a channel, only for Mods and Admins [.slowmode (Time in Seconds)] or [.sm (Time in Seconds)]'},
-            { name: '.help', value: 'I\'m the help command lol' },
             { name: '.kick', value: 'Kicks a member, only for Mods and Admins [.kick (Username)]' },
             { name: '.ban', value: 'Bans a member, only for Mods and Admins [.ban (Username)]'  },
             )
