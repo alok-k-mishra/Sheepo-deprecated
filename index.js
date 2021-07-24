@@ -132,7 +132,7 @@ client.on('message', message =>{
   client.commands.get('send').execute(message, args, Discord) : message.author.send("Hey, you gotta use my commands in sheepy server :)") 
   
 
-  : (message.channel.type !== 'dm') ?
+  : (message.channel.type == 'dm') ?
     
     (command === 'purge') ?
       (message.member.roles.cache.has("434006808789647370") || message.member.roles.cache.has("453618428373368832")) ?
