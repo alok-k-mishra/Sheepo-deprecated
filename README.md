@@ -8,6 +8,7 @@ No templates or so were used in making the bot, everything was done from scratch
 Integrated Tenor API for gif features.
 Sheepo is a fully functional Moderation Bot with easter eggs and
 fun commands for members too!
-Our bot is currently hosted on Heroku!
+
+Our bot is currently hosted on Heroku.
 
 Copying or duplicating the bot in anyway is illegal and against the copyrights.
