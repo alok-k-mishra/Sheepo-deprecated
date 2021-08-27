@@ -2,7 +2,7 @@
 Sheepo Discord Bot Source Code.
 Sheepo is a discord bot written in javascript, with integrated node.js/discord.js
 
-Our bot has been developed by Killeration and Aryun Gupta, exclusively for the MrSuicideSheep Discord server! (https://www.discord.gg/mrsuicidesheep)
+Developed by Alok and Aryun Gupta, exclusively for the MrSuicideSheep Discord server! (https://www.discord.gg/mrsuicidesheep)
 
 No templates or so were used in making the bot, everything was done from scratch.
 Integrated Tenor API for gif features.
