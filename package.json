@@ -1,6 +1,6 @@
 {
   "name": "sheepo",
-  "version": "2.0.0",
+  "version": "1.0.0",
     "engines": {
     "node": "16.08.0"
   "description": "A Bot exclusive for MrSuicideSheep",
@@ -20,7 +20,6 @@
     "discord.js": "^13.1.0",
     "distube": "^3.0.4",
     "ffmpeg-static": "^4.4.0",
-    "libsodium-wrappers": "^0.7.9",
-    "node-fetch": "^2.6.1"
+    "libsodium-wrappers": "^0.7.9"
   }
 }
