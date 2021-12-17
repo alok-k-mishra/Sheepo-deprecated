@@ -1,3 +1,5 @@
+const { MessageEmbed } = require("discord.js");
+
 module.exports = {
     name: 'mute',
     description: "Mute Members",
@@ -34,8 +36,8 @@ module.exports = {
             .setDescription("Reason: "+ reason)
             .setTimestamp()
 
-            message.channel.send(mute);
-            mentioned.send(muteDM);
+            message.channel.send({embeds: [mute]});
+            mentioned.send({embeds: [muteDM]});
             }
         
             else{

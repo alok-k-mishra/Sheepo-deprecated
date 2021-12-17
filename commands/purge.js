@@ -1,3 +1,5 @@
+const { MessageEmbed } = require("discord.js");
+
 module.exports = {
     name: 'purge',
     description: "Purge Messages",
@@ -19,7 +21,7 @@ module.exports = {
             .setFooter("Happily moderating MrSuicideSheep server :D")
             .setTimestamp()
 
-            message.channel.send(purge);
+            message.channel.send({ embeds: [purge]});
             
             
         })

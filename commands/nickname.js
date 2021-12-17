@@ -1,3 +1,5 @@
+const { MessageEmbed } = require("discord.js");
+
 module.exports = {
     name: 'nickname',
     description: "Change Member's nickname",
@@ -29,7 +31,7 @@ module.exports = {
             .setDescription("New Nickname: "+ nickname)
             .setFooter("Happily moderating MrSuicideSheep server :D")
     
-            message.channel.send(nname);
+            message.channel.send({ embeds: [nname]});
         }}
 
             else{

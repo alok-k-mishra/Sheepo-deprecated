@@ -1,3 +1,5 @@
+const { MessageEmbed } = require('discord.js');
+
 module.exports = {
     name: 'hug',
     description: "Hug Command",
@@ -46,7 +48,7 @@ module.exports = {
             .setDescription(hugr)
             .setImage(huggr)
             
-            message.channel.send(hugEm);    
+            message.channel.send({embed: [hugEm]});    
             
             message.react('❤️');
             message.react('😄');
@@ -60,7 +62,7 @@ module.exports = {
         .setImage(huggr)
         
 
-        message.channel.send(hugEm2);
+        message.channel.send({ embed: [hugEm2]});
         }
 
 

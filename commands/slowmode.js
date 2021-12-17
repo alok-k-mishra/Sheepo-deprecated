@@ -1,3 +1,5 @@
+const { MessageEmbed } = require("discord.js");
+
 module.exports = {
     name: 'slowmode',
     description: "Channel Slowmode",
@@ -52,7 +54,7 @@ module.exports = {
                 .setTimestamp()
 
 
-             message.channel.send(slowmode);
+             message.channel.send({embeds: [slowmode]});
              }
             }
             

@@ -1,3 +1,5 @@
+const {MessageEmbed} = require('discord.js')
+
 module.exports = {
     name: 'ban',
     description: "Ban Member",
@@ -26,7 +28,7 @@ module.exports = {
             .setDescription("Reason: "+ banreason)
             .setFooter("Happily moderating MrSuicideSheep server :D")
     
-            message.channel.send(ban);
+            message.channel.send({ embeds: [ban]});
         }
             else{
                 message.channel.send("Wasn't able to ban the member :/");

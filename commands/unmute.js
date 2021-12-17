@@ -1,3 +1,5 @@
+const { MessageEmbed } = require("discord.js");
+
 module.exports = {
     name: 'unmute',
     description: "Unmute Members",
@@ -21,7 +23,7 @@ module.exports = {
                 .setFooter("Happily moderating MrSuicideSheep server :D")
                 .setTimestamp()
 
-                message.channel.send(unmute)
+                message.channel.send({embeds: [unmute]})
                 
             } else{
                 message.channel.send('Cant find that member :/');

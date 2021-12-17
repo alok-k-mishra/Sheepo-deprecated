@@ -1,3 +1,5 @@
+const { MessageEmbed } = require("discord.js");
+
 module.exports = {
     name: 'poke',
     description: "Poke a Member",
@@ -44,7 +46,7 @@ module.exports = {
         .setImage(pokedRGif)
 
 
-        message.channel.send(pokee);
+        message.channel.send({embeds: [pokee]});
         }
     }
 

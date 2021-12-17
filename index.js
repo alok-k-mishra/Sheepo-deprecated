@@ -1,210 +1,361 @@
 const Discord = require('discord.js');
 
-const client = new Discord.Client();
+const client = new Discord.Client({ intents: ['GUILDS', 'GUILD_MESSAGES', 'GUILD_VOICE_STATES']});
+
+const DisTube = require('distube')
+
+const { SoundCloudPlugin } = require('@distube/soundcloud')
+
+const { SpotifyPlugin } = require('@distube/spotify')
 
 const GuildMemberManager = require("discord.js");
-
-const { badwords } = require("./bw.json")
-
-const { badwords2 } = require("./bw.json")
 
 const prefix = '.';
 
 const fs = require('fs');
 
-client.commands = new Discord.Collection();
+const { MessageEmbed } = require('discord.js');
 
-const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
-
-for (const file of commandFiles){
-  console.log("Error")
-  const command = require(`./commands/${file}`);
-
-  client.commands.set(command.name, command);
-}
-client.once('ready', () =>{
-  console.log('SheepyMod is Online!');
-  client.user.setActivity('Sheepy Server || Stay Safe and Hydrated!',
-  { type: 'WATCHING', url:"https://linktr.ee/mrsuicidesheep"}).catch();
-});
-
-client.on('message', message =>{
-
-  if (!message.content.startsWith(prefix) || message.author.bot) return
-
-  const args = message.content.slice(prefix.length).split(/ +/);
-  const command = args.shift().toLowerCase();
-
-
-  (message.channel.type !== 'dm') ?
-    
-    (command === 'purge') ?
-      (message.member.roles.cache.has("434006808789647370") || message.member.roles.cache.has("453618428373368832")) ?
-      client.commands.get('purge').execute(message, args, Discord) : message.reply("Hey you ain't a mod or admin >:(") 
-
-    : (command === 'clear') ?
-     (message.member.roles.cache.has("434006808789647370") || message.member.roles.cache.has("453618428373368832")) ? 
-      client.commands.get('clearc').execute(message, args, Discord): message.reply("Hey you ain't a mod or admin >:(")
-      
-    : (command === 'kick') ?
-      (message.member.roles.cache.has("434006808789647370") || message.member.roles.cache.has("453618428373368832")) ? 
-      client.commands.get('kick').execute(message, args, Discord) : message.reply("Hey you ain't a mod or admin >:(")
-
-    : (command === 'ban') ?
-      (message.member.roles.cache.has("434006808789647370") || message.member.roles.cache.has("453618428373368832")) ?
-      client.commands.get('ban').execute(message, args, Discord) : message.reply("Hey you ain't a mod or admin >:(")
-
-    : (command === 'mute') ?
-      (message.member.roles.cache.has("434006808789647370") || message.member.roles.cache.has("453618428373368832")) ?
-      client.commands.get('mute').execute(message, args, Discord) : message.reply("Hey you ain't a mod or admin >:(")
-
-    : (command === 'tempmute') ?
-      (message.member.roles.cache.has("434006808789647370") || message.member.roles.cache.has("453618428373368832")) ?
-      client.commands.get('tempmute').execute(message, args, Discord) : message.reply("Hey you ain't a mod or admin >:(")
-
-    : (command === 'tmute') ?
-      (message.member.roles.cache.has("434006808789647370") || message.member.roles.cache.has("453618428373368832")) ?
-      client.commands.get('tempmute').execute(message, args, Discord) : message.reply("Hey you ain't a mod or admin >:(")
-
-    : (command === 'sm') ?
-      (message.member.roles.cache.has("434006808789647370") || message.member.roles.cache.has("453618428373368832")) ?
-      client.commands.get('slowmode').execute(message, args, Discord) : message.reply("Hey you ain't a mod or admin >:(")
-
-    : (command === 'slowmode') ?
-      (message.member.roles.cache.has("434006808789647370") || message.member.roles.cache.has("453618428373368832")) ?
-      client.commands.get('slowmode').execute(message, args, Discord) : message.reply("Hey you ain't a mod or admin >:(")
-
-    : (command === 'unmute') ?
-      (message.member.roles.cache.has("434006808789647370") || message.member.roles.cache.has("453618428373368832")) ?
-      client.commands.get('unmute').execute(message, args, Discord) :message.reply("Hey you ain't a mod or admin >:(")
-
-    : (command === 'nickname') ? 
-      (message.member.roles.cache.has("434006808789647370") || message.member.roles.cache.has("453618428373368832")) ?
-      client.commands.get('nickname').execute(message, args, Discord) : message.reply("Hey you ain't a mod or admin >:(")
-
-    : (command === 'about') ? client.commands.get('about').execute(message, args, Discord)
-
-    : (command === 'helpmember') ? client.commands.get('helpmember').execute(message, args, Discord)
-
-    : (command === 'helpmod') ? client.commands.get('helpmod').execute(message, args, Discord)
-      
-    : (command === 'youtube') ? client.commands.get('youtube').execute(message, args, Discord)
-
-    : (command === 'playlist') ? client.commands.get('playlist').execute(message, args, Discord)
-
-    : (command === 'playlists') ? client.commands.get('playlist').execute(message, args, Discord)
-
-    : (command === 'yt') ? client.commands.get('youtube').execute(message, args, Discord)
-
-    : (command === 'ping') ? client.commands.get('ping').execute(message, args, Discord)
-
-    : (command === 'bonk') ? client.commands.get('bonk').execute(message, args, Discord)
-    
-    : (command === 'bday') ? client.commands.get('bday').execute(message, args, Discord)
-
-    : (command === 'hug') ? client.commands.get('hug').execute(message, args, Discord)
-
-    : (command === 'doubt') ? client.commands.get('doubt').execute(message, args, Discord)
-
-    : (command === 'slap') ? client.commands.get('slap').execute(message, args, Discord)
-
-    : (command === 'pat') ? client.commands.get('pat').execute(message, args, Discord)
-
-    : (command === 'boop') ? client.commands.get('boop').execute(message, args, Discord)
-
-    : (command === 'poke') ? client.commands.get('poke').execute(message, args, Discord)
-
-    : (command === 'catto') ? client.commands.get('catto').execute(message, args, Discord)
-
-    : (command === 'doggo') ? client.commands.get('doggo').execute(message, args, Discord)
-
-    : (command === 'animal') ? client.commands.get('animal').execute(message, args, Discord)
-
-    : (command === 'birb') ? client.commands.get('birb').execute(message, args, Discord)
-
-    : (command === 'rosie') ? client.commands.get('rosie').execute(message, args, Discord)
-
-    : {}
-  
-    : (command === 'msend')? (message.author.id = '560848102295207940') ? client.commands.get('send').execute(message, args, Discord) 
-
-    :{}
-
-  : message.author.send("Hey, you gotta use my commands in sheepy server :)")
-
-
-
-
-
-
-    /// Banned words blacklist
-
-  let bl = [
-    "Bruh, why?", "smh.", "<:FeelsBanMan:756266709085847574>", "<:Welp:809237146950041620> nope.",
-    "Chill", "nO.", "brutha-, keep it safe <:angeryfish:784084830769905675>", "<:angeryfish:784084830769905675>",
-    "that's not allowed.", "<:MikeSullyFaceSwap:766014297959563284>", "<:MikeSullyFaceSwap:766014297959563284> no."
-  ]
-    
-    
-  let blrandom = Math.floor(Math.random() * 11);
-  let blmsg = bl[blrandom];
-    
-    
-  const blacklisted = [
-    "faggot", "cum", "cumming", "jap", "rape", "rapes", "nigga", "nigger", "paki",
-    "milf", "motherfucker", "sex", "s3x", "pedophile", "paedophile", "pedo", "paedo",
-    "fag", "torrent", "nigguh", "porn", "pornography", "retard", "retarded", "cock", "vagina", "bitch",
-    "fags", "bastard", "abortion", "aids", "niggers", "nonce", "nonces", "porno", "tits", "cunts",
-    "raped", "raping", "nazi", "nazis", "rapist", "pussy", "fuckboy", "fuckboi", "chink", "nigguh", "nig"
-  ]
-
-  if (blacklisted.some(word => message.content.includes(word))) message.channel.send(blmsg);
-    
-  const blacklisted2 = [
-    "*faggot*", "*cum*", "*cumming*", "*jap*", "*rape*", "*rapes*", "*nigga*", "*nigger*", "*paki*",
-    "*milf*", "*motherfucker*", "*sex*", "*s3x*", "*pedophile*", "*paedophile*", "*pedo*", "*paedo*",
-    "*fag*", "*torrent*", "*nigguh*", "*porn*", "*pornography*", "*retard*", "*retarded*", "*cock*", "*vagina*", "*bitch*",
-    "*fags*", "*bastard*", "*abortion*", "*aids*", "*niggers*", "*nonce*", "*nonces*", "*porno*", "*tits*", "*cunts*",
-    "*raped*", "*raping*", "*nazi*", "*nazis*", "*rapist*", "*pussy*", "*fuckboy*", "*fuckboi*", "*chink*", "*nigguh*", "*nig*",
-      
-      
-    "**faggot**", "**cum**", "**cumming**", "**jap**", "**rape**", "**rapes**", "**nigga**", "**nigger**", "**paki**",
-    "**milf**", "**motherfucker**", "**sex**", "**s3x**", "**pedophile**", "**paedophile**", "**pedo**", "**paedo**",
-    "**fag**", "**torrent**", "**nigguh**", "**porn**", "**pornography**", "**retard**", "**retarded**", "**cock**", "**vagina**", "**bitch**",
-    "**fags**", "**bastard**", "**abortion**", "**aids**", "**niggers**", "**nonce**", "**nonces**", "**porno**", "**tits**", "**cunts**",
-    "**raped**", "**raping**", "**nazi**", "**nazis**", "**rapist**", "**pussy**", "**fuckboy**", "**fuckboi**", "**chink**", "**nigguh**", "**nig**",
-      
-      
-    "***faggot***", "***cum***", "***cumming***", "***jap***", "***rape***", "***rapes***", "***nigga***", "***nigger***", "***paki***",
-    "***milf***", "***motherfucker***", "***sex***", "***s3x***", "***pedophile***", "***paedophile***", "***pedo***", "***paedo***",
-    "***fag***", "***torrent***", "***nigguh***", "***porn***", "***pornography***", "***retard***", "***retarded***", "***cock***", "***vagina***", "***bitch***",
-    "***fags***", "***bastard***", "***abortion***", "***aids***", "***niggers***", "***nonce***", "***nonces***", "***porno***", "***tits***", "***cunts***",
-    "***raped***", "***raping***", "***nazi***", "***nazis***", "***rapist***", "***pussy***", "***fuckboy***", "***fuckboi***", "***chink***", "***nigguh***", "***nig***",
-      
-    "||faggot||", "||cum||", "||cumming||", "||jap||", "||rape||", "||rapes||", "||nigga||", "||nigger||", "||paki||",
-    "||milf||", "||motherfucker||", "||sex||", "||s3x||", "||pedophile||", "||paedophile||", "||pedo||", "||paedo||",
-    "||fag||", "||torrent||", "||nigguh||", "||porn||", "||pornography||", "||retard||", "||retarded||", "||cock||", "||vagina||", "||bitch||",
-    "||fags||", "||bastard||", "||abortion||", "||aids||", "||niggers||", "||nonce||", "||nonces||", "||porno||", "||tits||", "||cunts||",
-    "||raped||", "||raping||", "||nazi||", "||nazis||", "||rapist||", "||pussy||", "||fuckboy||", "||fuckboi||", "||chink||", "||nigguh||", "||nig||"
-  ]
-    
-  if (blacklisted2.some(word => message.content.includes(word))) {
-    message.delete()
-    message.channel.send(blmsg);
-  }     
-    ///end of blacklisted words
+// Create a new DisTube
+const distube = new DisTube.default(client, {
+	searchSongs: 1,
+	searchCooldown: 30,
+	leaveOnEmpty: false,
+	emptyCooldown: 0,
+	leaveOnFinish: false,
+	leaveOnStop: true,
+	plugins: [new SoundCloudPlugin(),
+            new SpotifyPlugin()]
 })
 
 
+client.commands = new Discord.Collection();
+
+const commandFiles = fs.readdirSync(`./commands/`).filter(files => files.endsWith('.js'));;
+
+for (const file of commandFiles){
+  const command = require(`./commands/${file}`);
+  console.log("Loading", command.name)
+
+  client.commands.set(command.name, command);
+}
+
+
+
+
+client.on('ready', () =>{
+  console.log('Sheepo is Online!');
+  client.user.setActivity('Sheepy Server || Stay Safe and Hydrated!',
+  { type: 'WATCHING'});
+
+    distube.on('error', (channel, error) => {
+      console.error(error)
+      // channel.send(`An error encountered: ${error.slice(0, 1979)}`)
+
+    })
+
+
+
+
+  })
+
+
+client.on('messageCreate' , (message) =>{
+
+  if (!message.content.startsWith(prefix) || message.author.bot) return;
+  
+  const args = message.content.slice(prefix.length).trim().split(' ');
+  const command = args.shift().toLowerCase();
+
+
+
+  if (command === 'msend') { if (message.author.id = '560848102295207940') {
+    client.commands.get('send').execute(message, args, Discord) 
+  }}  
+
+
+  if(message.channel.type !== 'DM') {
+
+
+           ///music
+
+           if (command === 'play' || command === 'p') { 
+            if(!args[0]) {message.reply("I don\'t know how to play empty search lol")}
+            else {distube.play(message, args.join(' ')).catch(err => 
+            message.reply('An error occured, It might be because you sent the command without being in a VC'))
+           }
+    
+            
+          }
+    
+           if (['repeat', 'loop'].includes(command)) {
+             const mode = distube.setRepeatMode(message)
+             message.channel.send(`Set repeat mode to \`${mode ? mode === 2 ? 'All Queue' : 'This Song' : 'Off'}\``).catch(err => 
+              message.reply('You must be in a VC to execute this command!'))
+           }
+         
+           if (command === 'stop') {
+            distube.stop(message).catch(err => message.reply('There\'s no music to stop lol'))
+            message.channel.send('Stopped the music!')
+           }
+         
+           if (command === 'resume') { 
+             distube.resume(message).catch(err => 
+              message.reply('You must be in a VC!'))
+            message.channel.send("⏯ Resumed") }
+         
+           if (command === 'pause') { distube.pause(message).catch(err => message.reply('You must be in a VC to use this command!'))
+              message.channel.send("⏸ Paused")}
+         
+           if (command === 'skip') { distube.skip(message).catch(err => message.reply('You must be in a VC to use this command!'))
+                message.channel.send("<:LEDcat:840237693383344178> Skipped!") }
+              
+            if (command === 'leave') {client.commands.get('leave').execute(message, args, Discord) }
+
+
+           if (command === 'queue') {
+             const queue = distube.getQueue(message)
+             if (!queue) {
+               message.channel.send('Nothing playing right now!').catch(err => message.reply('Lol connect to a VC first'))
+             } else {
+               message.channel.send(
+                 `Current queue:\n${queue.songs
+                   .map(
+                     (song, id) =>
+                       `**${id ? id : 'Playing'}**. ${song.name} - \`${
+                         song.formattedDuration
+                       }\``,
+                   ).catch(err => message.reply('Lol connect to a VC first'))
+                   .slice(0, 10)
+                   .join('\n')}`,
+               )
+             }
+           }
+ 
+           if (
+             [
+               `3d`,
+               `bassboost`,
+               `echo`,
+               `karaoke`,
+               `nightcore`,
+               `vaporwave`,
+             ].includes(command)
+           ) {
+             const filter = distube.setFilter(message, command)
+             message.channel.send(
+               `Current queue filter: ${filter.join(', ') || 'Off'}`,
+             )
+           }
+         
+    
+    
+    if (command === 'purge') {
+      if (message.member.roles.cache.has("434006808789647370") || message.member.roles.cache.has("453618428373368832")) {
+        client.commands.get('purge').execute(message, args, Discord) }
+      else{ message.reply("Hey you ain't a mod or admin >:(") 
+  }}
+
+    if (command === 'clear') {
+     if (message.member.roles.cache.has("434006808789647370") || message.member.roles.cache.has("453618428373368832")) {
+      client.commands.get('clearc').execute(message, args, Discord) }
+      else{ message.reply("Hey you ain't a mod or admin >:(")
+     }}
+      
+    if (command === 'kick') {
+      if(message.member.roles.cache.has("434006808789647370") || message.member.roles.cache.has("453618428373368832")) {
+      client.commands.get('kick').execute(message, args, Discord) }
+      else{ message.reply("Hey you ain't a mod or admin >:(")
+      }}
+
+    if (command === 'ban') {
+      if (message.member.roles.cache.has("434006808789647370") || message.member.roles.cache.has("453618428373368832")) {
+      client.commands.get('ban').execute(message, args, Discord) }
+      else{ message.reply("Hey you ain't a mod or admin >:(")
+      }}
+
+    if (command === 'mute') {
+      if (message.member.roles.cache.has("434006808789647370") || message.member.roles.cache.has("453618428373368832")) {
+      client.commands.get('mute').execute(message, args, Discord) }
+      else {message.reply("Hey you ain't a mod or admin >:(")
+      }}
+
+    if (command === 'tempmute' || command === 'tmute') {
+      if (message.member.roles.cache.has("434006808789647370") || message.member.roles.cache.has("453618428373368832")) {
+      client.commands.get('tempmute').execute(message, args, Discord) }
+      else {message.reply("Hey you ain't a mod or admin >:(")
+      }}
+
+    if (command === 'sm' || command === 'slowmode') {
+      if (message.member.roles.cache.has("434006808789647370") || message.member.roles.cache.has("453618428373368832")) {
+      client.commands.get('slowmode').execute(message, args, Discord)}
+      else { message.reply("Hey you ain't a mod or admin >:(")
+      }}
+
+    if (command === 'unmute') {
+      (message.member.roles.cache.has("434006808789647370") || message.member.roles.cache.has("453618428373368832")) ?
+      client.commands.get('unmute').execute(message, args, Discord) :message.reply("Hey you ain't a mod or admin >:(")
+    }
+
+    if (command === 'nickname') { 
+      (message.member.roles.cache.has("434006808789647370") || message.member.roles.cache.has("453618428373368832")) ?
+      client.commands.get('nickname').execute(message, args, Discord) : message.reply("Hey you ain't a mod or admin >:(")
+    }
+    
+    if (command === 'about') { client.commands.get('about').execute(message, args, Discord) }
+
+    if (command === 'helpmember') { client.commands.get('helpmember').execute(message, args, Discord) }
+    
+    if (command === 'helpmod') { client.commands.get('helpmod').execute(message, args, Discord) }
+      
+    if (command === 'youtube') { client.commands.get('youtube').execute(message, args, Discord) }
+    
+    if (command === 'playlist') { client.commands.get('playlist').execute(message, args, Discord) }
+    
+    if (command === 'playlists') { client.commands.get('playlist').execute(message, args, Discord) }
+    
+    if (command === 'yt') { client.commands.get('youtube').execute(message, args, Discord) }
+    
+    if (command === 'ping') { client.commands.get('ping').execute(message, args, Discord) }
+    
+    if (command === 'bonk') { client.commands.get('bonk').execute(message, args, Discord) }
+    
+    if (command === 'bday') { client.commands.get('bday').execute(message, args, Discord) }
+    
+    if (command === 'hug') { client.commands.get('hug').execute(message, args, Discord) }
+    
+    if (command === 'doubt') { client.commands.get('doubt').execute(message, args, Discord) }
+    
+    if (command === 'slap') { client.commands.get('slap').execute(message, args, Discord) }
+    
+    if (command === 'pat') { client.commands.get('pat').execute(message, args, Discord) }
+    
+    if (command === 'boop') { client.commands.get('boop').execute(message, args, Discord) }
+    
+    if (command === 'poke') { client.commands.get('poke').execute(message, args, Discord) }
+    
+    if (command === 'catto') { client.commands.get('catto').execute(message, args, Discord) }
+    
+    if (command === 'doggo') { client.commands.get('doggo').execute(message, args, Discord) }
+    
+    if (command === 'animal') { client.commands.get('animal').execute(message, args, Discord) }
+    
+    if (command === 'birb') { client.commands.get('birb').execute(message, args, Discord) }
+    
+    if (command === 'rosie') { client.commands.get('rosie').execute(message, args, Discord) }
+
+
+    }
+      else{
+        message.author.send("Hey, you gotta use my commands in sheepy server :)")
+
+
+      }
+ 
+
+})
+
+//embeds
+
+
+// const PlayingMusic = new MessageEmbed()
+//     .setColor('#0099ff')
+//     .setTitle('Playing <:screaming_cat:766014264908840970>')
+//     .setURL('https://discord.js.org/')
+//     .setDescription(`${song.name}`)
+//     .setTimestamp()
+//     .setFooter(`\nRequested by: ${song.user}\n${status(queue)}`);
 
 
 
 
 
 
+
+
+const status = queue =>
+	`Volume: \`${queue.volume}%\` | Filter: \`${queue.filters.join(', ')
+		|| 'Off'}\` | Loop: \`${
+		queue.repeatMode
+			? queue.repeatMode === 2
+				? 'All Queue'
+				: 'This Song'
+			: 'Off'
+	}\` | Autoplay: \`${queue.autoplay ? 'On' : 'Off'}\``
+
+// DisTube event listeners, more in the documentation page
+distube
+	.on('playSong', (queue, song) => {
+
+    const PlayingMusic = new MessageEmbed()
+    .setColor('#3EFF00')
+    .setTitle('<:screaming_cat:766014264908840970> Playing ' +  `${song.name}`)
+    .addField('Requested By', `${song.user}`)
+    .setTimestamp()
+    .setFooter(`${status(queue)}`);
     
 
+		queue.textChannel.send({ embeds: [PlayingMusic] }
+			// `Playing \`${song.name}\` - \`${
+			// 	song.formattedDuration
+			// }\`\nRequested by: ${song.user.username}`,
+    )})
+
+	.on('addSong', (queue, song) => {
+
+  const AddingMusic = new MessageEmbed()
+  .setColor('#00FFD8')
+  .setTitle('✅ Adding ' +  `${song.name}` + ' to the queue')
+  .addField('Requested By', `${song.user}`)
+  .setTimestamp()
+  .setFooter(`${status(queue)}`);
+  
+  queue.textChannel.send({embeds: [AddingMusic]} )
+		// 	`Added ${song.name} - \`${song.formattedDuration}\` to the queue by ${song.user.username}`,
+		// ))
+  })
+
+	.on('addList', (queue, playlist) =>{
+  const AddingList = new MessageEmbed()
+  .setColor('#00FFD8')
+  .setTitle('✅ Adding ' +  `${playlist.name}` + ' playlist' + `$playlist.songs.length`+ ' songs' + 'to the queue')
+  .setTimestamp()
+  .setFooter(`${status(queue)}`);
+
+		queue.textChannel.send({embeds: [AddingList]}
+			// `Added \`${playlist.name}\` playlist (${
+			// 	playlist.songs.length
+			// } songs) to queue\n${status(queue)}`,
+    )
+  })
+	// DisTubeOptions.searchSongs = true
+	.on('searchResult', (message, result) => {
+		let i = 0
+		message.channel.send(
+			`**Choose an option from below**\n${result
+				.map(
+					song =>
+						`**${++i}**. ${song.name} - \`${
+							song.formattedDuration
+						}\``,
+				)
+				.join(
+					'\n',
+				)}\n*Enter anything else or wait 30 seconds to cancel*`,
+		)
+	})
+	// DisTubeOptions.searchSongs = true
+	.on('searchCancel', message => message.channel.send(`Searching canceled`))
+	.on('searchInvalidAnswer', message =>
+		message.channel.send(`searchInvalidAnswer`))
+	.on('searchNoResult', message => message.channel.send(`No result found!`))
+	.on('error', (textChannel, e) => {
+		console.error(e)
+		textChannel.send(`An error encountered: ${e.slice(0, 2000)}`)
+	})
+	.on('finish', queue => queue.textChannel.send('`Finished queue!`'))
+	.on('disconnect', queue => queue.textChannel.send('`Disconnected!`'))
+	.on('empty', queue => queue.textChannel.send('`Empty lol`'))
 
 
- 
 client.login(process.env.DJS_TOKEN);

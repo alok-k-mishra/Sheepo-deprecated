@@ -1,3 +1,5 @@
+const { MessageEmbed } = require("discord.js");
+
 module.exports = {
     name: 'youtube',
     description: "Sends Youtube Link",
@@ -14,7 +16,7 @@ module.exports = {
     .setTimestamp()
 
     
-        message.channel.send(youtube);
+        message.channel.send({embeds: [youtube]});
 
 
 

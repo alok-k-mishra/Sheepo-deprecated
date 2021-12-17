@@ -1,3 +1,5 @@
+const {MessageEmbed} = require('discord.js')
+
 module.exports = {
     name: 'bday',
     description: "Wish a Member on their birthday",
@@ -43,7 +45,7 @@ module.exports = {
         .setTitle("Yoooo " + (message.mentions.members.first().displayName) + " it\'s ur bday!!!! " )
         .setDescription(rbdaym)
 
-        message.channel.send(bday);
+        message.channel.send({embeds :[bday]});
         }
     }
 

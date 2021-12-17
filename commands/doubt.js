@@ -1,3 +1,5 @@
+const {MessageEmbed} = require('discord.js')
+
 module.exports = {
     name: 'doubt',
     description: "Doubt a Member",
@@ -34,7 +36,7 @@ module.exports = {
         .setImage(doubtrgif)
 
 
-        message.channel.send(doubted);
+        message.channel.send({ embeds : [doubted]});
         }
     }
 

@@ -1,3 +1,5 @@
+const { MessageEmbed } = require("discord.js");
+
 module.exports = {
     name: 'slap',
     description: "Slap a Member",
@@ -51,7 +53,7 @@ module.exports = {
         .setImage(slaprgif)
 
 
-        message.channel.send(slapp);
+        message.channel.send({embeds: [slapp]});
         }
     }
 

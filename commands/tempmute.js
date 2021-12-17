@@ -1,3 +1,5 @@
+const { MessageEmbed } = require("discord.js");
+
 module.exports = {
     name: 'tempmute',
     description: "Temporarily Mute Members",
@@ -27,7 +29,7 @@ module.exports = {
 
 
 
-        const purge = new Discord.MessageEmbed()
+        const tmute = new Discord.MessageEmbed()
             
         .setColor('3DAE3B')
         .setTitle("Muted " + (message.mentions.members.first().displayName) + " for " + (args[1]) + " minutes :clock:")
@@ -35,7 +37,7 @@ module.exports = {
         .setDescription("Reason: "+ mutereason)
         .setTimestamp()
 
-        message.channel.send(purge);
+        message.channel.send({embeds: [tmute]});
 
 
         setTimeout(tunmute, mst) 

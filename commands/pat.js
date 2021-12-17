@@ -1,3 +1,5 @@
+const { MessageEmbed } = require("discord.js");
+
 module.exports = {
     name: 'pat',
     description: "Pat a Member",
@@ -34,7 +36,7 @@ module.exports = {
         .setImage(patgr)
 
 
-        message.channel.send(pats);
+        message.channel.send({embeds: [pats]});
         }
     }
 

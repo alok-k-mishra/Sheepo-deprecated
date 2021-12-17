@@ -1,4 +1,4 @@
-const { MessageAttachment } = require("discord.js");
+const { MessageEmbed } = require("discord.js");
 
 module.exports = {
     name: 'clearc',
@@ -27,7 +27,7 @@ module.exports = {
         .setFooter("Happily moderating MrSuicideSheep server :D")
         .setTimestamp()
 
-        message.channel.send(clear);
+        message.channel.send({ embeds: [clear] });
       
       })
 
