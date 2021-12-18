@@ -116,7 +116,7 @@ client.on('messageCreate' , (message) =>{
            if (command === 'queue') {
              const queue = distube.getQueue(message)
              if (!queue) {
-               message.channel.send('Nothing playing right now!').catch(err => message.reply('Lol connect to a VC first'))
+               message.channel.send('Nothing playing right now!')
              } else {
                message.channel.send(
                  `Current queue:\n${queue.songs
@@ -125,7 +125,7 @@ client.on('messageCreate' , (message) =>{
                        `**${id ? id : 'Playing'}**. ${song.name} - \`${
                          song.formattedDuration
                        }\``,
-                   ).catch(err => message.reply('Lol connect to a VC first'))
+                   )
                    .slice(0, 10)
                    .join('\n')}`,
                )
@@ -202,19 +202,17 @@ client.on('messageCreate' , (message) =>{
       client.commands.get('nickname').execute(message, args, Discord) : message.reply("Hey you ain't a mod or admin >:(")
     }
     
-    if (command === 'about') { client.commands.get('about').execute(message, args, Discord) }
+    if (command === 'help') { client.commands.get('help').execute(message, args, Discord) }
 
     if (command === 'helpmember') { client.commands.get('helpmember').execute(message, args, Discord) }
     
     if (command === 'helpmod') { client.commands.get('helpmod').execute(message, args, Discord) }
+
+    if (command === 'helpmusic') { client.commands.get('helpmusic').execute(message, args, Discord) }
       
-    if (command === 'youtube') { client.commands.get('youtube').execute(message, args, Discord) }
+    if (command === 'youtube' || command === 'yt') { client.commands.get('youtube').execute(message, args, Discord) }
     
-    if (command === 'playlist') { client.commands.get('playlist').execute(message, args, Discord) }
-    
-    if (command === 'playlists') { client.commands.get('playlist').execute(message, args, Discord) }
-    
-    if (command === 'yt') { client.commands.get('youtube').execute(message, args, Discord) }
+    if (command === 'playlist' || command === 'playlists') { client.commands.get('playlist').execute(message, args, Discord) }
     
     if (command === 'ping') { client.commands.get('ping').execute(message, args, Discord) }
     
@@ -254,8 +252,6 @@ client.on('messageCreate' , (message) =>{
  
 
 })
-
-//embeds
 
 
 // const PlayingMusic = new MessageEmbed()

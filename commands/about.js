@@ -1,5 +1,7 @@
+const {MessageEmbed} = require('discord.js')
+
 module.exports = {
-    name: 'about',
+    name: 'help',
     description: "Help Command",
     execute(message, args, Discord) {
 
@@ -11,12 +13,16 @@ module.exports = {
             .addFields(
                 { name: '.helpmod', value: 'Get the Moderation commands' },
                 { name: '.helpmember', value: 'Get the commands a member can use!' },
+                { name : '.helpmusic', value: 'Get the commands for playing music!'}
             )
         
-            message.channel.send(about)
+
+    
+
+                message.channel.send({ embeds : [help] })
+        }
+
+
+
+    
     }
-
-
-        
-}
-
