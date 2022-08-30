@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A Bot exclusive for MrSuicideSheep",
   "main": "index.js",
-    "engines": {
+  "engines": {
     "node": "16.8.0"
   },
   "scripts": {
@@ -21,6 +21,7 @@
     "discord.js": "^13.1.0",
     "distube": "^3.0.4",
     "ffmpeg-static": "^4.4.0",
-    "libsodium-wrappers": "^0.7.9"
+    "libsodium-wrappers": "^0.7.9",
+    "utf-8-validate": "^5.0.9"
   }
 }
