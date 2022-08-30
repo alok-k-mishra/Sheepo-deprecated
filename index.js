@@ -100,7 +100,7 @@ client.on('messageCreate' , (message) =>{
          
            if (command === 'leave' || command === 'bye') {
             distube.voices.get(message)?.leave();
-            message.channel.send('Leaved the voice channel!');
+            message.channel.send('Left the voice channel!🥲👋🏼');
           }
 
            if (command === 'resume') { 
