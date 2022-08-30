@@ -12,7 +12,7 @@ module.exports = {
             .setDescription("Hi! I'm Sheepo, a moderation bot developed by Killeration and Gronky, exclusively for the MrSuicideSheep Discord Server! :D \n \n There are two types of commands for this bot: ")
             .addFields(
                 { name: '.helpmod', value: 'Get the Moderation commands' },
-                { name: '.helpmember', value: 'Get the commands a member can use!' },
+
                 { name : '.helpmusic', value: 'Get the commands for playing music!'}
             )
         

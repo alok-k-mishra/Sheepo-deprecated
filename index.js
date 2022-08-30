@@ -18,12 +18,11 @@ const { MessageEmbed } = require('discord.js');
 
 // Create a new DisTube
 const distube = new DisTube.default(client, {
-	searchSongs: 1,
+	searchSongs: 5,
 	searchCooldown: 30,
 	leaveOnEmpty: false,
-	emptyCooldown: 0,
 	leaveOnFinish: false,
-	leaveOnStop: true,
+	leaveOnStop: false,
 	plugins: [new SoundCloudPlugin(),
             new SpotifyPlugin()]
 })
@@ -99,6 +98,11 @@ client.on('messageCreate' , (message) =>{
             message.channel.send('Stopped the music!')
            }
          
+           if (command === 'leave' || command === 'bye') {
+            distube.voices.get(message)?.leave();
+            message.channel.send('Leaved the voice channel!');
+          }
+
            if (command === 'resume') { 
              distube.resume(message).catch(err => 
               message.reply('You must be in a VC!'))
@@ -109,8 +113,6 @@ client.on('messageCreate' , (message) =>{
          
            if (command === 'skip') { distube.skip(message).catch(err => message.reply('You must be in a VC to use this command!'))
                 message.channel.send("<:LEDcat:840237693383344178> Skipped!") }
-              
-            if (command === 'leave') {client.commands.get('leave').execute(message, args, Discord) }
 
 
            if (command === 'queue') {
@@ -133,20 +135,21 @@ client.on('messageCreate' , (message) =>{
            }
  
            if (
-             [
-               `3d`,
-               `bassboost`,
-               `echo`,
-               `karaoke`,
-               `nightcore`,
-               `vaporwave`,
-             ].includes(command)
-           ) {
-             const filter = distube.setFilter(message, command)
-             message.channel.send(
-               `Current queue filter: ${filter.join(', ') || 'Off'}`,
-             )
-           }
+            [
+              '3d',
+              'bassboost',
+              'echo',
+              'karaoke',
+              'nightcore',
+              'vaporwave',
+            ].includes(command)
+          ) {
+            const filter = distube.setFilter(message, command);
+            message.channel.send(
+              `Current queue filter: ${filter.join(', ') || 'Off'}`,
+            );
+          }
+        
          
     
     
@@ -174,28 +177,11 @@ client.on('messageCreate' , (message) =>{
       else{ message.reply("Hey you ain't a mod or admin >:(")
       }}
 
-    if (command === 'mute') {
-      if (message.member.roles.cache.has("434006808789647370") || message.member.roles.cache.has("453618428373368832")) {
-      client.commands.get('mute').execute(message, args, Discord) }
-      else {message.reply("Hey you ain't a mod or admin >:(")
-      }}
-
-    if (command === 'tempmute' || command === 'tmute') {
-      if (message.member.roles.cache.has("434006808789647370") || message.member.roles.cache.has("453618428373368832")) {
-      client.commands.get('tempmute').execute(message, args, Discord) }
-      else {message.reply("Hey you ain't a mod or admin >:(")
-      }}
-
     if (command === 'sm' || command === 'slowmode') {
       if (message.member.roles.cache.has("434006808789647370") || message.member.roles.cache.has("453618428373368832")) {
       client.commands.get('slowmode').execute(message, args, Discord)}
       else { message.reply("Hey you ain't a mod or admin >:(")
       }}
-
-    if (command === 'unmute') {
-      (message.member.roles.cache.has("434006808789647370") || message.member.roles.cache.has("453618428373368832")) ?
-      client.commands.get('unmute').execute(message, args, Discord) :message.reply("Hey you ain't a mod or admin >:(")
-    }
 
     if (command === 'nickname') { 
       (message.member.roles.cache.has("434006808789647370") || message.member.roles.cache.has("453618428373368832")) ?
@@ -203,34 +189,12 @@ client.on('messageCreate' , (message) =>{
     }
     
     if (command === 'help') { client.commands.get('help').execute(message, args, Discord) }
-
-    if (command === 'helpmember') { client.commands.get('helpmember').execute(message, args, Discord) }
     
     if (command === 'helpmod') { client.commands.get('helpmod').execute(message, args, Discord) }
 
     if (command === 'helpmusic') { client.commands.get('helpmusic').execute(message, args, Discord) }
-      
-    if (command === 'youtube' || command === 'yt') { client.commands.get('youtube').execute(message, args, Discord) }
-    
-    if (command === 'playlist' || command === 'playlists') { client.commands.get('playlist').execute(message, args, Discord) }
     
     if (command === 'ping') { client.commands.get('ping').execute(message, args, Discord) }
-    
-    if (command === 'bonk') { client.commands.get('bonk').execute(message, args, Discord) }
-    
-    if (command === 'bday') { client.commands.get('bday').execute(message, args, Discord) }
-    
-    if (command === 'hug') { client.commands.get('hug').execute(message, args, Discord) }
-    
-    if (command === 'doubt') { client.commands.get('doubt').execute(message, args, Discord) }
-    
-    if (command === 'slap') { client.commands.get('slap').execute(message, args, Discord) }
-    
-    if (command === 'pat') { client.commands.get('pat').execute(message, args, Discord) }
-    
-    if (command === 'boop') { client.commands.get('boop').execute(message, args, Discord) }
-    
-    if (command === 'poke') { client.commands.get('poke').execute(message, args, Discord) }
     
     if (command === 'catto') { client.commands.get('catto').execute(message, args, Discord) }
     
@@ -292,23 +256,18 @@ distube
     
 
 		queue.textChannel.send({ embeds: [PlayingMusic] }
-			// `Playing \`${song.name}\` - \`${
-			// 	song.formattedDuration
-			// }\`\nRequested by: ${song.user.username}`,
     )})
 
 	.on('addSong', (queue, song) => {
 
   const AddingMusic = new MessageEmbed()
   .setColor('#00FFD8')
-  .setTitle('✅ Adding ' +  `${song.name}` + ' to the queue')
+  .setTitle('✅ Adding'+  `\n ${song.name}` + ' to the queue')
   .addField('Requested By', `${song.user}`)
   .setTimestamp()
   .setFooter(`${status(queue)}`);
   
   queue.textChannel.send({embeds: [AddingMusic]} )
-		// 	`Added ${song.name} - \`${song.formattedDuration}\` to the queue by ${song.user.username}`,
-		// ))
   })
 
 	.on('addList', (queue, playlist) =>{
@@ -324,9 +283,33 @@ distube
 			// } songs) to queue\n${status(queue)}`,
     )
   })
+
+  .on('error', (textChannel, e) => {
+		console.error(e);
+		textChannel.send(
+			`An error encountered`,
+		);
+
+	})
+	.on('finish', queue => queue.textChannel?.send('Finished queue!'))
+
+
+	.on('finishSong', queue =>
+		queue.textChannel?.send('Finished song!'),
+	)
+	.on('disconnect', queue =>
+		queue.textChannel?.send('Disconnected!🥲'),
+	)
+	.on('empty', queue =>
+		queue.textChannel?.send(
+			'The voice channel is empty! Leaving the voice channel 👋🏼',
+		),
+	)
+
+
 	// DisTubeOptions.searchSongs = true
 	.on('searchResult', (message, result) => {
-		let i = 0
+		let i = 0 
 		message.channel.send(
 			`**Choose an option from below**\n${result
 				.map(
@@ -340,18 +323,36 @@ distube
 				)}\n*Enter anything else or wait 30 seconds to cancel*`,
 		)
 	})
-	// DisTubeOptions.searchSongs = true
-	.on('searchCancel', message => message.channel.send(`Searching canceled`))
-	.on('searchInvalidAnswer', message =>
-		message.channel.send(`searchInvalidAnswer`))
-	.on('searchNoResult', message => message.channel.send(`No result found!`))
-	.on('error', (textChannel, e) => {
-		console.error(e)
-		textChannel.send(`An error encountered: ${e.slice(0, 2000)}`)
-	})
-	.on('finish', queue => queue.textChannel.send('`Finished queue!`'))
-	.on('disconnect', queue => queue.textChannel.send('`Disconnected!`'))
-	.on('empty', queue => queue.textChannel.send('`Empty lol`'))
 
+
+	// DisTubeOptions.searchSongs = true
+	.on('searchResult', (message, result) => {
+		let i = 0;
+		message.channel.send(
+			`**Choose an option from below**\n${result
+				.map(
+					song =>
+						`**${++i}**. ${song.name} - \`${
+							song.formattedDuration
+						}\``,
+				)
+				.join(
+					'\n',
+				)}\n*Enter anything else or wait 30 seconds to cancel*`,
+		);
+	})
+	.on('searchCancel', message =>
+		message.channel.send('Searching canceled'),
+	)
+	.on('searchInvalidAnswer', message =>
+		message.channel.send('Invalid number of result.'),
+	)
+	.on('searchNoResult', message =>
+		message.channel.send('No result found!'),
+	)
+	.on('searchDone', () => {});
+
+
+  
 
 client.login(process.env.DJS_TOKEN);

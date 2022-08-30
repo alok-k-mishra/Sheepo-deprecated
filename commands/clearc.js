@@ -8,7 +8,7 @@ module.exports = {
 
       if(!args[0]) return message.reply("Please specify the number of messages(1-100) to be purged!");
       if(isNaN(args[0])) return message.reply("Please enter a real number!");
-      if(args[0] > 100) return message.reply("Please enter a number between 1-100");
+      if(args[0] > 200) return message.reply("Please enter a number between 1-100");
       if(args[0] < 1) return message.reply("Please enter a number between 1-100");
 
 
