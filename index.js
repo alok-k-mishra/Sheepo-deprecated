@@ -1,18 +1,20 @@
-// const Discord = require('discord.js');
+const Discord = require('discord.js');
 
-// const client = new Discord.Client({ intents: ['GUILDS', 'GUILD_MESSAGES', 'GUILD_VOICE_STATES']});
+const client = new Discord.Client({ intents: ['Guilds', 'GuildVoiceStates', 'GuildMessages']});
 
-const { Client, GatewayIntentBits } = require('discord.js');
-const client = new Client({ intents: [GatewayIntentBits.Guilds] });
+// const { Client, GatewayIntentBits } = require('discord.js');
 
+// const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
-const DisTube = new DisTube.Distube(client, otp);
+const { DisTube } = require('distube');
 
-
-// const distube = new DisTube({ plugins: [new YtDlpPlugin({ update: false })] })
+// const DisTube = new DisTube.Distube(client, otp);
 
 
 const { YtDlpPlugin } = require("@distube/yt-dlp")
+
+
+// const distube = new DisTube({ plugins: [new YtDlpPlugin({ update: false })] })
 
 
 
