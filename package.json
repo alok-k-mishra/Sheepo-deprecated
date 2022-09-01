@@ -1,7 +1,7 @@
 {
   "name": "sheepo",
-  "version": "1.0.0",
-  "description": "A Bot exclusive for MrSuicideSheep",
+  "version": "1.0.1",
+  "description": "A Bot exclusively for MrSuicideSheep",
   "main": "index.js",
   "engines": {
     "node": "16.8.0"

@@ -16,23 +16,10 @@ module.exports = {
     } else{
 
 
-        if (!smdur){
+        if (!smdur || args[0] === 0){
         
             message.channel.setRateLimitPerUser(0);
             const disabledslomo = new Discord.MessageEmbed()
-            
-                .setColor('FF00E8')
-                .setTitle("Disabled Message Cooldown")
-                .setFooter("Happily moderating MrSuicideSheep server :D")
-                .setTimestamp()
-
-            message.channel.send(disabledslomo);
-                }
-
-            else if(args[0] === 0) {
-
-
-                const disabledslomo = new Discord.MessageEmbed()
             
                 .setColor('FF00E8')
                 .setTitle("Disabled Message Cooldown")

@@ -218,17 +218,6 @@ client.on('messageCreate' , (message) =>{
 })
 
 
-// const PlayingMusic = new MessageEmbed()
-//     .setColor('#0099ff')
-//     .setTitle('Playing <:screaming_cat:766014264908840970>')
-//     .setURL('https://discord.js.org/')
-//     .setDescription(`${song.name}`)
-//     .setTimestamp()
-//     .setFooter(`\nRequested by: ${song.user}\n${status(queue)}`);
-
-
-
-
 
 
 
@@ -249,7 +238,7 @@ distube
 
     const PlayingMusic = new MessageEmbed()
     .setColor('#3EFF00')
-    .setTitle('<:screaming_cat:766014264908840970> Playing ' +  `${song.name}`)
+    .setTitle('<:screaming_cat:766014264908840970> Playing ' +  `\n ${song.name}`)
     .addField('Requested By', `${song.user}`)
     .setTimestamp()
     .setFooter(`${status(queue)}`);
@@ -272,15 +261,12 @@ distube
 
 	.on('addList', (queue, playlist) =>{
   const AddingList = new MessageEmbed()
-  .setColor('#00FFD8')
-  .setTitle('✅ Adding ' +  `${playlist.name}` + ' playlist' + `$playlist.songs.length`+ ' songs' + 'to the queue')
-  .setTimestamp()
-  .setFooter(`${status(queue)}`);
+      .setColor('#00FFD8')
+      .setTitle('✅ Adding ' +  '${playlist.name}' + ' playlist' + '\n $playlist.songs.length'+ ' songs' + ' to the queue')
+      .setTimestamp()
+      .setFooter(`${status(queue)}`);
 
-		queue.textChannel.send({embeds: [AddingList]}
-			// `Added \`${playlist.name}\` playlist (${
-			// 	playlist.songs.length
-			// } songs) to queue\n${status(queue)}`,
+		queue.textChannel.send({embeds: [AddingList]},
     )
   })
 
@@ -305,24 +291,6 @@ distube
 			'The voice channel is empty! Leaving the voice channel 👋🏼',
 		),
 	)
-
-
-	// DisTubeOptions.searchSongs = true
-	.on('searchResult', (message, result) => {
-		let i = 0 
-		message.channel.send(
-			`**Choose an option from below**\n${result
-				.map(
-					song =>
-						`**${++i}**. ${song.name} - \`${
-							song.formattedDuration
-						}\``,
-				)
-				.join(
-					'\n',
-				)}\n*Enter anything else or wait 30 seconds to cancel*`,
-		)
-	})
 
 
 	// DisTubeOptions.searchSongs = true

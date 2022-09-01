@@ -1,4 +1,3 @@
-
 module.exports = {
     name: 'send',
     description: "Secret Sending from dms",
@@ -9,8 +8,6 @@ module.exports = {
         channel = guild.channels.cache.get("426851648309035011")
 
         var dmmessage = args.join(" ")
-       
-        console.log(dmmessage);
 
 
        channel.send(dmmessage)
