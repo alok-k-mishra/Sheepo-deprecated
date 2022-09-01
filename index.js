@@ -2,7 +2,9 @@ const Discord = require('discord.js');
 
 const client = new Discord.Client({ intents: ['GUILDS', 'GUILD_MESSAGES', 'GUILD_VOICE_STATES']});
 
-const DisTube = require('distube')
+const { YtDlpPlugin } = require("@distube/yt-dlp")
+
+const DisTube = new DisTube({ plugins: [new YtDlpPlugin({ update: false })] })
 
 // const DisTube = new DisTube.Distube(client, otp);
 
@@ -82,7 +84,7 @@ client.on('messageCreate' , (message) =>{
 
            if (command === 'play' || command === 'p') { 
             if(!args[0]) {message.reply("I don\'t know how to play empty search lol")}
-            else {distube.play(message, args.join(' '), {
+            else {distube.play(message.member.voice.channel, args.join(' '), {
               member: message.member,
               textChannel: message.channel,
               message
