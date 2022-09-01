@@ -2,9 +2,9 @@ const Discord = require('discord.js');
 
 const client = new Discord.Client({ intents: ['GUILDS', 'GUILD_MESSAGES', 'GUILD_VOICE_STATES']});
 
-// const DisTube = require('distube')
+const DisTube = require('distube')
 
-const DisTube = new DisTube.Distube(client, otp);
+// const DisTube = new DisTube.Distube(client, otp);
 
 const { SoundCloudPlugin } = require('@distube/soundcloud')
 
@@ -82,7 +82,11 @@ client.on('messageCreate' , (message) =>{
 
            if (command === 'play' || command === 'p') { 
             if(!args[0]) {message.reply("I don\'t know how to play empty search lol")}
-            else {distube.play(message, args.join(' ')).catch(err => 
+            else {distube.play(message, args.join(' '), {
+              member: message.member,
+              textChannel: message.channel,
+              message
+          }).catch(err => 
             message.reply('An error occured, It might be because you sent the command without being in a VC'))
            }
     
