@@ -6,11 +6,16 @@ const { Client, GatewayIntentBits } = require('discord.js');
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
 
-const { YtDlpPlugin } = require("@distube/yt-dlp")
-
 const DisTube = new DisTube.Distube(client, otp);
 
+
 // const distube = new DisTube({ plugins: [new YtDlpPlugin({ update: false })] })
+
+
+const { YtDlpPlugin } = require("@distube/yt-dlp")
+
+
+
 
 
 
