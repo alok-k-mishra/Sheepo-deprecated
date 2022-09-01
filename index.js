@@ -46,7 +46,7 @@ for (const file of commandFiles){
 
 client.on('ready', () =>{
   console.log('Sheepo is Online!');
-  client.user.setActivity('Sheepy Server || Stay Safe and Hydrated!',
+  client.user.setActivity('Sheepy Server || Backoff Automod!!!',
   { type: 'WATCHING'});
 
     distube.on('error', (channel, error) => {
