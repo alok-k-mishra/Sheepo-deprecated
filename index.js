@@ -7,10 +7,11 @@ const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
 
 const { YtDlpPlugin } = require("@distube/yt-dlp")
+const DisTube = new DisTube.Distube(client, otp);
 
-const DisTube = new DisTube({ plugins: [new YtDlpPlugin({ update: false })] })
+// const distube = new DisTube({ plugins: [new YtDlpPlugin({ update: false })] })
 
-// const DisTube = new DisTube.Distube(client, otp);
+
 
 const { SoundCloudPlugin } = require('@distube/soundcloud')
 
