@@ -34,7 +34,7 @@ const fs = require('fs');
 const { MessageEmbed } = require('discord.js');
 
 // Create a new DisTube
-const distube = new DisTube.default(client, {
+client.distube = new DisTube.default(client, {
 	searchSongs: 5,
 	searchCooldown: 30,
 	leaveOnEmpty: false,
