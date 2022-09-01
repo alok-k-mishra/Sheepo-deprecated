@@ -2,7 +2,9 @@ const Discord = require('discord.js');
 
 const client = new Discord.Client({ intents: ['GUILDS', 'GUILD_MESSAGES', 'GUILD_VOICE_STATES']});
 
-const DisTube = require('distube')
+// const DisTube = require('distube')
+
+const DisTube = new DisTube.Distube(client, otp);
 
 const { SoundCloudPlugin } = require('@distube/soundcloud')
 
@@ -151,13 +153,13 @@ client.on('messageCreate' , (message) =>{
           }
         
          
-    
+        //moderation
     
     if (command === 'purge') {
       if (message.member.roles.cache.has("434006808789647370") || message.member.roles.cache.has("453618428373368832")) {
         client.commands.get('purge').execute(message, args, Discord) }
       else{ message.reply("Hey you ain't a mod or admin >:(") 
-  }}
+    }}
 
     if (command === 'clear') {
      if (message.member.roles.cache.has("434006808789647370") || message.member.roles.cache.has("453618428373368832")) {
@@ -219,7 +221,7 @@ client.on('messageCreate' , (message) =>{
 
 
 
-
+//-------//
 
 
 const status = queue =>
