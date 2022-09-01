@@ -87,7 +87,7 @@ client.on('messageCreate' , (message) =>{
               textChannel: message.channel,
               message
           }).catch(err => 
-            message.reply('An error occured, It might be because you sent the command without being in a VC'))
+            message.reply('Join a VC lol.'))
            }
     
             
@@ -106,7 +106,7 @@ client.on('messageCreate' , (message) =>{
          
            if (command === 'leave' || command === 'bye') {
             distube.voices.get(message)?.leave();
-            message.channel.send('Left the voice channel!🥲👋🏼');
+            message.channel.send('Left the voice channel! 🥲👋🏼');
           }
 
            if (command === 'resume') { 
@@ -244,7 +244,7 @@ distube
 
     const PlayingMusic = new MessageEmbed()
     .setColor('#3EFF00')
-    .setTitle('<:screaming_cat:766014264908840970> Playing ' +  `\n ${song.name}`)
+    .setTitle('<:screaming_cat:766014264908840970> Playing ' +  `\n \n ${song.name}`)
     .addField('Requested By', `${song.user}`)
     .setTimestamp()
     .setFooter(`${status(queue)}`);
