@@ -244,7 +244,7 @@ distube
 
     const PlayingMusic = new MessageEmbed()
     .setColor('#3EFF00')
-    .setTitle('<:screaming_cat:766014264908840970> Playing ' +  `\n \n ${song.name}`)
+    .setTitle('<:screaming_cat:766014264908840970> Playing' +  `\n \n${song.name}`)
     .addField('Requested By', `${song.user}`)
     .setTimestamp()
     .setFooter(`${status(queue)}`);
@@ -257,7 +257,7 @@ distube
 
   const AddingMusic = new MessageEmbed()
   .setColor('#00FFD8')
-  .setTitle('✅ Adding'+  `\n ${song.name}` + ' to the queue')
+  .setTitle('✅ Adding'+  `\n${song.name}` + ' to the queue')
   .addField('Requested By', `${song.user}`)
   .setTimestamp()
   .setFooter(`${status(queue)}`);
