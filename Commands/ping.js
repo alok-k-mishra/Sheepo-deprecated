@@ -1,4 +1,4 @@
-const { EmbedBuilder } = require("@discordjs/builders");
+const { EmbedBuilder } = require("discord.js");
 const { ChatInputCommandInteraction, SlashCommandBuilder } = require("discord.js");
 const { MessageEmbed }  = require('discord.js');
 
@@ -20,7 +20,7 @@ execute(interactin){
      interactin.reply({content: { 
       embeds: [new EmbedBuilder()
       .setTitle("🏓 Pong!")
-      .setColor("5DFF00")
+      // .setColor("5DFF00")
       .setDescription("📡 Latency is " + (Date.now() - message.createdTimestamp) + " ms")] },
       
       ephemeral: false
