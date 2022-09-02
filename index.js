@@ -138,21 +138,8 @@ client.on('messageCreate' , (message) =>{
     if (command === 'rosie') { client.commands.get('rosie').execute(message, args, Discord) }
 
 
-    }
-  
     
-    else{
-
-      message.author.send("Hey, you gotta use my commands in sheepy server :)")
-    
-
-      }
- 
-
-})
-
-
- ///music
+     ///music
 
  if (command === 'play' || command === 'p') { 
   if(!args[0]) {message.reply("I don\'t know how to play empty search lol")}
@@ -242,6 +229,22 @@ const status = queue =>
 				: 'This Song'
 			: 'Off'
 	}\` | Autoplay: \`${queue.autoplay ? 'On' : 'Off'}\``
+
+    }
+  
+    
+    else{
+
+      message.author.send("Hey, you gotta use my commands in sheepy server :)")
+    
+
+      }
+ 
+
+})
+
+
+
 
 // DisTube event listeners, more in the documentation page
 distube
