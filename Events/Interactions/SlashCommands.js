@@ -16,13 +16,13 @@ module.exports = {
                 ephemeral: true
             })
 
-            if(command.developer && interaction.user.id !== "560848102295207940");
-            return interaction.reply({
-                content: "This command is only available to the developer.",
-                ephemeral: true
+            // if(command.developer && interaction.user.id !== "560848102295207940");
+            // return interaction.reply({
+            //     content: "This command is only available to the developer.",
+            //     ephemeral: true
     
     
-            });
+            // });
 
             command.execute(interaction, client);
 
