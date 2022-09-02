@@ -8,7 +8,7 @@ const { SoundCloudPlugin } = require('@distube/soundcloud');
 
 const { SpotifyPlugin } = require('@distube/spotify');
 
-const client = new Discord.Client({ intents: ['Guilds', 'GuildVoiceStates', 'GuildMessages']});
+const client = new Client({ intents: ['Guilds', 'GuildVoiceStates', 'GuildMessages']});
 
 const GuildMemberManager = require("discord.js");
 
