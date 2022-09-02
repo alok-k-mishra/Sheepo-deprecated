@@ -10,22 +10,18 @@ module.exports = {
  * 
  * @param { ChatInputCommandInteraction } interaction 
  */
-execute(interaction, message){
+async execute(interaction, client){
         
-    // const ping = new EmbedBuilder()
-    // .setTitle("🏓 Pong!")
-    // .setColor("5DFF00")
-    // .setDescription("📡 Latency is " + (Date.now() - message.createdTimestamp) + " ms")
-  
-     interaction.reply({content: { 
-      embeds: [new EmbedBuilder()
-      .setTitle("🏓 Pong!")
-      // .setColor("5DFF00")
-      .setDescription("📡 Latency is " + (Date.now() - message.createdTimestamp) + " ms")] },
-      
+    const ping = new EmbedBuilder()
+    .setTitle("🏓 Pong!")
+    .setColor("5DFF00")
+    .setDescription("📡 Latency is " + (Date.now() - message.createdTimestamp) + " ms")
+
+    await interaction.reply(
+      {content: { embeds: [ping] },
       ephemeral: false
     })
-    
-  }
 
+
+  },
 }
