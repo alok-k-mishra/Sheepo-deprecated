@@ -1,7 +1,12 @@
+const { loadCommands } = require("../../Handlers/commandHandler");
+
+
 module.exports = {
     name: "ready",
     once: true,
-    execute() {
-        console.log("Sheepo is Online.")
+    execute(client) {
+        console.log("Sheepo is Online.");
+    
+        loadCommands(client);
     }
 }

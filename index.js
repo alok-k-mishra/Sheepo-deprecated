@@ -20,8 +20,10 @@ const client = new Client({
 const { loadEvents } = require("./Handlers/eventHandler");
 
 client.events = new Collection();
+client.commands = new Collection();
 
 loadEvents(client);
+load
 
 
 const { ActivityType } = require('discord.js');

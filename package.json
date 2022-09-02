@@ -13,7 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "@discordjs/opus": "^0.8.0",
-    "@discordjs/rest": "^0.1.0-canary.0",
+    "@discordjs/rest": "^1.1.0",
     "@discordjs/voice": "^0.6.0",
     "@distube/soundcloud": "^1.0.0",
     "@distube/spotify": "^1.0.0",

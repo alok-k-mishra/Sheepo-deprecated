@@ -24,7 +24,7 @@ async function loadEvents(client) {
                 client.on(event.name, execute);
             }
         
-            table.addRow(event.name, '🟩')
+            table.addRow(event.name, '✅')
     })
 
     return console.log(table.toString(), "\nLoaded Events");
