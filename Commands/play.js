@@ -1,5 +1,7 @@
 const { EmbedBuilder, ActionRowBuilder, ButtonStyle } = require("discord.js");
 const { ChatInputCommandInteraction, SlashCommandBuilder } = require("discord.js");
+const { REST } = require("@discordjs/rest");
+
 const { 
     ButtonBuilder,
     InteractionType,
@@ -28,7 +30,10 @@ async execute(interaction, message, client){
 
     await interaction.reply({
       embeds: [music] ,
-      content: new ActionRowBuilder().setCustomId('button1').setLabel('⏯').setStyle(ButtonStyle.Primary),
+      content: new ActionRowBuilder().setComponents(
+        new ButtonBuilder().setCustomId('button1').setLabel('⏯').setStyle(ButtonStyle.Primary),
+      )
+      
       ephemeral: false
 })
 
