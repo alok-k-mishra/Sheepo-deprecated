@@ -30,7 +30,7 @@ const distube = new DisTube(client, {
 })
 
 
-client.commands = new Discord.Collection();
+client.commands = new Client.Collection();
 
 const commandFiles = fs.readdirSync(`./commands/`).filter(files => files.endsWith('.js'));;
 
