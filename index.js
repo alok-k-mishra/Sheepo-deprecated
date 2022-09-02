@@ -72,9 +72,6 @@ client.on('messageCreate' , (message) =>{
   const args = message.content.slice(prefix.length).trim().split(' ');
   const command = args.shift().toLowerCase();
 
-  if (command === 'msend') { if (message.author.id = '560848102295207940') {
-    client.commands.get('send').execute(message, args, Discord) 
-  }}  
 
    if(message.channel.type !== 'DM') {
 
@@ -218,8 +215,12 @@ client.on('messageCreate' , (message) =>{
   
     
     else{
-        message.author.send("Hey, you gotta use my commands in sheepy server :)")
-
+      if (command === 'msend') { if (message.author.id = '560848102295207940') {
+        client.commands.get('send').execute(message, args, Discord) 
+      }}  
+        else {
+          message.author.send("Hey, you gotta use my commands in sheepy server :)")
+    }
 
       }
  
