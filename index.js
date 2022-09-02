@@ -34,6 +34,7 @@ const prefix = '.';
 const fs = require('fs');
 
 const { MessageEmbed } = require('discord.js');
+const asciiTable = require("ascii-table");
 
 // Create a new DisTube
 const distube = new DisTube(client, {
