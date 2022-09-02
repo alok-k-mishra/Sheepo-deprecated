@@ -21,9 +21,11 @@
     "@distube/ytdl-core": "^4.11.4",
     "@distube/ytpl": "^1.1.1",
     "@distube/ytsr": "^1.1.8",
+    "ascii-table": "^0.0.9",
     "discord.js": "^14.3.0",
     "distube": "^4.0.3",
     "ffmpeg-static": "^4.4.0",
+    "glob": "^8.0.3",
     "libsodium-wrappers": "^0.7.9",
     "utf-8-validate": "^5.0.9"
   }

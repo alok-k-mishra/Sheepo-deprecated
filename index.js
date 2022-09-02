@@ -1,4 +1,8 @@
-const { Client } = require("discord.js");
+const { Client , GatewayIntentBits , Partials , Collection } = require("discord.js");
+
+const { Guilds, GuildMembers, GuildMessages } = GatewayIntentBits;
+
+const { User, Message, GuildMember, ThreadMember} = Partials;
 
 const { DisTube } = require('distube');
 
@@ -8,7 +12,16 @@ const { SoundCloudPlugin } = require('@distube/soundcloud');
 
 const { SpotifyPlugin } = require('@distube/spotify');
 
-const client = new Client({ intents: ['Guilds', 'GuildVoiceStates', 'GuildMessages']});
+const client = new Client({
+  intents: ['Guilds', 'GuildMembers', 'GuildVoiceStates', 'GuildMessages'],
+  partials: [User, Message, GuildMember, ThreadMember]
+});
+
+client.events = new Collection();
+
+const { loadEvents } = require("./Handlers/eventHandler");
+loadEvents(client);
+
 
 const { ActivityType } = require('discord.js');
 
@@ -32,16 +45,6 @@ const distube = new DisTube(client, {
 })
 
 
-// client.commands = new Client.Collection();
-
-// const commandFiles = fs.readdirSync(`./commands/`).filter(files => files.endsWith('.js'));;
-
-// for (const file of commandFiles){
-//   const command = require(`./commands/${file}`);
-//   console.log("Loading", command.name)
-
-//   client.commands.set(command.name, command);
-// }
 
 
 
