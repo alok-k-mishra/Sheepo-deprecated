@@ -16,10 +16,10 @@ async execute(interaction, message, client){
     .setColor("5DFF00")
     // .setDescription("📡 Latency is " + (Date.now() - message.createdTimestamp) + " ms")
 
-    await interaction.reply(
-      {content: { embeds: [ping] },
+    await interaction.reply({
+      embeds: [ping] ,
       ephemeral: false
-    })
+})
 
 
   },
