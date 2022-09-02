@@ -23,7 +23,6 @@ client.events = new Collection();
 client.commands = new Collection();
 
 loadEvents(client);
-load
 
 
 const { ActivityType } = require('discord.js');
