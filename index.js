@@ -2,24 +2,13 @@ const Discord = require('discord.js');
 
 const client = new Discord.Client({ intents: ['Guilds', 'GuildVoiceStates', 'GuildMessages']});
 
-// const { Client, GatewayIntentBits } = require('discord.js');
-
-// const client = new Client({ intents: [GatewayIntentBits.Guilds] });
-
 const { DisTube } = require('distube');
 
 // const DisTube = new DisTube.Distube(client, otp);
 
-
 const { YtDlpPlugin } = require("@distube/yt-dlp")
 
-
 // const distube = new DisTube({ plugins: [new YtDlpPlugin({ update: false })] })
-
-
-
-
-
 
 const { SoundCloudPlugin } = require('@distube/soundcloud')
 
@@ -34,7 +23,7 @@ const fs = require('fs');
 const { MessageEmbed } = require('discord.js');
 
 // Create a new DisTube
-client.distube = new DisTube.default(client, {
+const distube = new DisTube(client, {
 	searchSongs: 5,
 	searchCooldown: 30,
 	leaveOnEmpty: false,
@@ -61,7 +50,7 @@ for (const file of commandFiles){
 
 client.on('ready', () =>{
   console.log('Sheepo is Online!');
-  client.user.setActivity('Sheepy Server || Backoff Automod!!!',
+  client.user.setActivity('Sheepy Server || Backoff AutoMod!!!',
   { type: 'WATCHING'});
 
     distube.on('error', (channel, error) => {
@@ -82,12 +71,6 @@ client.on('messageCreate' , (message) =>{
   
   const args = message.content.slice(prefix.length).trim().split(' ');
   const command = args.shift().toLowerCase();
-
-
-
-  if (command === 'msend') { if (message.author.id = '560848102295207940') {
-    client.commands.get('send').execute(message, args, Discord) 
-  }}  
 
 
   if(message.channel.type !== 'DM') {
@@ -229,7 +212,11 @@ client.on('messageCreate' , (message) =>{
 
 
     }
-      else{
+    else if (command === 'msend') { if (message.author.id = '560848102295207940') {
+      client.commands.get('send').execute(message, args, Discord) 
+    }}    
+    
+    else{
         message.author.send("Hey, you gotta use my commands in sheepy server :)")
 
 
@@ -317,24 +304,45 @@ distube
 	// DisTubeOptions.searchSongs = true
 	.on('searchResult', (message, result) => {
 		let i = 0;
-		message.channel.send(
-			`**Choose an option from below**\n${result
-				.map(
-					song =>
-						`**${++i}**. ${song.name} - \`${
-							song.formattedDuration
-						}\``,
-				)
-				.join(
-					'\n',
-				)}\n*Enter anything else or wait 30 seconds to cancel*`,
-		);
+
+    const SearchList = new MessageEmbed()
+    .setColor('#00FFD8')
+    .setTitle('🔎**Choose an option from below**🔍\n')
+    .addField(
+      `${result.map(
+        song =>
+          `**${++i}**. ${song.name} - \`${
+            song.formattedDuration
+          }\``,
+      )
+      .join(
+        '\n',
+      )}`)
+    .setFooter(`\n*Enter anything else or wait 30 seconds to cancel*`);
+
+    		queue.textChannel.send({embeds: [AddingList]},
+        )
+
+
+	// 	message.channel.send(
+	// 		`**Choose an option from below**\n${result
+	// 			.map(
+	// 				song =>
+	// 					`**${++i}**. ${song.name} - \`${
+	// 						song.formattedDuration
+	// 					}\``,
+	// 			)
+	// 			.join(
+	// 				'\n',
+	// 			)}\n*Enter anything else or wait 30 seconds to cancel*`,
+	// 	);
 	})
+
 	.on('searchCancel', message =>
 		message.channel.send('Searching canceled'),
 	)
 	.on('searchInvalidAnswer', message =>
-		message.channel.send('Invalid number of result.'),
+		message.channel.send('Invalid number of results.'),
 	)
 	.on('searchNoResult', message =>
 		message.channel.send('No result found!'),
