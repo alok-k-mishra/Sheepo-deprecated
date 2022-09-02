@@ -9,14 +9,14 @@ module.exports = {
  * 
  * @param { ChatInputCommandInteraction } interaction 
  */
-execute(interaction){
+execute(interactin){
         
     const ping = new MessageEmbed()
     .setTitle("🏓 Pong!")
     .setColor("5DFF00")
     .setDescription("📡 Latency is " + (Date.now() - message.createdTimestamp) + " ms")
   
-     interaction.reply({content: { embeds: [ping] }, ephemeral: false
+     interactin.reply({content: { embeds: [ping] }, ephemeral: false
     })
     
   }
