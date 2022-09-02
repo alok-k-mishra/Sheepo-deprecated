@@ -13,7 +13,7 @@ async function loadCommands(client) {
         const command = require(file);
         client.commands.set(command.data.name, command);
 
-        commandsArrary.push(command.data.toJSON());
+        commandsArray.push(command.data.toJSON());
 
         table.addRow(command.data.name, "✔️");
 
