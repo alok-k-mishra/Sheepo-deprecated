@@ -10,7 +10,7 @@ module.exports = {
  * 
  * @param { ChatInputCommandInteraction } interaction 
  */
-async execute(interaction, client){
+async execute(interaction, message, client){
         
     const ping = new EmbedBuilder()
     .setTitle("🏓 Pong!")
