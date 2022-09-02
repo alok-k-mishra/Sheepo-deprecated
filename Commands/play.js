@@ -32,8 +32,7 @@ async execute(interaction, message, client){
       embeds: [music] ,
       content: new ActionRowBuilder().setComponents(
         new ButtonBuilder().setCustomId('button1').setLabel('⏯').setStyle(ButtonStyle.Primary),
-      )
-      
+      ),
       ephemeral: false
 })
 
