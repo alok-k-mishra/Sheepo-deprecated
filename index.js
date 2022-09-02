@@ -56,8 +56,8 @@ distube.on('error', (channel, error) => {
     .then(() => {
 
     console.log('Sheepo is Online!');
-    client.user.setActivity('Sheepy Server || Backoff AutoMod!!!'
-    // { type: 'WATCHING'}
+    client.user.setActivity('Sheepy Server || Backoff AutoMod!!!',
+    { type: ActivityType.Watching }
     );
         
     }
