@@ -32,7 +32,23 @@ async execute(interaction, message, client){
       embeds: [music] ,
       components: [
         new ActionRowBuilder().setComponents(
-        new ButtonBuilder().setCustomId('button1').setLabel('⏯').setStyle(ButtonStyle.Primary),
+            new ButtonBuilder()
+                .setCustomId('Stop')
+                .setLabel('⏹️ Stop')
+                .setStyle(ButtonStyle.Secondary),
+            new ButtonBuilder()
+            .setCustomId('Play Next')
+            .setLabel('⏭️ Next')
+            .setStyle(ButtonStyle.Secondary),
+            new ButtonBuilder()
+            .setCustomId('Queue')
+            .setLabel('📃 Queue')
+            .setStyle(ButtonStyle.Secondary),
+            new ButtonBuilder()
+            .setCustomId('YT Link')
+            .setLabel('Link to YouTube Video')
+            .setStyle(ButtonStyle.Link)
+            .setURL(),
       )
         ],
       ephemeral: false
