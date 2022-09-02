@@ -17,9 +17,10 @@ const client = new Client({
   partials: [User, Message, GuildMember, ThreadMember]
 });
 
+const { loadEvents } = require("./Handlers/eventHandler");
+
 client.events = new Collection();
 
-const { loadEvents } = require("./Handlers/eventHandler");
 loadEvents(client);
 
 
