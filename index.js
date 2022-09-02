@@ -60,8 +60,6 @@ distube.on('error', (channel, error) => {
   client
     .login(process.env.DJS_TOKEN)
     .then(() => {
-
-    console.log('Sheepo is Online!');
     client.user.setActivity('Sheepy Server || Backoff AutoMod!!!',
     { type: ActivityType.Watching }
     );
