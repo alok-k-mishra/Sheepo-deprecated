@@ -1,6 +1,11 @@
 const { ChatInputCommandInteraction, SlashCommandBuilder } = require("discord.js");
 const { MessageEmbed }  = require('discord.js');
 
+const ping = new MessageEmbed()
+.setTitle("🏓 Pong!")
+.setColor("5DFF00")
+.setDescription("📡 Latency is " + (Date.now() - message.createdTimestamp) + " ms")
+
 module.exports = {
   data: new SlashCommandBuilder()
   .setName("ping")
@@ -9,12 +14,9 @@ module.exports = {
  * 
  * @param { ChatInputCommandInteraction } interaction 
  */
+
+
 execute(interactin){
-        
-    const ping = new MessageEmbed()
-    .setTitle("🏓 Pong!")
-    .setColor("5DFF00")
-    .setDescription("📡 Latency is " + (Date.now() - message.createdTimestamp) + " ms")
   
      interactin.reply({content: { embeds: [ping] }, ephemeral: false
     })
