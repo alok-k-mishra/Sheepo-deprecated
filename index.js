@@ -4,7 +4,7 @@ const client = new Discord.Client({ intents: ['Guilds', 'GuildVoiceStates', 'Gui
 
 const { DisTube } = require('distube');
 
-const DisTube = new DisTube.Distube(client, otp);
+// const DisTube = new DisTube.Distube(client, otp);
 
 const { YtDlpPlugin } = require("@distube/yt-dlp")
 
@@ -73,87 +73,14 @@ client.on('messageCreate' , (message) =>{
   const command = args.shift().toLowerCase();
 
 
+      if (command === 'msend') { if (message.author.id = '560848102295207940') {
+        client.commands.get('send').execute(message, args, Discord) 
+      }}  
+      
+
   if(message.channel.type !== 'DM') {
 
 
-           ///music
-
-           if (command === 'play' || command === 'p') { 
-            if(!args[0]) {message.reply("I don\'t know how to play empty search lol")}
-            else {distube.play(message.member.voice.channel, args.join(' '), {
-              member: message.member,
-              textChannel: message.channel,
-              message
-          }).catch(err => 
-            message.reply('Join a VC lol.'))
-           }
-    
-            
-          }
-    
-           if (['repeat', 'loop'].includes(command)) {
-             const mode = distube.setRepeatMode(message)
-             message.channel.send(`Set repeat mode to \`${mode ? mode === 2 ? 'All Queue' : 'This Song' : 'Off'}\``).catch(err => 
-              message.reply('You must be in a VC to execute this command!'))
-           }
-         
-           if (command === 'stop') {
-            distube.stop(message).catch(err => message.reply('There\'s no music to stop lol'))
-            message.channel.send('Stopped the music!')
-           }
-         
-           if (command === 'leave' || command === 'bye') {
-            distube.voices.get(message)?.leave();
-            message.channel.send('Left the voice channel! 🥲👋🏼');
-          }
-
-           if (command === 'resume') { 
-             distube.resume(message).catch(err => 
-              message.reply('You must be in a VC!'))
-            message.channel.send("⏯ Resumed") }
-         
-           if (command === 'pause') { distube.pause(message).catch(err => message.reply('You must be in a VC to use this command!'))
-              message.channel.send("⏸ Paused")}
-         
-           if (command === 'skip') { distube.skip(message).catch(err => message.reply('You must be in a VC to use this command!'))
-                message.channel.send("<:LEDcat:840237693383344178> Skipped!") }
-
-
-           if (command === 'queue') {
-             const queue = distube.getQueue(message)
-             if (!queue) {
-               message.channel.send('Nothing playing right now!')
-             } else {
-               message.channel.send(
-                 `Current queue:\n${queue.songs
-                   .map(
-                     (song, id) =>
-                       `**${id ? id : 'Playing'}**. ${song.name} - \`${
-                         song.formattedDuration
-                       }\``,
-                   )
-                   .slice(0, 10)
-                   .join('\n')}`,
-               )
-             }
-           }
- 
-           if (
-            [
-              '3d',
-              'bassboost',
-              'echo',
-              'karaoke',
-              'nightcore',
-              'vaporwave',
-            ].includes(command)
-          ) {
-            const filter = distube.setFilter(message, command);
-            message.channel.send(
-              `Current queue filter: ${filter.join(', ') || 'Off'}`,
-            );
-          }
-        
          
         //moderation
     
@@ -215,10 +142,7 @@ client.on('messageCreate' , (message) =>{
   
     
     else{
-      // if (command === 'msend') { if (message.author.id = '560848102295207940') {
-      //   client.commands.get('send').execute(message, args, Discord) 
-      // }}  
-      //   else {
+
       message.author.send("Hey, you gotta use my commands in sheepy server :)")
     
 
@@ -227,6 +151,83 @@ client.on('messageCreate' , (message) =>{
 
 })
 
+
+ ///music
+
+ if (command === 'play' || command === 'p') { 
+  if(!args[0]) {message.reply("I don\'t know how to play empty search lol")}
+  else {distube.play(message.member.voice.channel, args.join(' '), {
+    member: message.member,
+    textChannel: message.channel,
+    message
+}).catch(err => 
+  message.reply('Join a VC lol.'))
+ }
+
+}
+
+ if (['repeat', 'loop'].includes(command)) {
+   const mode = distube.setRepeatMode(message)
+   message.channel.send(`Set repeat mode to \`${mode ? mode === 2 ? 'All Queue' : 'This Song' : 'Off'}\``).catch(err => 
+    message.reply('You must be in a VC to execute this command!'))
+ }
+
+ if (command === 'stop') {
+  distube.stop(message).catch(err => message.reply('There\'s no music to stop lol'))
+  message.channel.send('Stopped the music!')
+ }
+
+ if (command === 'leave' || command === 'bye') {
+  distube.voices.get(message)?.leave();
+  message.channel.send('Left the voice channel! 🥲👋🏼');
+}
+
+ if (command === 'resume') { 
+   distube.resume(message).catch(err => 
+    message.reply('You must be in a VC!'))
+  message.channel.send("⏯ Resumed") }
+
+ if (command === 'pause') { distube.pause(message).catch(err => message.reply('You must be in a VC to use this command!'))
+    message.channel.send("⏸ Paused")}
+
+ if (command === 'skip') { distube.skip(message).catch(err => message.reply('You must be in a VC to use this command!'))
+      message.channel.send("<:LEDcat:840237693383344178> Skipped!") }
+
+
+ if (command === 'queue') {
+   const queue = distube.getQueue(message)
+   if (!queue) {
+     message.channel.send('Nothing playing right now!')
+   } else {
+     message.channel.send(
+       `Current queue:\n${queue.songs
+         .map(
+           (song, id) =>
+             `**${id ? id : 'Playing'}**. ${song.name} - \`${
+               song.formattedDuration
+             }\``,
+         )
+         .slice(0, 10)
+         .join('\n')}`,
+     )
+   }
+ }
+
+ if (
+  [
+    '3d',
+    'bassboost',
+    'echo',
+    'karaoke',
+    'nightcore',
+    'vaporwave',
+  ].includes(command)
+) {
+  const filter = distube.setFilter(message, command);
+  message.channel.send(
+    `Current queue filter: ${filter.join(', ') || 'Off'}`,
+  );
+}
 
 
 //-------//
