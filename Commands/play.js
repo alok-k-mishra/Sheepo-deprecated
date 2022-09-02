@@ -1,6 +1,14 @@
 const { EmbedBuilder, ActionRowBuilder, ButtonStyle } = require("discord.js");
 const { ChatInputCommandInteraction, SlashCommandBuilder } = require("discord.js");
-const { ButtonBuilder } = require("discord.js");
+const { 
+    ButtonBuilder,
+    ActionRowBuilder,
+    InteractionType,
+    ModelBuilder,
+    Routes,
+    SelectMenuBuilder,
+    TextInputBuilder,
+    TextInputStyle } = require("discord.js");
 
 
 module.exports = {
