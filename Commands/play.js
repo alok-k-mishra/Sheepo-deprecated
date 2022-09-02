@@ -48,7 +48,7 @@ async execute(interaction, message, client){
             .setCustomId('YT Link')
             .setLabel('Link to YouTube Video')
             .setStyle(ButtonStyle.Link)
-            .setURL(),
+            ,
       )
         ],
       ephemeral: false
