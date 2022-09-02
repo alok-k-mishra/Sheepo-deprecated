@@ -10,7 +10,7 @@ module.exports = {
  * 
  * @param { ChatInputCommandInteraction } interaction 
  */
-execute(interactin){
+execute(message, interactin){
         
     // const ping = new EmbedBuilder()
     // .setTitle("🏓 Pong!")
