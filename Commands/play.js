@@ -30,9 +30,11 @@ async execute(interaction, message, client){
 
     await interaction.reply({
       embeds: [music] ,
-      content: new ActionRowBuilder().setComponents(
+      components: [
+        new ActionRowBuilder().setComponents(
         new ButtonBuilder().setCustomId('button1').setLabel('⏯').setStyle(ButtonStyle.Primary),
-      ),
+      )
+        ],
       ephemeral: false
 })
 
