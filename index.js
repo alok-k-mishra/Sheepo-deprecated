@@ -24,7 +24,7 @@ const { MessageEmbed } = require('discord.js');
 
 // Create a new DisTube
 const distube = new DisTube(client, {
-	searchSongs: 5,
+	searchSongs: 7,
 	searchCooldown: 30,
 	leaveOnEmpty: false,
 	leaveOnFinish: false,
@@ -215,12 +215,12 @@ client.on('messageCreate' , (message) =>{
   
     
     else{
-      if (command === 'msend') { if (message.author.id = '560848102295207940') {
-        client.commands.get('send').execute(message, args, Discord) 
-      }}  
-        else {
-          message.author.send("Hey, you gotta use my commands in sheepy server :)")
-    }
+      // if (command === 'msend') { if (message.author.id = '560848102295207940') {
+      //   client.commands.get('send').execute(message, args, Discord) 
+      // }}  
+      //   else {
+      message.author.send("Hey, you gotta use my commands in sheepy server :)")
+    
 
       }
  
@@ -308,14 +308,13 @@ distube
 		let i = 0;
 
     const SearchList = new MessageEmbed()
-    .setColor('#00FFD8')
-    .setTitle('🔎**Choose an option from below**🔍\n')
-    .addField(
+      .setColor('#00FFD8')
+      .setTitle('🔎**Choose an option from below**🔍\n')
+      .addField(
       `${result.map(
         song =>
-          `**${++i}**. ${song.name} - \`${
-            song.formattedDuration
-          }\``,
+          `**${++i}**. ${song.name} - \`
+          ${song.formattedDuration}\``,
       )
       .join(
         '\n',
