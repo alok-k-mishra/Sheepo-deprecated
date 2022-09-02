@@ -53,17 +53,13 @@ client.on('ready', () =>{
   client.user.setActivity('Sheepy Server || Backoff AutoMod!!!',
   { type: 'WATCHING'});
 
-    distube.on('error', (channel, error) => {
-      console.error(error)
-      // channel.send(`An error encountered: ${error.slice(0, 1979)}`)
-
-    })
-
-
-
-
   })
 
+distube.on('error', (channel, error) => {
+    console.error(error)
+    // channel.send(`An error encountered: ${error.slice(0, 1979)}`)
+
+  })
 
 client.on('messageCreate' , (message) =>{
 
@@ -138,7 +134,7 @@ client.on('messageCreate' , (message) =>{
     if (command === 'rosie') { client.commands.get('rosie').execute(message, args, Discord) }
 
 
-    
+
      ///music
 
  if (command === 'play' || command === 'p') { 
