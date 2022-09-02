@@ -10,6 +10,8 @@ const { SpotifyPlugin } = require('@distube/spotify');
 
 const client = new Client({ intents: ['Guilds', 'GuildVoiceStates', 'GuildMessages']});
 
+const { ActivityType } = require('discord.js');
+
 const GuildMemberManager = require("discord.js");
 
 const prefix = '.';
