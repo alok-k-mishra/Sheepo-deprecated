@@ -76,7 +76,7 @@ client.on('messageCreate' , (message) =>{
     client.commands.get('send').execute(message, args, Discord) 
   }}  
 
-  else if(message.channel.type !== 'DM') {
+   if(message.channel.type !== 'DM') {
 
 
            ///music
