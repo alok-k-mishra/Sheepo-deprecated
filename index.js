@@ -59,7 +59,7 @@ distube.on('error', (channel, error) => {
     client.user.setActivity('Sheepy Server || Backoff AutoMod!!!',
     { type: ActivityType.Watching }
     );
-        
+    client.user.setStatus('idle');
     }
     
     )
