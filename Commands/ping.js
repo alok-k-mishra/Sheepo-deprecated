@@ -12,12 +12,18 @@ module.exports = {
  */
 execute(interactin){
         
-    const ping = new EmbedBuilder()
-    .setTitle("🏓 Pong!")
-    .setColor("5DFF00")
-    .setDescription("📡 Latency is " + (Date.now() - message.createdTimestamp) + " ms")
+    // const ping = new EmbedBuilder()
+    // .setTitle("🏓 Pong!")
+    // .setColor("5DFF00")
+    // .setDescription("📡 Latency is " + (Date.now() - message.createdTimestamp) + " ms")
   
-     interactin.reply({content: { embeds: [ping] }, ephemeral: false
+     interactin.reply({content: { 
+      embeds: new EmbedBuilder()
+      .setTitle("🏓 Pong!")
+      .setColor("5DFF00")
+      .setDescription("📡 Latency is " + (Date.now() - message.createdTimestamp) + " ms") },
+      
+      ephemeral: false
     })
     
   }
