@@ -4,7 +4,7 @@ const client = new Discord.Client({ intents: ['Guilds', 'GuildVoiceStates', 'Gui
 
 const { DisTube } = require('distube');
 
-// const DisTube = new DisTube.Distube(client, otp);
+const DisTube = new DisTube.Distube(client, otp);
 
 const { YtDlpPlugin } = require("@distube/yt-dlp")
 
@@ -22,16 +22,16 @@ const fs = require('fs');
 
 const { MessageEmbed } = require('discord.js');
 
-// // Create a new DisTube
-// const distube = new DisTube(client, {
-// 	searchSongs: 7,
-// 	searchCooldown: 30,
-// 	leaveOnEmpty: false,
-// 	leaveOnFinish: false,
-// 	leaveOnStop: false,
-// 	plugins: [new SoundCloudPlugin(),
-//             new SpotifyPlugin()]
-// })
+// Create a new DisTube
+const distube = new DisTube(client, {
+	searchSongs: 7,
+	searchCooldown: 30,
+	leaveOnEmpty: false,
+	leaveOnFinish: false,
+	leaveOnStop: false,
+	plugins: [new SoundCloudPlugin(),
+            new SpotifyPlugin()]
+})
 
 
 client.commands = new Discord.Collection();
