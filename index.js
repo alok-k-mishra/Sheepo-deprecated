@@ -4,15 +4,15 @@ const { Guilds, GuildMembers, GuildMessages } = GatewayIntentBits;
 
 const { User, Message, GuildMember, ThreadMember} = Partials;
 
-const {
-  ActionRowBuilder,
-  InteractionType,
-  ModelBuilder,
-  Routes,
-  SelectMenuBuilder,
-  TextInputBuilder,
-  TextInputStyle
-} = require('discord.js');
+// const {
+//   ActionRowBuilder,
+//   InteractionType,
+//   ModelBuilder,
+//   Routes,
+//   SelectMenuBuilder,
+//   TextInputBuilder,
+//   TextInputStyle
+// } = require('discord.js');
 
 const { DisTube } = require('distube');
 
