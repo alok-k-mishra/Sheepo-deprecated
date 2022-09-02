@@ -45,7 +45,6 @@ async execute(interaction, message, client){
             .setLabel('📃 Queue')
             .setStyle(ButtonStyle.Secondary),
             new ButtonBuilder()
-            .setCustomId('YT Link')
             .setLabel('Link to YouTube Video')
             .setStyle(ButtonStyle.Link)
             .setURL('https://www.youtube.com/watch?v=f6ddxmQoVmM'),
