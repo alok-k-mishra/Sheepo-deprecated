@@ -1,18 +1,18 @@
-const Discord = require('discord.js');
-
+// const Discord = require('discord.js');
+const { Client, GatewayIntentBits } = require('discord.js');
 const client = new Discord.Client({ intents: ['Guilds', 'GuildVoiceStates', 'GuildMessages']});
 
 const { DisTube } = require('distube');
 
 // const DisTube = new DisTube.Distube(client, otp);
 
-const { YtDlpPlugin } = require("@distube/yt-dlp")
+const { YtDlpPlugin } = require("@distube/yt-dlp");
 
 // const distube = new DisTube({ plugins: [new YtDlpPlugin({ update: false })] });
 
-const { SoundCloudPlugin } = require('@distube/soundcloud')
+const { SoundCloudPlugin } = require('@distube/soundcloud');
 
-const { SpotifyPlugin } = require('@distube/spotify')
+const { SpotifyPlugin } = require('@distube/spotify');
 
 const GuildMemberManager = require("discord.js");
 
