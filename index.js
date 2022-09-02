@@ -30,16 +30,16 @@ const distube = new DisTube(client, {
 })
 
 
-client.commands = new Client.Collection();
+// client.commands = new Client.Collection();
 
-const commandFiles = fs.readdirSync(`./commands/`).filter(files => files.endsWith('.js'));;
+// const commandFiles = fs.readdirSync(`./commands/`).filter(files => files.endsWith('.js'));;
 
-for (const file of commandFiles){
-  const command = require(`./commands/${file}`);
-  console.log("Loading", command.name)
+// for (const file of commandFiles){
+//   const command = require(`./commands/${file}`);
+//   console.log("Loading", command.name)
 
-  client.commands.set(command.name, command);
-}
+//   client.commands.set(command.name, command);
+// }
 
 
 
