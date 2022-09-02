@@ -18,10 +18,10 @@ execute(interactin){
     // .setDescription("📡 Latency is " + (Date.now() - message.createdTimestamp) + " ms")
   
      interactin.reply({content: { 
-      embeds: new EmbedBuilder()
+      embeds: [new EmbedBuilder()
       .setTitle("🏓 Pong!")
       .setColor("5DFF00")
-      .setDescription("📡 Latency is " + (Date.now() - message.createdTimestamp) + " ms") },
+      .setDescription("📡 Latency is " + (Date.now() - message.createdTimestamp) + " ms")] },
       
       ephemeral: false
     })
