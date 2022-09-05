@@ -27,6 +27,7 @@
     "ffmpeg-static": "^4.4.0",
     "glob": "^8.0.3",
     "libsodium-wrappers": "^0.7.9",
+    "mongoose": "^6.5.4",
     "utf-8-validate": "^5.0.9"
   }
 }

@@ -36,18 +36,21 @@ async execute(interaction, message, client){
                 .setCustomId('Stop')
                 .setLabel('⏹️ Stop')
                 .setStyle(ButtonStyle.Secondary),
+
             new ButtonBuilder()
-            .setCustomId('Play Next')
-            .setLabel('⏭️ Next')
-            .setStyle(ButtonStyle.Secondary),
+                .setCustomId('Play Next')
+                .setLabel('⏭️ Next')
+                .setStyle(ButtonStyle.Secondary),
+
             new ButtonBuilder()
-            .setCustomId('Queue')
-            .setLabel('📃 Queue')
-            .setStyle(ButtonStyle.Secondary),
+                .setCustomId('Queue')
+                .setLabel('📃 Queue')
+                .setStyle(ButtonStyle.Secondary),
+
             new ButtonBuilder()
-            .setLabel('Link to YouTube Video')
-            .setStyle(ButtonStyle.Link)
-            .setURL('https://www.youtube.com/watch?v=f6ddxmQoVmM'),
+                .setLabel('Link to YouTube Video')
+                .setStyle(ButtonStyle.Link)
+                .setURL('https://www.youtube.com/watch?v=f6ddxmQoVmM'),
       )
         ],
       ephemeral: false

@@ -28,6 +28,7 @@ const client = new Client({
 });
 
 const { loadEvents } = require("./Handlers/eventHandler");
+const { connect } = require("mongoose");
 
 client.events = new Collection();
 client.commands = new Collection();
@@ -67,6 +68,11 @@ distube.on('error', (channel, error) => {
     // channel.send(`An error encountered: ${error.slice(0, 1979)}`)
 
   })
+
+  connect(process.env.MONGODB_TOKEN, {
+  }).then(() => console.log("The client is now connected to MongoDB Database"));
+
+
 
   client
     .login(process.env.DJS_TOKEN)
