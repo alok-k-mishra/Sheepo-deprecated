@@ -68,8 +68,9 @@ distube.on('error', (channel, error) => {
     // channel.send(`An error encountered: ${error.slice(0, 1979)}`)
 
   })
+client.MongoConfig = require("./MongoConfig.json");
 
-  connect(process.env.MONGODB_TOKEN, {
+  connect(client.MongoConfig.DatabaseURL, {
   }).then(() => console.log("The client is now connected to MongoDB Database"));
 
 
