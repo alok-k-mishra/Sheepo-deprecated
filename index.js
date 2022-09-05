@@ -28,7 +28,7 @@ const client = new Client({
 });
 
 const { loadEvents } = require("./Handlers/eventHandler");
-const { connect } = require("mongoose");
+// const { connect } = require("mongoose");
 
 client.events = new Collection();
 client.commands = new Collection();
@@ -69,8 +69,8 @@ distube.on('error', (channel, error) => {
 
   })
 
-  connect(process.env.MONGODB_URL, {
-  }).then(() => console.log("The client is now connected to MongoDB Database"));
+  // connect(process.env.MONGODB_URL, {
+  // }).then(() => console.log("The client is now connected to MongoDB Database"));
 
 
 
