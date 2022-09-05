@@ -32,6 +32,7 @@ const { connect } = require("mongoose");
 
 client.events = new Collection();
 client.commands = new Collection();
+client.MongoConfig = require("./MongoConfig.json");
 
 loadEvents(client);
 
@@ -68,7 +69,7 @@ distube.on('error', (channel, error) => {
     // channel.send(`An error encountered: ${error.slice(0, 1979)}`)
 
   })
-client.MongoConfig = require("./MongoConfig.json");
+
 
   connect(client.MongoConfig.DatabaseURL, {
   }).then(() => console.log("The client is now connected to MongoDB Database"));
