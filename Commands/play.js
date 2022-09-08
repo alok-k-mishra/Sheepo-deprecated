@@ -1,7 +1,10 @@
 const { EmbedBuilder, ActionRowBuilder, ButtonStyle } = require("discord.js");
 const { ChatInputCommandInteraction, SlashCommandBuilder } = require("discord.js");
 const { REST } = require("@discordjs/rest");
-
+const { DisTube } = require('distube');
+const { YtDlpPlugin } = require("@distube/yt-dlp");
+const { SoundCloudPlugin } = require('@distube/soundcloud');
+const { SpotifyPlugin } = require('@distube/spotify');
 const { 
     ButtonBuilder,
     InteractionType,
@@ -20,6 +23,7 @@ module.exports = {
  * 
  * @param { ChatInputCommandInteraction } interaction 
  */
+/** */
 async execute(interaction, message, client){
         
     const music = new EmbedBuilder()
