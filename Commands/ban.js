@@ -23,8 +23,6 @@ async execute(interaction, message, client){
 
   const user = interaction.options.getUser('target');
   const banreason = interaction.options.getString('reason')
-  guild.members.ban(user)
-  .reason(banreason);
 
     const ban = new EmbedBuilder()
     .setColor('FB542B')
@@ -32,9 +30,12 @@ async execute(interaction, message, client){
     .setDescription("Reason: "+ banreason)
     .setFooter("Happily moderating MrSuicideSheep server :D")
 
-    await interaction.reply({
-      embeds: [ban] ,
-      ephemeral: true
+    await
+      user.ban(banreason);
+
+      interaction.reply({
+        embeds: [ban] ,
+        ephemeral: true
     
 })}
 

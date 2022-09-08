@@ -23,8 +23,6 @@ async execute(interaction, message, client){
 
   const user = interaction.options.getUser('target');
   const kickreason = interaction.options.getString('reason')
-  guild.members.kick(user)
-  .reason(kickreason);
 
     const kick = new EmbedBuilder()
     .setColor('FB542B')
@@ -32,7 +30,10 @@ async execute(interaction, message, client){
     .setDescription("Reason: "+ kickreason)
     .setFooter("Happily moderating MrSuicideSheep server :D")
 
-    await interaction.reply({
+    await 
+    user.kick(kickreason);
+    
+    interaction.reply({
       embeds: [kick] ,
       ephemeral: true
     
