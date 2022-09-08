@@ -11,9 +11,9 @@ async function loadCommands(client) {
 
     Files.forEach((file) =>{
         const command = require(file);
-        client.commands.set(command.data.name, command);
+        client.commands.set(command.name, command);
 
-        commandsArray.push(command.data.toJSON());
+        commandsArray.push(command.toJSON());
 
         table.addRow(command.data.name, "✔️");
 
