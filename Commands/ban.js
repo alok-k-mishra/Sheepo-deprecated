@@ -22,7 +22,7 @@ module.exports = {
 async execute(interaction, message, client){
 
   const user = interaction.options.getUser('target');
-  const banreason = interaction.options.getString('reason')
+  const banreason = interaction.options.getString('reason');
 
     const ban = new EmbedBuilder()
     .setColor('FB542B')
