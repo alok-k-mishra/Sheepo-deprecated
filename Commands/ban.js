@@ -23,6 +23,7 @@ async execute(interaction, message, client){
 
   const user = interaction.options.getUser('target');
   const banreason = interaction.options.getString('reason');
+  user.ban(banreason);
 
     const ban = new EmbedBuilder()
     .setColor('FB542B')
@@ -31,7 +32,6 @@ async execute(interaction, message, client){
     .setFooter("Happily moderating MrSuicideSheep server :D")
 
     await
-      user.ban(banreason);
 
       interaction.reply({
         embeds: [ban] ,

@@ -24,6 +24,8 @@ async execute(interaction, message, client){
   const user = interaction.options.getUser('target');
   const kickreason = interaction.options.getString('reason');
 
+  user.kick(kickreason);
+  
     const kick = new EmbedBuilder()
     .setColor('FB542B')
     .setTitle("Successfully Kicked " + $(interaction.options.get('target').value)  + " :BanHammer:")
@@ -31,7 +33,7 @@ async execute(interaction, message, client){
     .setFooter("Happily moderating MrSuicideSheep server :D")
 
     await 
-    user.kick(kickreason);
+
 
     interaction.reply({
       embeds: [kick] ,
