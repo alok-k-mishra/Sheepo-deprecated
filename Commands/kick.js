@@ -1,4 +1,4 @@
-const { EmbedBuilder, MembershipScreeningFieldType } = require("discord.js");
+const { EmbedBuilder, MembershipScreeningFieldType, GuildMemberManager } = require("discord.js");
 const { ChatInputCommandInteraction, SlashCommandBuilder, PermissionFlagsBits } = require("discord.js");
 
 module.exports = {
@@ -25,7 +25,7 @@ async execute(interaction, message, client){
   const kickreason = interaction.options.getString('reason');
 
   user.kick(kickreason);
-  
+
     const kick = new EmbedBuilder()
     .setColor('FB542B')
     .setTitle("Successfully Kicked " + $(interaction.options.get('target').value)  + " :BanHammer:")

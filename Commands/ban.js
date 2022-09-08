@@ -1,4 +1,4 @@
-const { EmbedBuilder, MembershipScreeningFieldType } = require("discord.js");
+const { EmbedBuilder, MembershipScreeningFieldType, GuildMemberManager } = require("discord.js");
 const { ChatInputCommandInteraction, SlashCommandBuilder, PermissionFlagsBits } = require("discord.js");
 
 module.exports = {
@@ -23,8 +23,9 @@ async execute(interaction, message, client){
 
   const user = interaction.options.getUser('target');
   const banreason = interaction.options.getString('reason');
-  user.ban(banreason);
-
+  guild.members.kick(user)
+  .then(kickInfo => console.log(`Kicked ${kickInfo.user?.tag ?? kickInfo.tag ?? kickInfo}`))
+  .catch(console.error);
     const ban = new EmbedBuilder()
     .setColor('FB542B')
     .setTitle("Successfully Banned " + $(interaction.options.get('target').value)  + " :BanHammer:")
