@@ -137,21 +137,21 @@ distube.on('error', (channel, error) => {
     }
       
      
-      if (
-       [
-         '3d',
-         'bassboost',
-         'echo',
-         'karaoke',
-         'nightcore',
-         'vaporwave',
-       ].includes(command)
-     ) {
-       const filter = distube.setFilter(message, command);
-       message.channel.send(
-         `Current queue filter: ${filter.join(', ') || 'Off'}`,
-       );
-     }
+    //   if (
+    //    [
+    //      '3d',
+    //      'bassboost',
+    //      'echo',
+    //      'karaoke',
+    //      'nightcore',
+    //      'vaporwave',
+    //    ].includes()
+    //  ) {
+    //    const filter = distube.setFilter(message, command);
+    //    message.channel.send(
+    //      `Current queue filter: ${filter.join(', ') || 'Off'}`,
+    //    );
+    //  }
         distube.skip(interaction)
          
         interaction.reply({
