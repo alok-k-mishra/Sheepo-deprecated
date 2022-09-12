@@ -45,7 +45,7 @@ const distube = new DisTube(client, {
 
 
 
-
+require('events').EventEmitter.defaultMaxListeners = 100;
 
 
 distube.on('error', (channel, error) => {
