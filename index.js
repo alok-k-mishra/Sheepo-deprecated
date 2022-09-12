@@ -70,20 +70,20 @@ distube.on('error', (channel, error) => {
     
     )
 
-    client.on('messageCreate', (message) => {
+    // client.on('messageCreate', (message) => {
 
-      const args = message.content.slice().trim().split(' ');
-      if(message.author.bot || !message.channel === '762736320240943145') return;
+    //   const args = message.content.slice().trim().split(' ');
+    //   if(message.author.bot || !message.channel === '762736320240943145') return;
   
-      distube.play(message.member.voice.channel, args.join(' '), {
-        member: message.member,
-        textChannel: message.channel,
-        message
-    }).then(setTimeout(() => message.delete(), 2000)).catch(err => 
-      message.reply('Join a VC lol.')).then(setTimeout(() => message.delete(), 2000))
-    }
+    //   distube.play(message.member.voice.channel, args.join(' '), {
+    //     member: message.member,
+    //     textChannel: message.channel,
+    //     message
+    // }).then(setTimeout(() => message.delete(), 2000)).catch(err => 
+    //   message.reply('Join a VC lol.')).then(setTimeout(() => message.delete(), 2000))
+    // }
     
-      )
+    //   )
 
 
     client.on('interactionCreate', (interaction) => {
