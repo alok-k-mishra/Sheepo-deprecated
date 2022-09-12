@@ -14,7 +14,7 @@ async execute(interaction, message, client){
     const ping = new EmbedBuilder()
     .setTitle("🏓 Pong!")
     .setColor("5DFF00")
-    .setDescription("📡 Latency is " + (Date.now() - message.createdTimestamp) + " ms")
+    .setDescription("📡 Latency is " + (message.createdTimestamp - interaction.createdTimestamp) + " ms")
 
     await interaction.reply({
       embeds: [ping] ,

@@ -23,7 +23,7 @@ async execute(interaction, message, client){
 
   const user = interaction.options.getUser('target');
   const banreason = interaction.options.getString('reason');
-  guild.members.kick(user)
+  guild.members.ban(user)
   .then(kickInfo => console.log(`Kicked ${kickInfo.user?.tag ?? kickInfo.tag ?? kickInfo}`))
   .catch(console.error);
     const ban = new EmbedBuilder()
